@@ -9,8 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>
 
-@interface MapViewController : UIViewController
+@interface MapViewController : UIViewController <MKMapViewDelegate>
 
-@property (nonatomic) IBOutlet MKMapView *map;
+@property (nonatomic, strong) IBOutlet MKMapView *map;
 //@property (readonly) NSArray *annotations;
 @end
