@@ -7,7 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <MapKit/MapKit.h>
 
 @interface MapViewController : UIViewController
 
+@property (nonatomic) IBOutlet MKMapView *map;
+//@property (readonly) NSArray *annotations;
 @end

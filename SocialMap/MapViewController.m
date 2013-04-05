@@ -10,4 +10,13 @@
 
 @implementation MapViewController
 
+-(void) viewDidLoad {
+    [super viewDidLoad];
+    NSLog(@"viewDidLoad %@", self.map);
+
+}
+
+
+
+
 @end
