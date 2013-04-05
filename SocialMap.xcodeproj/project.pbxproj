@@ -20,6 +20,8 @@
 		8FDE58ED170EAB1F0038FA78 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FDE58EB170EAB1F0038FA78 /* MainStoryboard_iPad.storyboard */; };
 		8FDE58F0170EAB1F0038FA78 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDE58EF170EAB1F0038FA78 /* MasterViewController.m */; };
 		8FDE58F3170EAB1F0038FA78 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDE58F2170EAB1F0038FA78 /* DetailViewController.m */; };
+		8FDE58FB170EACF30038FA78 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDE58FA170EACF30038FA78 /* MapViewController.m */; };
+		8FDE58FD170EADB60038FA78 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FDE58FC170EADB60038FA78 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,9 @@
 		8FDE58EF170EAB1F0038FA78 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
 		8FDE58F1170EAB1F0038FA78 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		8FDE58F2170EAB1F0038FA78 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		8FDE58F9170EACF30038FA78 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		8FDE58FA170EACF30038FA78 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		8FDE58FC170EADB60038FA78 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FDE58FD170EADB60038FA78 /* MapKit.framework in Frameworks */,
 				8FDE58D1170EAB1F0038FA78 /* UIKit.framework in Frameworks */,
 				8FDE58D3170EAB1F0038FA78 /* Foundation.framework in Frameworks */,
 				8FDE58D5170EAB1F0038FA78 /* CoreGraphics.framework in Frameworks */,
@@ -78,6 +84,7 @@
 		8FDE58CF170EAB1F0038FA78 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8FDE58FC170EADB60038FA78 /* MapKit.framework */,
 				8FDE58D0170EAB1F0038FA78 /* UIKit.framework */,
 				8FDE58D2170EAB1F0038FA78 /* Foundation.framework */,
 				8FDE58D4170EAB1F0038FA78 /* CoreGraphics.framework */,
@@ -97,6 +104,8 @@
 				8FDE58F1170EAB1F0038FA78 /* DetailViewController.h */,
 				8FDE58F2170EAB1F0038FA78 /* DetailViewController.m */,
 				8FDE58D7170EAB1F0038FA78 /* Supporting Files */,
+				8FDE58F9170EACF30038FA78 /* MapViewController.h */,
+				8FDE58FA170EACF30038FA78 /* MapViewController.m */,
 			);
 			path = SocialMap;
 			sourceTree = "<group>";
@@ -186,6 +195,7 @@
 				8FDE58E1170EAB1F0038FA78 /* AppDelegate.m in Sources */,
 				8FDE58F0170EAB1F0038FA78 /* MasterViewController.m in Sources */,
 				8FDE58F3170EAB1F0038FA78 /* DetailViewController.m in Sources */,
+				8FDE58FB170EACF30038FA78 /* MapViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
