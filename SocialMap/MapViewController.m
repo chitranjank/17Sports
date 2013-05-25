@@ -13,6 +13,24 @@
 -(void) viewDidLoad {
     [super viewDidLoad];
     NSLog(@"viewDidLoad %f", self.map.region.span.latitudeDelta);
+
+    CLLocationManager *locationManager = [[CLLocationManager alloc] init];
+    locationManager.delegate = (id)self;//设置代理
+    locationManager.desiredAccuracy=kCLLocationAccuracyBest;//指定需要的精度级别
+    locationManager.distanceFilter=1000.0f;//设置距离筛选器
+    [locationManager startUpdatingLocation];//启动位置管理器
+    
+    MKCoordinateSpan theSpan;    //地图的范围 越小越精确
+    theSpan.latitudeDelta=5;
+    theSpan.longitudeDelta=5;
+    MKCoordinateRegion theRegion;
+    theRegion.center=[[locationManager location] coordinate];
+    theRegion.span=theSpan;
+    [self.map setRegion:theRegion];
+    
+    [self.map setCenterCoordinate:theRegion.center animated:YES];
+    
+    
     
     Anno *sh = [[Anno alloc] init];
     sh.coordinate = CLLocationCoordinate2DMake(31.240948, 121.485958);
@@ -29,7 +47,7 @@
     [self.map setShowsUserLocation:YES];
 
     
-    [self.map setCenterCoordinate:sh.coordinate animated:YES];
+
 }
 
 -(MKAnnotationView*) mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
