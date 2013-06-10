@@ -26,8 +26,8 @@
     [locationManager startUpdatingLocation];//启动位置管理器
     
     MKCoordinateSpan theSpan;    //地图的范围 越小越精确
-    theSpan.latitudeDelta=5;
-    theSpan.longitudeDelta=5;
+    theSpan.latitudeDelta=8;
+    theSpan.longitudeDelta=8;
     MKCoordinateRegion theRegion;
     theRegion.center=[[locationManager location] coordinate];
     theRegion.span=theSpan;

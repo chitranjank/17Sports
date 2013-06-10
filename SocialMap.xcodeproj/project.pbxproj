@@ -18,6 +18,8 @@
 		8F295D891765E1BD00EE546A /* 10 英雅马术俱乐部.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8F295D7E1765E1BD00EE546A /* 10 英雅马术俱乐部.jpg */; };
 		8F295D8A1765E1BD00EE546A /* 11 牧歌骑士会.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8F295D7F1765E1BD00EE546A /* 11 牧歌骑士会.jpg */; };
 		8F295D8C1765E6C400EE546A /* 1 复康路游泳馆.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8F295D8B1765E6C400EE546A /* 1 复康路游泳馆.jpg */; };
+		8F295D9F176626DB00EE546A /* Beijing, China.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 8F295D9E176626DB00EE546A /* Beijing, China.gpx */; };
+		8F295DA1176627FD00EE546A /* Tianjin, China.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 8F295DA0176627FD00EE546A /* Tianjin, China.gpx */; };
 		8F2F5A831764245D00F296EA /* 6-12AM.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F2F5A821764245D00F296EA /* 6-12AM.png */; };
 		8FDE58D1170EAB1F0038FA78 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FDE58D0170EAB1F0038FA78 /* UIKit.framework */; };
 		8FDE58D3170EAB1F0038FA78 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FDE58D2170EAB1F0038FA78 /* Foundation.framework */; };
@@ -50,6 +52,9 @@
 		8F295D7E1765E1BD00EE546A /* 10 英雅马术俱乐部.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "10 英雅马术俱乐部.jpg"; sourceTree = "<group>"; };
 		8F295D7F1765E1BD00EE546A /* 11 牧歌骑士会.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "11 牧歌骑士会.jpg"; sourceTree = "<group>"; };
 		8F295D8B1765E6C400EE546A /* 1 复康路游泳馆.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "1 复康路游泳馆.jpg"; sourceTree = "<group>"; };
+		8F295D9D1766260400EE546A /* 场馆信息.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "场馆信息.docx"; sourceTree = "<group>"; };
+		8F295D9E176626DB00EE546A /* Beijing, China.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "Beijing, China.gpx"; path = "../Beijing, China.gpx"; sourceTree = "<group>"; };
+		8F295DA0176627FD00EE546A /* Tianjin, China.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "Tianjin, China.gpx"; path = "../Tianjin, China.gpx"; sourceTree = "<group>"; };
 		8F2F5A821764245D00F296EA /* 6-12AM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "6-12AM.png"; sourceTree = "<group>"; };
 		8FDE58CC170EAB1F0038FA78 /* SocialMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FDE58D0170EAB1F0038FA78 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -97,6 +102,8 @@
 		8F295D741765E1B000EE546A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8F2F5A821764245D00F296EA /* 6-12AM.png */,
+				8F295D9D1766260400EE546A /* 场馆信息.docx */,
 				8F295D8B1765E6C400EE546A /* 1 复康路游泳馆.jpg */,
 				8F295D761765E1BD00EE546A /* 2 天大游泳馆.jpg */,
 				8F295D771765E1BD00EE546A /* 3 游泳跳水馆.jpg */,
@@ -145,7 +152,6 @@
 			isa = PBXGroup;
 			children = (
 				8F295D741765E1B000EE546A /* Resources */,
-				8F2F5A821764245D00F296EA /* 6-12AM.png */,
 				8FDE58DF170EAB1F0038FA78 /* AppDelegate.h */,
 				8FDE58E0170EAB1F0038FA78 /* AppDelegate.m */,
 				8FDE58E8170EAB1F0038FA78 /* MainStoryboard_iPhone.storyboard */,
@@ -166,6 +172,8 @@
 		8FDE58D7170EAB1F0038FA78 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8F295DA0176627FD00EE546A /* Tianjin, China.gpx */,
+				8F295D9E176626DB00EE546A /* Beijing, China.gpx */,
 				8FDE58D8170EAB1F0038FA78 /* SocialMap-Info.plist */,
 				8FDE58D9170EAB1F0038FA78 /* InfoPlist.strings */,
 				8FDE58DC170EAB1F0038FA78 /* main.m */,
@@ -246,6 +254,8 @@
 				8F295D891765E1BD00EE546A /* 10 英雅马术俱乐部.jpg in Resources */,
 				8F295D8A1765E1BD00EE546A /* 11 牧歌骑士会.jpg in Resources */,
 				8F295D8C1765E6C400EE546A /* 1 复康路游泳馆.jpg in Resources */,
+				8F295D9F176626DB00EE546A /* Beijing, China.gpx in Resources */,
+				8F295DA1176627FD00EE546A /* Tianjin, China.gpx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

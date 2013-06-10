@@ -23,10 +23,10 @@
         <scene sceneID="18">
             <objects>
                 <tableViewController storyboardIdentifier="" title="Master" id="12" customClass="MasterViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" tag="100" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="13">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" tag="100" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="13">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" id="fUB-cf-wdc">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
@@ -42,14 +42,14 @@
                         </searchBar>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="phq-AM-6qj" style="IBUITableViewCellStyleDefault" id="lJ0-d7-vTF">
-                                <rect key="frame" x="0.0" y="80" width="320" height="46"/>
+                                <rect key="frame" x="0.0" y="66" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="10" y="1" width="280" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="phq-AM-6qj">
-                                            <rect key="frame" x="10" y="0.0" width="260" height="43"/>
+                                            <rect key="frame" x="10" y="0.0" width="280" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -104,13 +104,33 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="fmw-0L-BE5"/>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KhK-cJ-lOt">
+                                <items>
+                                    <barButtonItem systemItem="pageCurl" id="1zU-q8-VFa"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="mdz-Vr-jXV"/>
+                                    <barButtonItem style="plain" id="dG7-0x-vJa">
+                                        <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="gWb-nA-CME">
+                                            <rect key="frame" x="153" y="8" width="161" height="31"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <segments>
+                                                <segment title="马术"/>
+                                                <segment title="游泳"/>
+                                                <segment title="高尔夫"/>
+                                            </segments>
+                                        </segmentedControl>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="KhK-cJ-lOt" firstAttribute="bottom" secondItem="yJH-h0-OO5" secondAttribute="bottom" type="default" id="HG8-sG-9YO"/>
                             <constraint firstItem="fmw-0L-BE5" firstAttribute="trailing" secondItem="yJH-h0-OO5" secondAttribute="trailing" type="default" id="Sla-TR-MxL"/>
+                            <constraint firstItem="KhK-cJ-lOt" firstAttribute="leading" secondItem="yJH-h0-OO5" secondAttribute="leading" type="default" id="WNH-DR-WRu"/>
                             <constraint firstItem="fmw-0L-BE5" firstAttribute="leading" secondItem="yJH-h0-OO5" secondAttribute="leading" type="default" id="bdX-Kl-jYo"/>
                             <constraint firstItem="fmw-0L-BE5" firstAttribute="top" secondItem="yJH-h0-OO5" secondAttribute="top" type="default" id="gBe-hO-36r"/>
                             <constraint firstItem="fmw-0L-BE5" firstAttribute="bottom" secondItem="yJH-h0-OO5" secondAttribute="bottom" type="default" id="gFt-5z-S4t"/>
+                            <constraint firstItem="KhK-cJ-lOt" firstAttribute="trailing" secondItem="yJH-h0-OO5" secondAttribute="trailing" type="default" id="z8Y-6N-01k"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="地图" id="ZCm-cm-MYn"/>
@@ -243,7 +263,7 @@
             <objects>
                 <viewController id="fRR-Nb-4yS" sceneMemberID="viewController">
                     <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gvn-yo-hyu">
-                        <rect key="frame" x="0.0" y="0.0" width="192" height="75"/>
+                        <rect key="frame" x="0.0" y="0.0" width="192" height="76"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="sub view" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w80-Qd-nIj">
