@@ -69,4 +69,8 @@
     self.masterPopoverController = nil;
 }
 
+#pragma mark - Sub view
+-(IBAction) changeSubView {
+    NSLog(@"sub view change");
+}
 @end
