@@ -162,6 +162,12 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    DLog(@"%@ %@", tableView, indexPath);
+    /* tag 100 is defined in stroy board*/
+    if (tableView.tag != 100) {
+        return [self tableViewCellWithReuseIdentifier:@"Found"];
+    }
+    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     //UITableViewCell *cell = [self tableViewCellWithReuseIdentifier:@"Cell"];
     
