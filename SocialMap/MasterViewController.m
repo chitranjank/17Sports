@@ -44,8 +44,15 @@
     if (!_objects) {
         _objects = [[NSMutableArray alloc] init];
     }
-    for (int i = 0; i < 5; i++) {
-        [_objects insertObject:[NSDate date] atIndex:0];
+    
+    NSArray *data = @[
+    @{@"id" : @"1", @"name" : @"复康路游泳馆"},
+    @{@"id" : @"4", @"name" : @"三源益康"},
+    @{@"id" : @"3", @"name" : @"游泳跳水馆"}
+    ];
+    
+    for (int i = 0; i < 3; i++) {
+        [_objects insertObject:data[i] atIndex:0];
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
         [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     }
@@ -137,7 +144,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -153,13 +160,13 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     //UITableViewCell *cell = [self tableViewCellWithReuseIdentifier:@"Cell"];
     
-    cell.imageView.image = [UIImage imageNamed:@"6-12AM.png"];
-    ((UILabel *)[cell.contentView viewWithTag:NAME_TAG]).text = @"CUSTOM";
+    //((UILabel *)[cell.contentView viewWithTag:NAME_TAG]).text = @"CUSTOM";
     if (indexPath.section == 0) {
-        NSDate *object = _objects[indexPath.row];
-        cell.textLabel.text = [object description];
+        NSDictionary *dict = _objects[indexPath.row];
+        cell.textLabel.text = dict[@"name"];
+        cell.imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@ %@.jpg", dict[@"id"], dict[@"name"]]];
     } else {
-        cell.textLabel.text = @"Map here";
+        //cell.textLabel.text = @"Map here";
     }
     return cell;
 }
@@ -168,7 +175,7 @@
     if(section == 1) {
         return @"map section";
     }
-    return @"default section";
+    return @"搜索结果";
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
@@ -220,6 +227,11 @@
         NSDate *object = _objects[indexPath.row];
         [[segue destinationViewController] setDetailItem:object];
     }
+}
+
+#pragma mark - search bar
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+    NSLog(@"%@", searchText);
 }
 
 @end

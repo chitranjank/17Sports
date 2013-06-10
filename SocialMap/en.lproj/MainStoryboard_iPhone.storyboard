@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2524" systemVersion="12A217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="11G63b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="3">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1863"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -19,28 +19,41 @@
             </objects>
             <point key="canvasLocation" x="-1" y="64"/>
         </scene>
-        <!--class Prefix:identifier Master View Controller - Master-->
+        <!--Master View Controller - Master-->
         <scene sceneID="18">
             <objects>
                 <tableViewController storyboardIdentifier="" title="Master" id="12" customClass="MasterViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="13">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" showsScopeBar="YES" id="fUB-cf-wdc">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="88"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <scopeButtonTitles>
+                                <string>距离</string>
+                                <string>价格</string>
+                                <string>人气</string>
+                            </scopeButtonTitles>
+                            <connections>
+                                <outlet property="delegate" destination="12" id="FLk-mM-KH2"/>
+                            </connections>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="phq-AM-6qj" style="IBUITableViewCellStyleDefault" id="lJ0-d7-vTF">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="110" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" lineBreakMode="tailTruncation" autoshrinkMode="none" baselineAdjustment="alignBaselines" text="Title" adjustsFontSizeToFit="NO" id="phq-AM-6qj">
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="phq-AM-6qj">
                                             <rect key="frame" x="10" y="0.0" width="280" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </label>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -57,35 +70,137 @@
                             <outlet property="delegate" destination="12" id="15"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Master" id="36"/>
+                    <navigationItem key="navigationItem" title="搜索场馆" id="36">
+                        <barButtonItem key="leftBarButtonItem" title="地图" id="HxB-gN-Ssl">
+                            <connections>
+                                <segue destination="F63-FR-qNW" kind="push" identifier="map" id="qIg-tr-0yb"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="筛选" id="JIR-vf-DfQ"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="aNA-bp-kYm" id="6SN-Rs-DAM"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="17" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="aNA-bp-kYm">
+                    <connections>
+                        <outlet property="delegate" destination="12" id="yKF-Cm-dae"/>
+                        <outlet property="searchBar" destination="fUB-cf-wdc" id="YXn-od-fpb"/>
+                        <outlet property="searchContentsController" destination="12" id="x8f-E0-2nA"/>
+                        <outlet property="searchResultsDataSource" destination="12" id="wVT-O0-JpW"/>
+                        <outlet property="searchResultsDelegate" destination="12" id="mQS-Lp-pgz"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="459" y="64"/>
         </scene>
-        <!--class Prefix:identifier Detail View Controller - Detail-->
+        <!--View Controller - 地图-->
+        <scene sceneID="zds-7S-rjR">
+            <objects>
+                <viewController id="F63-FR-qNW" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yJH-h0-OO5">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="fmw-0L-BE5"/>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fmw-0L-BE5" firstAttribute="top" secondItem="yJH-h0-OO5" secondAttribute="top" type="default" id="46D-Nk-epn"/>
+                            <constraint firstItem="fmw-0L-BE5" firstAttribute="leading" secondItem="yJH-h0-OO5" secondAttribute="leading" type="default" id="GX0-sv-F8k"/>
+                            <constraint firstItem="fmw-0L-BE5" firstAttribute="bottom" secondItem="yJH-h0-OO5" secondAttribute="bottom" type="default" id="RYB-pU-46m"/>
+                            <constraint firstItem="fmw-0L-BE5" firstAttribute="trailing" secondItem="yJH-h0-OO5" secondAttribute="trailing" type="default" id="fZp-8t-RIG"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="地图" id="ZCm-cm-MYn"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DyY-NM-E3y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="459" y="737"/>
+        </scene>
+        <!--Detail View Controller - Detail-->
         <scene sceneID="24">
             <objects>
                 <viewController storyboardIdentifier="" title="Detail" id="21" customClass="DetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="22">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label translatesAutoresizingMaskIntoConstraints="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" lineBreakMode="tailTruncation" autoshrinkMode="none" minimumFontSize="10" text="Detail view content goes here" textAlignment="center" id="27">
+                            <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Detail view content goes here" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="27">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" size="system"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="1 复康路游泳馆.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="nzd-gB-XpN">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="vvV-HB-b9b"/>
+                                    <constraint firstAttribute="width" constant="151" id="w9K-bx-4co"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="电话：23351962" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nsa-Is-UX4">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="票价：40元/人/次" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AXM-Th-KPr">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="地址：天津市南开区复康路7号增2号" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3dw-8i-AV8">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="274" id="V8H-z8-KF4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="简介：拥有50×21米的8条泳道标准池，及21×18米浅水池各一座。其中标准池水深1.9—2.1米，浅水池水深1.4米。" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="277" translatesAutoresizingMaskIntoConstraints="NO" id="w1a-kt-ggB">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="277" id="069-dF-rdX"/>
+                                    <constraint firstAttribute="height" constant="107" id="u1z-eT-Guf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="8 森奥高尔夫.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="soO-0d-3N7">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="FAh-81-ID0"/>
+                                    <constraint firstAttribute="width" constant="128" id="fG1-z6-SJ1"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="9 汇川马友会.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="5OP-vS-MWu">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="124" id="x9d-AC-Y8J"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="27" firstAttribute="centerY" secondItem="22" secondAttribute="centerY" type="default" id="7cE-gL-0wv"/>
-                            <constraint firstItem="27" firstAttribute="leading" secondItem="22" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="R0m-z7-TWk"/>
-                            <constraint firstAttribute="trailing" secondItem="27" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="pRe-qY-58T"/>
+                            <constraint firstItem="Nsa-Is-UX4" firstAttribute="leading" secondItem="nzd-gB-XpN" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="6WY-eY-bwM"/>
+                            <constraint firstItem="AXM-Th-KPr" firstAttribute="top" secondItem="22" secondAttribute="top" constant="73" id="6s6-If-ktv"/>
+                            <constraint firstItem="w1a-kt-ggB" firstAttribute="leading" secondItem="22" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="9nt-AV-oG2"/>
+                            <constraint firstItem="AXM-Th-KPr" firstAttribute="leading" secondItem="nzd-gB-XpN" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="E8Z-Gq-rzP"/>
+                            <constraint firstItem="soO-0d-3N7" firstAttribute="top" secondItem="27" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Gtc-r3-SVX"/>
+                            <constraint firstItem="3dw-8i-AV8" firstAttribute="leading" secondItem="22" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="KGN-1a-Ajh"/>
+                            <constraint firstItem="soO-0d-3N7" firstAttribute="bottom" secondItem="5OP-vS-MWu" secondAttribute="bottom" type="default" id="Ksf-e8-ZGV"/>
+                            <constraint firstItem="3dw-8i-AV8" firstAttribute="top" secondItem="22" secondAttribute="top" constant="165" id="R1b-er-6La"/>
+                            <constraint firstItem="nzd-gB-XpN" firstAttribute="leading" secondItem="22" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="UlR-Zc-Hrv"/>
+                            <constraint firstItem="3dw-8i-AV8" firstAttribute="centerX" secondItem="27" secondAttribute="centerX" type="default" id="Vs8-yY-6hY"/>
+                            <constraint firstItem="w1a-kt-ggB" firstAttribute="trailing" secondItem="27" secondAttribute="trailing" type="default" id="XmA-hN-K7m"/>
+                            <constraint firstItem="w1a-kt-ggB" firstAttribute="top" secondItem="3dw-8i-AV8" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="cvt-Ux-d80"/>
+                            <constraint firstItem="soO-0d-3N7" firstAttribute="leading" secondItem="27" secondAttribute="leading" type="default" id="dMt-gI-tUC"/>
+                            <constraint firstItem="5OP-vS-MWu" firstAttribute="top" secondItem="27" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="gch-8P-ts6"/>
+                            <constraint firstItem="5OP-vS-MWu" firstAttribute="trailing" secondItem="3dw-8i-AV8" secondAttribute="trailing" type="default" id="odT-tM-S9q"/>
+                            <constraint firstItem="nzd-gB-XpN" firstAttribute="top" secondItem="22" secondAttribute="top" constant="20" symbolic="YES" type="default" id="qEq-Uf-3w3"/>
+                            <constraint firstItem="Nsa-Is-UX4" firstAttribute="top" secondItem="22" secondAttribute="top" constant="33" id="qKd-Ox-aTO"/>
+                            <constraint firstItem="27" firstAttribute="top" secondItem="w1a-kt-ggB" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="wTJ-32-91L"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Detail" id="26"/>
+                    <navigationItem key="navigationItem" title="场馆详情" id="26"/>
                     <connections>
                         <outlet property="detailDescriptionLabel" destination="27" id="28"/>
                     </connections>
@@ -95,6 +210,25 @@
             <point key="canvasLocation" x="902" y="64"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="1 复康路游泳馆.jpg" width="500" height="322"/>
+        <image name="8 森奥高尔夫.jpg" width="500" height="375"/>
+        <image name="9 汇川马友会.jpg" width="500" height="331"/>
+    </resources>
+    <classes>
+        <class className="DetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="detailDescriptionLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="MasterViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MasterViewController.h"/>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
