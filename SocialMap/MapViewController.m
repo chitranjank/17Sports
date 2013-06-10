@@ -10,9 +10,14 @@
 #import "Anno.h"
 @implementation MapViewController
 
+- (id)initWithCoder:(NSCoder *)decoder {
+    NSLog(@"nscode=%@", decoder);
+    return [super initWithCoder:(NSCoder *)decoder];
+}
+
 -(void) viewDidLoad {
     [super viewDidLoad];
-    NSLog(@"viewDidLoad %f", self.map.region.span.latitudeDelta);
+    NSLog(@"map viewDidLoad %f", self.map.region.span.latitudeDelta);
 
     CLLocationManager *locationManager = [[CLLocationManager alloc] init];
     locationManager.delegate = (id)self;//设置代理
@@ -29,6 +34,7 @@
     [self.map setRegion:theRegion];
     
     [self.map setCenterCoordinate:theRegion.center animated:YES];
+    NSLog(@"here=%f, %f", theRegion.center.latitude, theRegion.center.longitude);
     
     
     

@@ -14,7 +14,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
 
-@property (weak, nonatomic) IBOutlet UIButton *btnSubView;
+@property (weak, nonatomic) IBOutlet UIView *cView;
 
 -(IBAction) changeSubView;
 

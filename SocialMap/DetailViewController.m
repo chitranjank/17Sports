@@ -7,6 +7,7 @@
 //
 
 #import "DetailViewController.h"
+#import "MapViewController.h"
 
 @interface DetailViewController ()
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
@@ -16,6 +17,11 @@
 @implementation DetailViewController
 
 #pragma mark - Managing the detail item
+
+- (id)initWithCoder:(NSCoder *)decoder {
+    NSLog(@"nscode=%@", decoder);
+    return [super initWithCoder:(NSCoder *)decoder];
+}
 
 - (void)setDetailItem:(id)newDetailItem
 {
@@ -71,6 +77,20 @@
 
 #pragma mark - Sub view
 -(IBAction) changeSubView {
-    NSLog(@"sub view change");
+    NSLog(@"sub view change %@",self.cView.subviews);
+    MapViewController *map = [[MapViewController alloc] init];
+    //[self presentViewController:map animated:YES completion:NULL];
+    //[self.cView addSubview:map.view];
+    
+    [UIView transitionFromView:self.cView
+                        toView:map.view
+                      duration:1.0
+                       options:UIViewAnimationOptionTransitionFlipFromLeft
+                    completion:^(BOOL finished) {
+                        // animation completed
+                    }];
+    
+    NSLog(@"%@", map.map);
+    
 }
 @end

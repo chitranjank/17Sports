@@ -26,6 +26,11 @@
     [super awakeFromNib];
 }
 
+- (id)initWithCoder:(NSCoder *)decoder {
+    NSLog(@"nscode=%@", decoder);
+    return [super initWithCoder:(NSCoder *)decoder];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
