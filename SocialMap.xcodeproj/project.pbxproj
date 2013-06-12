@@ -38,6 +38,7 @@
 		8FDE58FD170EADB60038FA78 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FDE58FC170EADB60038FA78 /* MapKit.framework */; };
 		8FDE5901170EB6520038FA78 /* Anno.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDE5900170EB6520038FA78 /* Anno.m */; };
 		8FDE5903170EB79B0038FA78 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FDE5902170EB79B0038FA78 /* CoreLocation.framework */; };
+		8FDEE1CD1768208E000BDBEB /* SearchResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDEE1CC1768208E000BDBEB /* SearchResultViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +82,8 @@
 		8FDE58FF170EB6520038FA78 /* Anno.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Anno.h; sourceTree = "<group>"; };
 		8FDE5900170EB6520038FA78 /* Anno.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Anno.m; sourceTree = "<group>"; };
 		8FDE5902170EB79B0038FA78 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		8FDEE1CB1768208E000BDBEB /* SearchResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultViewController.h; sourceTree = "<group>"; };
+		8FDEE1CC1768208E000BDBEB /* SearchResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +168,8 @@
 				8FDE58FA170EACF30038FA78 /* MapViewController.m */,
 				8FDE58FF170EB6520038FA78 /* Anno.h */,
 				8FDE5900170EB6520038FA78 /* Anno.m */,
+				8FDEE1CB1768208E000BDBEB /* SearchResultViewController.h */,
+				8FDEE1CC1768208E000BDBEB /* SearchResultViewController.m */,
 			);
 			path = SocialMap;
 			sourceTree = "<group>";
@@ -272,6 +277,7 @@
 				8FDE58F3170EAB1F0038FA78 /* DetailViewController.m in Sources */,
 				8FDE58FB170EACF30038FA78 /* MapViewController.m in Sources */,
 				8FDE5901170EB6520038FA78 /* Anno.m in Sources */,
+				8FDEE1CD1768208E000BDBEB /* SearchResultViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
