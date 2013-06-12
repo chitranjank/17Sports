@@ -82,6 +82,7 @@
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    DLog(@"Sec no=%d %@", section, tableView);
     if(section == 1) {
         return @"map section";
     }

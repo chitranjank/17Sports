@@ -15,6 +15,8 @@
 @interface MainViewController () {
     UIViewController *listView;
     UIImageView *v1, *v2;
+    MapViewController *mapVC;
+    SearchResultViewController *listVC;
 }
 
 @end
@@ -35,13 +37,18 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    v1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"1 复康路游泳馆.jpg"]];
-    v2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"3 游泳跳水馆.jpg"]];
+    //v1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"1 复康路游泳馆.jpg"]];
+    //v2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"3 游泳跳水馆.jpg"]];
     
-    //MapViewController *v3 = [[MapViewController alloc] init];
     //[self.view addSubview:v1];
     DLog(@"c=%@  ||| %@", self.container, self.container.subviews);
     
+
+    mapVC = [self.storyboard instantiateViewControllerWithIdentifier:@"MapViewController"];
+    listVC = [self.storyboard instantiateViewControllerWithIdentifier:@"SearchResultViewController"];
+    
+    [self.container addSubview:listVC.view];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -54,31 +61,25 @@
 
 -(IBAction) toogleListAndMap {
     DLog(@"toogle");
-    static int c =1;
-    c++;
+    static BOOL isShowingListOrMap = YES;
     
-
     
-    /*
-    SearchResultViewController *listView = [[SearchResultViewController alloc] initWithNibName:@"SearchResultView" bundle:nil];
-    */
-    
-    if (c%2==0) {
+    if (isShowingListOrMap) {
         [UIView transitionWithView:self.container
                           duration:0.8
                            options:UIViewAnimationOptionTransitionFlipFromLeft
-                        animations:^{ [v1 removeFromSuperview]; [self.container addSubview:v2]; }
+                        animations:^{ [listVC.view removeFromSuperview]; [self.container addSubview:mapVC.view]; }
                         completion:NULL];
      
     } else {
         [UIView transitionWithView:self.container
                           duration:0.8
                            options:UIViewAnimationOptionTransitionFlipFromLeft
-                        animations:^{ [v2 removeFromSuperview]; [self.container addSubview:v1]; }
+                        animations:^{ [mapVC.view removeFromSuperview]; [self.container addSubview:listVC.view]; }
                         completion:NULL];
         
     }
-    
+    isShowingListOrMap = !isShowingListOrMap;
     
 }
 
