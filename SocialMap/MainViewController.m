@@ -9,6 +9,7 @@
 #import "MainViewController.h"
 #import "SearchResultViewController.h"
 #import "DetailViewController.h"
+#import "MapViewController.h"
 
 
 @interface MainViewController () {
@@ -36,7 +37,10 @@
     
     v1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"1 复康路游泳馆.jpg"]];
     v2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"3 游泳跳水馆.jpg"]];
-    [self.container addSubview:v1];
+    
+    //MapViewController *v3 = [[MapViewController alloc] init];
+    //[self.view addSubview:v1];
+    DLog(@"c=%@  ||| %@", self.container, self.container.subviews);
     
 }
 
@@ -52,28 +56,30 @@
     DLog(@"toogle");
     static int c =1;
     c++;
+    
+
+    
     /*
     SearchResultViewController *listView = [[SearchResultViewController alloc] initWithNibName:@"SearchResultView" bundle:nil];
     */
+    
     if (c%2==0) {
-        [UIView transitionFromView:v1
-                                            toView:v2
-                                          duration:1.0
-                                           options:UIViewAnimationOptionTransitionFlipFromLeft
-                                        completion:^(BOOL finished) {
-                                            // animation completed
-                                        }];
+        [UIView transitionWithView:self.container
+                          duration:0.8
+                           options:UIViewAnimationOptionTransitionFlipFromLeft
+                        animations:^{ [v1 removeFromSuperview]; [self.container addSubview:v2]; }
+                        completion:NULL];
      
     } else {
-        [UIView transitionFromView:v2
-                            toView:v1
-                          duration:1.0
-                           options:UIViewAnimationOptionTransitionFlipFromRight
-                        completion:^(BOOL finished) {
-                            // animation completed
-                        }];
+        [UIView transitionWithView:self.container
+                          duration:0.8
+                           options:UIViewAnimationOptionTransitionFlipFromLeft
+                        animations:^{ [v2 removeFromSuperview]; [self.container addSubview:v1]; }
+                        completion:NULL];
         
     }
+    
+    
 }
 
 @end
