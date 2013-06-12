@@ -51,6 +51,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     [self configureView];
+    [self.view addGestureRecognizer:self.swipeLeftRecognizer];
 }
 
 - (void)didReceiveMemoryWarning
@@ -75,22 +76,24 @@
     self.masterPopoverController = nil;
 }
 
-#pragma mark - Sub view
--(IBAction) changeSubView {
-    NSLog(@"sub view change %@",self.cView.subviews);
-    MapViewController *map = [[MapViewController alloc] init];
-    //[self presentViewController:map animated:YES completion:NULL];
-    //[self.cView addSubview:map.view];
+- (IBAction)handleSwipeFrom:(UISwipeGestureRecognizer *)recognizer {
+
     
-    [UIView transitionFromView:self.cView
-                        toView:map.view
-                      duration:1.0
-                       options:UIViewAnimationOptionTransitionFlipFromLeft
-                    completion:^(BOOL finished) {
-                        // animation completed
-                    }];
-    
-    NSLog(@"%@", map.map);
-    
+	CGPoint location = [recognizer locationInView:self.view];
+    DLog(@"%f, %f", location.x, location.y);
+	
+    //[self showImageWithText:@"swipe" atPoint:location];
+	
+    if (recognizer.direction == UISwipeGestureRecognizerDirectionLeft) {
+        location.x -= 220.0;
+    }
+    else {
+        location.x += 220.0;
+    }
+	
+	[UIView animateWithDuration:0.55 animations:^{
+        //self.imageView.alpha = 0.0;
+        //self.imageView.center = location;
+    }];
 }
 @end

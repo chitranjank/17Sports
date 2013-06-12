@@ -14,8 +14,8 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
 
-@property (weak, nonatomic) IBOutlet UIView *cView;
+@property (nonatomic, strong) IBOutlet UISwipeGestureRecognizer *swipeLeftRecognizer;
 
--(IBAction) changeSubView;
+- (IBAction)handleSwipeFrom:(UISwipeGestureRecognizer *)recognizer;
 
 @end
