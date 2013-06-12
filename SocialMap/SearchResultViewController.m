@@ -7,9 +7,11 @@
 //
 
 #import "SearchResultViewController.h"
+#import "DetailViewController.h"
 
-@interface SearchResultViewController ()
-
+@interface SearchResultViewController () {
+    NSMutableArray *merchants;
+}
 @end
 
 @implementation SearchResultViewController
@@ -23,16 +25,40 @@
     return self;
 }
 
+
+
+- (void)awakeFromNib
+{
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+        self.clearsSelectionOnViewWillAppear = NO;
+        self.contentSizeForViewInPopover = CGSizeMake(320.0, 600.0);
+    }
+    [super awakeFromNib];
+}
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    [self initTableObjects];
+    
 }
+
+-(void) initTableObjects {
+    if (!merchants) {
+        merchants = [NSMutableArray arrayWithArray:@[
+        @{@"id" : @"1", @"name" : @"复康路游泳馆"},
+        @{@"id" : @"4", @"name" : @"三源益康"},
+        @{@"id" : @"3", @"name" : @"游泳跳水馆"}
+        ]];
+    }
+  
+    
+    //NSIndexPath *indexPath01 = [NSIndexPath indexPathForRow:0 inSection:1];
+    //[self.tableView insertRowsAtIndexPaths:@[indexPath01] withRowAnimation:UITableViewRowAnimationAutomatic];
+}
+
 
 
 - (void)didReceiveMemoryWarning
@@ -45,25 +71,42 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return [merchants count];
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    if(section == 1) {
+        return @"map section";
+    }
+    return @"搜索到12条结果";
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    DLog(@"%@ %@", tableView, indexPath);
+    /* tag 100 is defined in stroy board*/
+    /*if (tableView.tag != 100) {
+        return [self tableViewCellWithReuseIdentifier:@"Found"];
+    }*/
     
-    // Configure the cell...
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    //UITableViewCell *cell = [self tableViewCellWithReuseIdentifier:@"Cell"];
     
+    //((UILabel *)[cell.contentView viewWithTag:NAME_TAG]).text = @"CUSTOM";
+    if (indexPath.section == 0) {
+        NSDictionary *dict = merchants[indexPath.row];
+        cell.textLabel.text = dict[@"name"];
+        cell.imageView.image = [UIImage imageNamed:STR(@"%@ %@.jpg", dict[@"id"], dict[@"name"])];
+    } else {
+        //cell.textLabel.text = @"Map here";
+    }
     return cell;
 }
 
@@ -106,17 +149,28 @@
 }
 */
 
-#pragma mark - Table view delegate
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+        //NSDate *object = _objects[indexPath.row];
+        //self.detailViewController.detailItem = object;
+    }
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    NSLog(@"%@", segue);
+    if ([[segue identifier] isEqualToString:@"showDetail"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        NSDictionary *object = merchants[indexPath.row];
+        [[segue destinationViewController] setDetailItem:object];
+    }
+}
+
+#pragma mark - search bar
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+    NSLog(@"%@", searchText);
 }
 
 @end
