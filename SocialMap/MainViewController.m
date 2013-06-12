@@ -36,16 +36,15 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    
-    //v1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"1 复康路游泳馆.jpg"]];
-    //v2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"3 游泳跳水馆.jpg"]];
-    
-    //[self.view addSubview:v1];
+
     DLog(@"c=%@  ||| %@", self.container, self.container.subviews);
     
 
     mapVC = [self.storyboard instantiateViewControllerWithIdentifier:@"MapViewController"];
     listVC = [self.storyboard instantiateViewControllerWithIdentifier:@"SearchResultViewController"];
+    
+    [self addChildViewController:mapVC];
+    [self addChildViewController:listVC];
     
     [self.container addSubview:listVC.view];
 
@@ -60,7 +59,7 @@
 //@property (weak, nonatomic) IBOutlet UIView *container;
 
 -(IBAction) toogleListAndMap {
-    DLog(@"toogle");
+    DLog(@"toogle %@", self);
     static BOOL isShowingListOrMap = YES;
     
     

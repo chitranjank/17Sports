@@ -129,6 +129,10 @@
                             </toolbar>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="uDY-TV-PKZ">
                                 <textInputTraits key="textInputTraits"/>
+                                <scopeButtonTitles>
+                                    <string>距离排序</string>
+                                    <string>价格排序</string>
+                                </scopeButtonTitles>
                                 <connections>
                                     <outlet property="delegate" destination="bjW-MM-OMI" id="Hjm-Rm-9WX"/>
                                 </connections>
@@ -196,9 +200,6 @@
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
-                                <connections>
-                                    <segue destination="21" kind="push" identifier="showDetail" id="rCy-Vv-3dO"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -209,7 +210,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uYG-gd-ieW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="344" y="-1300"/>
+            <point key="canvasLocation" x="552" y="-1052"/>
         </scene>
         <!--Map View Controller - 地图-->
         <scene sceneID="zds-7S-rjR">
@@ -220,33 +221,13 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="fmw-0L-BE5"/>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KhK-cJ-lOt">
-                                <items>
-                                    <barButtonItem style="plain" id="dG7-0x-vJa">
-                                        <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="gWb-nA-CME">
-                                            <rect key="frame" x="6" y="8" width="161" height="31"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <segments>
-                                                <segment title="马术"/>
-                                                <segment title="游泳"/>
-                                                <segment title="高尔夫"/>
-                                            </segments>
-                                        </segmentedControl>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="mdz-Vr-jXV"/>
-                                    <barButtonItem systemItem="pageCurl" id="1zU-q8-VFa"/>
-                                </items>
-                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="KhK-cJ-lOt" firstAttribute="bottom" secondItem="yJH-h0-OO5" secondAttribute="bottom" type="default" id="HG8-sG-9YO"/>
                             <constraint firstItem="fmw-0L-BE5" firstAttribute="trailing" secondItem="yJH-h0-OO5" secondAttribute="trailing" type="default" id="Sla-TR-MxL"/>
-                            <constraint firstItem="KhK-cJ-lOt" firstAttribute="leading" secondItem="yJH-h0-OO5" secondAttribute="leading" type="default" id="WNH-DR-WRu"/>
                             <constraint firstItem="fmw-0L-BE5" firstAttribute="leading" secondItem="yJH-h0-OO5" secondAttribute="leading" type="default" id="bdX-Kl-jYo"/>
                             <constraint firstItem="fmw-0L-BE5" firstAttribute="top" secondItem="yJH-h0-OO5" secondAttribute="top" type="default" id="gBe-hO-36r"/>
                             <constraint firstItem="fmw-0L-BE5" firstAttribute="bottom" secondItem="yJH-h0-OO5" secondAttribute="bottom" type="default" id="gFt-5z-S4t"/>
-                            <constraint firstItem="KhK-cJ-lOt" firstAttribute="trailing" secondItem="yJH-h0-OO5" secondAttribute="trailing" type="default" id="z8Y-6N-01k"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="地图" id="ZCm-cm-MYn"/>
@@ -256,12 +237,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DyY-NM-E3y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="120" y="44"/>
+            <point key="canvasLocation" x="552" y="-316"/>
         </scene>
         <!--Detail View Controller - Detail-->
         <scene sceneID="24">
             <objects>
-                <viewController storyboardIdentifier="" title="Detail" id="21" customClass="DetailViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailViewController" title="Detail" id="21" customClass="DetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="22">
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -369,21 +350,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="23" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1069" y="-1327"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="2mE-Hh-FRG">
-            <objects>
-                <viewController id="C6x-ZM-10J" sceneMemberID="viewController">
-                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="qkZ-hL-9X3">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <toolbarItems/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8aU-qg-THr" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
+            <point key="canvasLocation" x="1049" y="-627"/>
         </scene>
     </scenes>
     <resources>
@@ -431,7 +398,4 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="rCy-Vv-3dO"/>
-    </inferredMetricsTieBreakers>
 </document>

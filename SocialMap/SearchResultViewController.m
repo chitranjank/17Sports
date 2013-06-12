@@ -153,10 +153,9 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-        //NSDate *object = _objects[indexPath.row];
-        //self.detailViewController.detailItem = object;
-    }
+    DetailViewController *detailVC = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailViewController"];
+    DLog(@"%@", self.parentViewController);
+    [self.parentViewController.navigationController pushViewController:detailVC animated:YES];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
