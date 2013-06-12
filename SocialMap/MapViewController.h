@@ -13,4 +13,7 @@
 
 @property (nonatomic, strong) IBOutlet MKMapView *map;
 //@property (readonly) NSArray *annotations;
+
+-(void) centerMap;
+
 @end

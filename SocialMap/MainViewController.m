@@ -37,7 +37,6 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 
-    DLog(@"c=%@  ||| %@", self.container, self.container.subviews);
     
 
     mapVC = [self.storyboard instantiateViewControllerWithIdentifier:@"MapViewController"];
@@ -46,7 +45,10 @@
     [self addChildViewController:mapVC];
     [self addChildViewController:listVC];
     
+    [self.container addSubview:mapVC.view];
     [self.container addSubview:listVC.view];
+
+    DLog(@"c=%@  ||| %@", self.container, self.container.subviews);
 
 }
 
@@ -69,6 +71,7 @@
                            options:UIViewAnimationOptionTransitionFlipFromLeft
                         animations:^{ [listVC.view removeFromSuperview]; [self.container addSubview:mapVC.view]; }
                         completion:NULL];
+        [mapVC centerMap];
      
     } else {
         [UIView transitionWithView:self.container
@@ -79,7 +82,25 @@
         
     }
     isShowingListOrMap = !isShowingListOrMap;
-    
+    DLog(@"c=%@  ||| %@", self.container, self.container.subviews);
+
 }
 
+#pragma mark - search bar and data source delegates
+//TODO should move to a dedicate class for searching
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+    NSLog(@"%@", searchText);
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 1;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+
+    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
+    return cell;
+}
 @end

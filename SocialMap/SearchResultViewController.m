@@ -104,7 +104,7 @@
     if (indexPath.section == 0) {
         NSDictionary *dict = merchants[indexPath.row];
         cell.textLabel.text = dict[@"name"];
-        cell.imageView.image = [UIImage imageNamed:STR(@"%@ %@.jpg", dict[@"id"], dict[@"name"])];
+        cell.imageView.image = [UIImage imageNamed:STR(@"%@ %@.jpg", dict[@"id"], dict[@"name"])];        
     } else {
         //cell.textLabel.text = @"Map here";
     }
@@ -152,21 +152,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
     DetailViewController *detailVC = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailViewController"];
     DLog(@"%@", self.parentViewController);
     [self.parentViewController.navigationController pushViewController:detailVC animated:YES];
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    NSLog(@"%@", segue);
-    if ([[segue identifier] isEqualToString:@"showDetail"]) {
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSDictionary *object = merchants[indexPath.row];
-        [[segue destinationViewController] setDetailItem:object];
-    }
-}
 
 #pragma mark - search bar
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
