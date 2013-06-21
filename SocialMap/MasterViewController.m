@@ -167,8 +167,12 @@
     if (tableView.tag != 100) {
         return [self tableViewCellWithReuseIdentifier:@"Found"];
     }
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+
+    //UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+
+
     //UITableViewCell *cell = [self tableViewCellWithReuseIdentifier:@"Cell"];
     
     //((UILabel *)[cell.contentView viewWithTag:NAME_TAG]).text = @"CUSTOM";

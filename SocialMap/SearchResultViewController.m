@@ -97,7 +97,13 @@
         return [self tableViewCellWithReuseIdentifier:@"Found"];
     }*/
     
+#ifdef ios6
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+#else
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+#endif
+    
+    
     //UITableViewCell *cell = [self tableViewCellWithReuseIdentifier:@"Cell"];
     
     //((UILabel *)[cell.contentView viewWithTag:NAME_TAG]).text = @"CUSTOM";
