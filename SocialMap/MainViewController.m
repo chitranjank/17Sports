@@ -96,9 +96,21 @@
 
 #pragma mark - search bar and data source delegates
 //TODO should move to a dedicate class for searching
+
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
-    NSLog(@"%@", searchText);
+    DLog(@"%@ %@", searchBar, searchText);
 }
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    DLog(@"%@", searchBar);
+    [self.searchDisplayController setActive:NO];
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
+    DLog(@"%@", searchBar);
+}
+
+
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -109,6 +121,7 @@
 {
 
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
+    cell.textLabel.text = @"天津";
     return cell;
 }
 @end

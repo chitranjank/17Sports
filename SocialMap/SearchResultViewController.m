@@ -162,9 +162,5 @@
 }
 
 
-#pragma mark - search bar
-- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
-    NSLog(@"%@", searchText);
-}
 
 @end
