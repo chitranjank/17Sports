@@ -108,6 +108,7 @@
     if (indexPath.section == 0) {
         NSDictionary *dict = merchants[indexPath.row];
         cell.textLabel.text = dict[@"name"];
+        cell.detailTextLabel.text = @"40元/次";
         cell.imageView.image = [UIImage imageNamed:STR(@"%@ %@.jpg", dict[@"id"], dict[@"name"])];        
     } else {
         //cell.textLabel.text = @"Map here";

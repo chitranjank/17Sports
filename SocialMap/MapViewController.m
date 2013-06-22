@@ -47,7 +47,7 @@
         
         anno.coordinate = CLLocationCoordinate2DMake([lng floatValue], [lat floatValue]);
         anno.title = merchant[@"name"];
-        anno.subtitle = merchant[@"id"];
+        anno.subtitle = @"40元/次";
         
         [self.map addAnnotation:anno];
     }
