@@ -96,4 +96,9 @@
         //self.imageView.center = location;
     }];
 }
+
+- (IBAction)callPhone:(id)sender {
+    NSString *num = [[NSString alloc] initWithFormat:@"telprompt://%@",@"23556589"];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:num]];
+}
 @end
