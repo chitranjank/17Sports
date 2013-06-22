@@ -97,6 +97,9 @@
     }];
 }
 
+/**
+ * This only works on real devices.
+ */
 - (IBAction)callPhone:(id)sender {
     NSString *num = [[NSString alloc] initWithFormat:@"telprompt://%@",@"23556589"];
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:num]];
