@@ -9,12 +9,20 @@
 #import "MapViewController.h"
 #import "Anno.h"
 #import "DetailViewController.h"
-@implementation MapViewController
+#import "MainViewController.h"
 
+@interface MapViewController () {
+    NSArray *merchants;
+}
+@end
+
+@implementation MapViewController
 
 -(void) viewDidLoad {
     
     [super viewDidLoad];
+    
+    [self addAnnos];
 
     [self.map setShowsUserLocation:YES];
     
@@ -24,25 +32,44 @@
     locationManager.distanceFilter = 1000.0f;//设置距离筛选器
     [locationManager startUpdatingLocation];//启动位置管理器
     
-    Anno *sh = [[Anno alloc] init];
-    sh.coordinate = CLLocationCoordinate2DMake(31.240948, 121.485958);
-    sh.title = @"Shanghai";
-    sh.subtitle = @"MoDu";
+    [self centerMap];
+}
 
-    Anno *bj = [[Anno alloc] init];
-    bj.coordinate = CLLocationCoordinate2DMake(39.908605, 116.398019);
-    bj.title = @"Beijing";
-    bj.subtitle = @"DiDu";
+-(void) addAnnos {
+    if (!merchants) {
+        merchants = ((MainViewController*)(self.parentViewController)).merchants;
+    }
+    
+    for (NSDictionary *merchant in merchants) {
+        Anno *anno = [[Anno alloc] init];
+        NSNumber *lng = ((NSNumber*)merchant[@"longtitude"]);
+        NSNumber *lat = ((NSNumber*)merchant[@"latitude"]);
+        
+        anno.coordinate = CLLocationCoordinate2DMake([lng floatValue], [lat floatValue]);
+        anno.title = merchant[@"name"];
+        anno.subtitle = merchant[@"id"];
+        
+        [self.map addAnnotation:anno];
+    }
+    /*
+     Anno *sh = [[Anno alloc] init];
+     sh.coordinate = CLLocationCoordinate2DMake(31.240948, 121.485958);
+     sh.title = @"Shanghai";
+     sh.subtitle = @"MoDu";
+     
+     Anno *bj = [[Anno alloc] init];
+     bj.coordinate = CLLocationCoordinate2DMake(39.908605, 116.398019);
+     bj.title = @"Beijing";
+     bj.subtitle = @"DiDu";
     
     [self.map addAnnotations:@[sh, bj]];
-
-    [self centerMap];
+     */
 }
 
 -(void) centerMap {
     MKCoordinateSpan theSpan;    //地图的范围 越小越精确
-    theSpan.latitudeDelta = 1;
-    theSpan.longitudeDelta = 1;
+    theSpan.latitudeDelta = .2;
+    theSpan.longitudeDelta = .2;
     
     MKCoordinateRegion theRegion;
     theRegion.center = [self.map userLocation].coordinate;

@@ -8,9 +8,10 @@
 
 #import "SearchResultViewController.h"
 #import "DetailViewController.h"
+#import "MainViewController.h"
 
 @interface SearchResultViewController () {
-    NSMutableArray *merchants;
+    NSArray *merchants;
 }
 @end
 
@@ -47,12 +48,9 @@
 
 -(void) initTableObjects {
     if (!merchants) {
-        merchants = [NSMutableArray arrayWithArray:@[
-        @{@"id" : @"1", @"name" : @"复康路游泳馆"},
-        @{@"id" : @"4", @"name" : @"三源益康"},
-        @{@"id" : @"3", @"name" : @"游泳跳水馆"}
-        ]];
+        merchants = ((MainViewController*)(self.parentViewController)).merchants;
     }
+    
   
     
     //NSIndexPath *indexPath01 = [NSIndexPath indexPathForRow:0 inSection:1];

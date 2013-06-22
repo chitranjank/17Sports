@@ -11,6 +11,7 @@
 @interface MainViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UIView *container;
+@property (strong, nonatomic) NSArray *merchants;
 
 -(IBAction) toogleListAndMap;
 

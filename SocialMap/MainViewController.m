@@ -23,6 +23,7 @@
 
 @implementation MainViewController
 
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -37,6 +38,12 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 
+    self.merchants = [NSMutableArray arrayWithArray:@[
+                      @{@"id": @"1", @"name": @"复康路游泳馆", @"longtitude": @39.099142, @"latitude": @117.171809},
+                      @{@"id": @"4", @"name": @"三源益康", @"longtitude": @39.1273, @"latitude": @117.2503},
+                      @{@"id": @"3", @"name": @"游泳跳水馆", @"longtitude": @39.1099, @"latitude": @117.2554}
+                      ]];
+    
     
 
     mapVC = [self.storyboard instantiateViewControllerWithIdentifier:@"MapViewController"];
@@ -49,6 +56,7 @@
     [self.container addSubview:listVC.view];
 
     DLog(@"c=%@  ||| %@", self.container, self.container.subviews);
+
 
 }
 
