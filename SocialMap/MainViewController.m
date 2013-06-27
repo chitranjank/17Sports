@@ -10,6 +10,7 @@
 #import "SearchResultViewController.h"
 #import "DetailViewController.h"
 #import "MapViewController.h"
+#import "WelcomeViewController.h"
 
 
 @interface MainViewController () {
@@ -17,6 +18,7 @@
     UIImageView *v1, *v2;
     MapViewController *mapVC;
     SearchResultViewController *listVC;
+    WelcomeViewController *welcomeVC;
 }
 
 @end
@@ -48,13 +50,17 @@
 
     mapVC = [self.storyboard instantiateViewControllerWithIdentifier:@"MapViewController"];
     listVC = [self.storyboard instantiateViewControllerWithIdentifier:@"SearchResultViewController"];
+    welcomeVC = [self.storyboard instantiateViewControllerWithIdentifier:@"WelcomeViewController"];
+
     
     [self addChildViewController:mapVC];
     [self addChildViewController:listVC];
+    [self addChildViewController:welcomeVC];
     
-    [self.container addSubview:mapVC.view];
-    [self.container addSubview:listVC.view];
-
+//    [self.container addSubview:mapVC.view];
+//    [self.container addSubview:listVC.view];
+    [self.container addSubview:welcomeVC.view];
+    
     DLog(@"c=%@  ||| %@", self.container, self.container.subviews);
 
 
@@ -66,7 +72,13 @@
     // Dispose of any resources that can be recreated.
 }
 
-//@property (weak, nonatomic) IBOutlet UIView *container;
+-(void) switchToList {
+    [UIView transitionWithView:self.container
+                      duration:0.8
+                       options:UIViewAnimationOptionTransitionCurlUp
+                    animations:^{ [mapVC.view removeFromSuperview]; [self.container addSubview:listVC.view]; }
+                    completion:NULL];
+}
 
 -(IBAction) toogleListAndMap {
     DLog(@"toogle %@", self);

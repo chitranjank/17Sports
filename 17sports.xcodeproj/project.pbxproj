@@ -27,6 +27,8 @@
 		8FB1590F177C7B31000838AD /* golf.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FB15909177C7B31000838AD /* golf.png */; };
 		8FB15913177C7B8A000838AD /* pool.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FB15911177C7B8A000838AD /* pool.png */; };
 		8FB15914177C7B8A000838AD /* tennis.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FB15912177C7B8A000838AD /* tennis.png */; };
+		8FB15917177C7C9E000838AD /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FB15916177C7C9E000838AD /* WelcomeViewController.m */; };
+		8FB1591A177C831E000838AD /* MerchantMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FB15919177C831E000838AD /* MerchantMapViewController.m */; };
 		8FDE58D1170EAB1F0038FA78 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FDE58D0170EAB1F0038FA78 /* UIKit.framework */; };
 		8FDE58D3170EAB1F0038FA78 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FDE58D2170EAB1F0038FA78 /* Foundation.framework */; };
 		8FDE58D5170EAB1F0038FA78 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FDE58D4170EAB1F0038FA78 /* CoreGraphics.framework */; };
@@ -70,6 +72,10 @@
 		8FB15909177C7B31000838AD /* golf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = golf.png; path = ../../golf.png; sourceTree = "<group>"; };
 		8FB15911177C7B8A000838AD /* pool.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pool.png; path = ../../pool.png; sourceTree = "<group>"; };
 		8FB15912177C7B8A000838AD /* tennis.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tennis.png; path = ../../tennis.png; sourceTree = "<group>"; };
+		8FB15915177C7C9E000838AD /* WelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeViewController.h; sourceTree = "<group>"; };
+		8FB15916177C7C9E000838AD /* WelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewController.m; sourceTree = "<group>"; };
+		8FB15918177C831E000838AD /* MerchantMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MerchantMapViewController.h; sourceTree = "<group>"; };
+		8FB15919177C831E000838AD /* MerchantMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MerchantMapViewController.m; sourceTree = "<group>"; };
 		8FDE58CC170EAB1F0038FA78 /* 17sports.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 17sports.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FDE58D0170EAB1F0038FA78 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		8FDE58D2170EAB1F0038FA78 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -193,6 +199,10 @@
 				8FDEE1CC1768208E000BDBEB /* SearchResultViewController.m */,
 				8FDEE1D217684C5F000BDBEB /* MainViewController.h */,
 				8FDEE1D317684C5F000BDBEB /* MainViewController.m */,
+				8FB15915177C7C9E000838AD /* WelcomeViewController.h */,
+				8FB15916177C7C9E000838AD /* WelcomeViewController.m */,
+				8FB15918177C831E000838AD /* MerchantMapViewController.h */,
+				8FB15919177C831E000838AD /* MerchantMapViewController.m */,
 			);
 			name = 17sports;
 			path = SocialMap;
@@ -309,6 +319,8 @@
 				8FDE5901170EB6520038FA78 /* Anno.m in Sources */,
 				8FDEE1CD1768208E000BDBEB /* SearchResultViewController.m in Sources */,
 				8FDEE1D417684C5F000BDBEB /* MainViewController.m in Sources */,
+				8FB15917177C7C9E000838AD /* WelcomeViewController.m in Sources */,
+				8FB1591A177C831E000838AD /* MerchantMapViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

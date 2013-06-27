@@ -14,5 +14,6 @@
 @property (strong, nonatomic) NSArray *merchants;
 
 -(IBAction) toogleListAndMap;
+-(void) switchToList;
 
 @end
