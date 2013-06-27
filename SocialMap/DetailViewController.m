@@ -86,15 +86,18 @@
 	
     if (recognizer.direction == UISwipeGestureRecognizerDirectionLeft) {
         location.x -= 220.0;
+        [UIView animateWithDuration:0.55 animations:^{
+            self.image1.alpha = 0.5;
+        }];
     }
     else {
         location.x += 220.0;
+        [UIView animateWithDuration:0.55 animations:^{
+            self.image1.alpha = 1;
+        }];
     }
 	
-	[UIView animateWithDuration:0.55 animations:^{
-        //self.imageView.alpha = 0.0;
-        //self.imageView.center = location;
-    }];
+
 }
 
 /**

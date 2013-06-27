@@ -512,20 +512,33 @@
                                 <rect key="frame" x="40" y="90" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" id="UQj-JL-NXe">
+                                <rect key="frame" x="138" y="193" width="38" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </pageControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                     </view>
                     <navigationItem key="navigationItem" title="场馆详情" id="26"/>
                     <connections>
-                        <outlet property="swipeLeftRecognizer" destination="YMJ-nD-dhZ" id="EJ7-Ni-BaL"/>
+                        <outlet property="detailDescriptionLabel" destination="w1a-kt-ggB" id="kWt-Ru-jwX"/>
+                        <outlet property="image1" destination="0JT-B7-GRJ" id="d3Y-p2-Q8W"/>
+                        <outlet property="swipeLeftRecognizer" destination="YMJ-nD-dhZ" id="ghV-Rv-xIK"/>
+                        <outlet property="swipeRightRecognizer" destination="1CH-1m-obb" id="UOG-Yv-LR7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="23" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="right" id="YMJ-nD-dhZ">
+                <swipeGestureRecognizer direction="left" id="YMJ-nD-dhZ">
                     <connections>
-                        <action selector="handleSwipeFrom:" destination="21" id="QWj-zy-HFj"/>
-                        <outlet property="delegate" destination="21" id="ia4-2V-yrb"/>
+                        <action selector="handleSwipeFrom:" destination="21" id="vUH-cW-zcU"/>
+                        <outlet property="delegate" destination="21" id="feo-ud-eCZ"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="up" id="1CH-1m-obb">
+                    <connections>
+                        <action selector="handleSwipeFrom:" destination="21" id="mCd-Oo-32Y"/>
+                        <outlet property="delegate" destination="21" id="sXL-tb-0S5"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
@@ -571,7 +584,9 @@
             <relationships>
                 <relationship kind="action" name="handleSwipeFrom:" candidateClass="UISwipeGestureRecognizer"/>
                 <relationship kind="outlet" name="detailDescriptionLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="image1" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="swipeLeftRecognizer" candidateClass="UISwipeGestureRecognizer"/>
+                <relationship kind="outlet" name="swipeRightRecognizer" candidateClass="UISwipeGestureRecognizer"/>
             </relationships>
         </class>
         <class className="MainViewController" superclassName="UIViewController">
