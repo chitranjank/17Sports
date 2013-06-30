@@ -35,6 +35,15 @@
     return self;
 }
 
+- (void)awakeFromNib
+{
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+//        self.clearsSelectionOnViewWillAppear = NO;
+//        self.contentSizeForViewInPopover = CGSizeMake(320.0, 600.0);
+    }
+    [super awakeFromNib];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -57,12 +66,12 @@
     [self addChildViewController:listVC];
     [self addChildViewController:welcomeVC];
     
-//    [self.container addSubview:mapVC.view];
-//    [self.container addSubview:listVC.view];
+
     [self.container addSubview:welcomeVC.view];
     
     DLog(@"c=%@  ||| %@", self.container, self.container.subviews);
-
+    self.navigationItem.leftBarButtonItem = nil;
+    self.navigationItem.rightBarButtonItem = nil;
 
 }
 
@@ -76,7 +85,26 @@
     [UIView transitionWithView:self.container
                       duration:0.8
                        options:UIViewAnimationOptionTransitionCurlUp
-                    animations:^{ [mapVC.view removeFromSuperview]; [self.container addSubview:listVC.view]; }
+                    animations:^{
+                        [welcomeVC.view removeFromSuperview];
+                        [self.container addSubview:listVC.view];
+                        self.navigationItem.leftBarButtonItem = self.btnWelcomePage;
+                        self.navigationItem.rightBarButtonItem = self.btnToogleListAndMap;
+                    }
+                    completion:NULL];
+}
+
+-(IBAction)switchToWelcomePage:(id)sender {
+    [UIView transitionWithView:self.container
+                      duration:0.8
+                       options:UIViewAnimationOptionTransitionCurlDown
+                    animations:^{
+                        [mapVC.view removeFromSuperview];
+                        [listVC.view removeFromSuperview];
+                        [self.container addSubview:welcomeVC.view];
+                        self.navigationItem.leftBarButtonItem = nil;
+                        self.navigationItem.rightBarButtonItem = nil;
+                    }
                     completion:NULL];
 }
 

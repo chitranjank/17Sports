@@ -25,7 +25,7 @@
         <scene sceneID="ONi-3G-iFe">
             <objects>
                 <tabBarController definesPresentationContext="YES" id="seH-cm-C7J" sceneMemberID="viewController">
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="DDc-uS-h5o">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -219,6 +219,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="17运动网" id="Bde-dr-5Td">
+                        <barButtonItem key="leftBarButtonItem" title="首页" id="l0B-OX-nnv">
+                            <connections>
+                                <action selector="switchToWelcomePage:" destination="bjW-MM-OMI" id="O8u-Xk-Syx"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="切换" id="6gG-vq-Wwf">
                             <connections>
                                 <action selector="toogleListAndMap" destination="bjW-MM-OMI" id="X68-1g-Nds"/>
@@ -226,6 +231,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="btnToogleListAndMap" destination="6gG-vq-Wwf" id="XEW-La-a0e"/>
+                        <outlet property="btnWelcomePage" destination="l0B-OX-nnv" id="LTv-UW-rSW"/>
                         <outlet property="container" destination="zAb-Lu-ZIh" id="7Nx-43-E0K"/>
                         <outlet property="searchDisplayController" destination="38S-hB-446" id="gAk-Uv-DW0"/>
                     </connections>
@@ -582,6 +589,7 @@
         <class className="DetailViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailViewController.h"/>
             <relationships>
+                <relationship kind="action" name="callPhone:"/>
                 <relationship kind="action" name="handleSwipeFrom:" candidateClass="UISwipeGestureRecognizer"/>
                 <relationship kind="outlet" name="detailDescriptionLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="image1" candidateClass="UIImageView"/>
@@ -592,7 +600,10 @@
         <class className="MainViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MainViewController.h"/>
             <relationships>
+                <relationship kind="action" name="switchToWelcomePage:"/>
                 <relationship kind="action" name="toogleListAndMap"/>
+                <relationship kind="outlet" name="btnToogleListAndMap" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="btnWelcomePage" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="container" candidateClass="UIView"/>
             </relationships>
         </class>
@@ -601,9 +612,6 @@
             <relationships>
                 <relationship kind="outlet" name="map" candidateClass="MKMapView"/>
             </relationships>
-        </class>
-        <class className="MasterViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MasterViewController.h"/>
         </class>
         <class className="MerchantMapViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MerchantMapViewController.h"/>

@@ -13,7 +13,11 @@
 @property (weak, nonatomic) IBOutlet UIView *container;
 @property (strong, nonatomic) NSArray *merchants;
 
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *btnWelcomePage;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *btnToogleListAndMap;
+
 -(IBAction) toogleListAndMap;
 -(void) switchToList;
+-(IBAction)switchToWelcomePage:(id)sender;
 
 @end

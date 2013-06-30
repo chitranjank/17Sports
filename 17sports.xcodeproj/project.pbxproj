@@ -40,7 +40,6 @@
 		8FDE58E7170EAB1F0038FA78 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FDE58E6170EAB1F0038FA78 /* Default-568h@2x.png */; };
 		8FDE58EA170EAB1F0038FA78 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FDE58E8170EAB1F0038FA78 /* MainStoryboard_iPhone.storyboard */; };
 		8FDE58ED170EAB1F0038FA78 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FDE58EB170EAB1F0038FA78 /* MainStoryboard_iPad.storyboard */; };
-		8FDE58F0170EAB1F0038FA78 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDE58EF170EAB1F0038FA78 /* MasterViewController.m */; };
 		8FDE58F3170EAB1F0038FA78 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDE58F2170EAB1F0038FA78 /* DetailViewController.m */; };
 		8FDE58FB170EACF30038FA78 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDE58FA170EACF30038FA78 /* MapViewController.m */; };
 		8FDE58FD170EADB60038FA78 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FDE58FC170EADB60038FA78 /* MapKit.framework */; };
@@ -91,8 +90,6 @@
 		8FDE58E6170EAB1F0038FA78 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		8FDE58E9170EAB1F0038FA78 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		8FDE58EC170EAB1F0038FA78 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		8FDE58EE170EAB1F0038FA78 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
-		8FDE58EF170EAB1F0038FA78 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
 		8FDE58F1170EAB1F0038FA78 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		8FDE58F2170EAB1F0038FA78 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		8FDE58F9170EACF30038FA78 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
@@ -186,8 +183,6 @@
 				8FDE58E0170EAB1F0038FA78 /* AppDelegate.m */,
 				8FDE58E8170EAB1F0038FA78 /* MainStoryboard_iPhone.storyboard */,
 				8FDE58EB170EAB1F0038FA78 /* MainStoryboard_iPad.storyboard */,
-				8FDE58EE170EAB1F0038FA78 /* MasterViewController.h */,
-				8FDE58EF170EAB1F0038FA78 /* MasterViewController.m */,
 				8FDE58F1170EAB1F0038FA78 /* DetailViewController.h */,
 				8FDE58F2170EAB1F0038FA78 /* DetailViewController.m */,
 				8FDE58D7170EAB1F0038FA78 /* Supporting Files */,
@@ -313,7 +308,6 @@
 			files = (
 				8FDE58DD170EAB1F0038FA78 /* main.m in Sources */,
 				8FDE58E1170EAB1F0038FA78 /* AppDelegate.m in Sources */,
-				8FDE58F0170EAB1F0038FA78 /* MasterViewController.m in Sources */,
 				8FDE58F3170EAB1F0038FA78 /* DetailViewController.m in Sources */,
 				8FDE58FB170EACF30038FA78 /* MapViewController.m in Sources */,
 				8FDE5901170EB6520038FA78 /* Anno.m in Sources */,
