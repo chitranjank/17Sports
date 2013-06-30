@@ -470,21 +470,19 @@
                     <connections>
                         <outlet property="detailDescriptionLabel" destination="w1a-kt-ggB" id="kWt-Ru-jwX"/>
                         <outlet property="image1" destination="0JT-B7-GRJ" id="d3Y-p2-Q8W"/>
-                        <outlet property="swipeLeftRecognizer" destination="YMJ-nD-dhZ" id="ghV-Rv-xIK"/>
-                        <outlet property="swipeRightRecognizer" destination="1CH-1m-obb" id="UOG-Yv-LR7"/>
+                        <outlet property="swipeLeftRecognizer" destination="mNv-jW-wnE" id="Jyq-1x-OgZ"/>
+                        <outlet property="swipeRightRecognizer" destination="Ipo-F1-lbR" id="MY8-YJ-FBa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="23" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="left" id="YMJ-nD-dhZ">
+                <swipeGestureRecognizer direction="left" id="mNv-jW-wnE" userLabel="Swipe Gesture Recognizer - L">
                     <connections>
-                        <action selector="handleSwipeFrom:" destination="21" id="vUH-cW-zcU"/>
-                        <outlet property="delegate" destination="21" id="feo-ud-eCZ"/>
+                        <action selector="handleSwipeFrom:" destination="21" id="jHT-Pk-Q6D"/>
                     </connections>
                 </swipeGestureRecognizer>
-                <swipeGestureRecognizer direction="up" id="1CH-1m-obb">
+                <swipeGestureRecognizer direction="right" id="Ipo-F1-lbR" userLabel="Swipe Gesture Recognizer - R">
                     <connections>
-                        <action selector="handleSwipeFrom:" destination="21" id="mCd-Oo-32Y"/>
-                        <outlet property="delegate" destination="21" id="sXL-tb-0S5"/>
+                        <action selector="handleSwipeFrom:" destination="21" id="GRZ-ZS-Jch"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>

@@ -52,6 +52,7 @@
 	// Do any additional setup after loading the view, typically from a nib.
     [self configureView];
     [self.view addGestureRecognizer:self.swipeLeftRecognizer];
+    [self.view addGestureRecognizer:self.swipeRightRecognizer];
 }
 
 - (void)didReceiveMemoryWarning
@@ -80,7 +81,7 @@
 
     
 	CGPoint location = [recognizer locationInView:self.view];
-    DLog(@"%f, %f", location.x, location.y);
+    DLog(@"%f, %f,   %d", location.x, location.y, recognizer.direction);
 	
     //[self showImageWithText:@"swipe" atPoint:location];
 	
