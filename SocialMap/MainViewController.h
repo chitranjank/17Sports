@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MainViewController : UIViewController<UISearchBarDelegate>
+@interface MainViewController : UIViewController<UISearchBarDelegate, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *container;
 @property (strong, nonatomic) NSArray *merchants;

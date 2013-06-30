@@ -19,6 +19,9 @@
     MapViewController *mapVC;
     SearchResultViewController *listVC;
     WelcomeViewController *welcomeVC;
+    
+    BOOL isShowingWelcome;
+    BOOL isShowingListNotMap;
 }
 
 @end
@@ -73,6 +76,7 @@
     self.navigationItem.leftBarButtonItem = nil;
     self.navigationItem.rightBarButtonItem = nil;
 
+    isShowingWelcome = YES;
 }
 
 - (void)didReceiveMemoryWarning
@@ -92,6 +96,8 @@
                         self.navigationItem.rightBarButtonItem = self.btnToogleListAndMap;
                     }
                     completion:NULL];
+    isShowingListNotMap = YES;
+    isShowingWelcome = NO;
 }
 
 -(IBAction)switchToWelcomePage:(id)sender {
@@ -106,14 +112,14 @@
                         self.navigationItem.rightBarButtonItem = nil;
                     }
                     completion:NULL];
+    isShowingWelcome = YES;
 }
 
 -(IBAction) toogleListAndMap {
     DLog(@"toogle %@", self);
-    static BOOL isShowingListOrMap = YES;
     
     
-    if (isShowingListOrMap) {
+    if (isShowingListNotMap) {
         [UIView transitionWithView:self.container
                           duration:0.8
                            options:UIViewAnimationOptionTransitionFlipFromLeft
@@ -129,9 +135,7 @@
                         completion:NULL];
         
     }
-    isShowingListOrMap = !isShowingListOrMap;
-    DLog(@"c=%@  ||| %@", self.container, self.container.subviews);
-
+    isShowingListNotMap = !isShowingListNotMap;
 }
 
 #pragma mark - search bar and data source delegates
@@ -144,13 +148,19 @@
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
     DLog(@"%@", searchBar);
     [self.searchDisplayController setActive:NO];
+    if (isShowingWelcome) {
+        [self switchToList];
+    }
+    
 }
 
 - (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
     DLog(@"%@", searchBar);
 }
 
-
+- (void)searchBar:(UISearchBar *)searchBar selectedScopeButtonIndexDidChange:(NSInteger)selectedScope {
+    DLog(@"%@: %d", searchBar, selectedScope);
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -163,5 +173,9 @@
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
     cell.textLabel.text = @"天津";
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    DLog(@"Choosed");
 }
 @end

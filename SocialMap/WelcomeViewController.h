@@ -11,4 +11,6 @@
 @interface WelcomeViewController : UIViewController
 
 -(IBAction)shortcuts:(id)sender;
+-(IBAction)recommends:(id)sender;
+
 @end

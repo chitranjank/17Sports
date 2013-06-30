@@ -8,6 +8,7 @@
 
 #import "WelcomeViewController.h"
 #import "MainViewController.h"
+#import "DetailViewController.h"
 @interface WelcomeViewController ()
 
 @end
@@ -39,4 +40,11 @@
     [(MainViewController*)self.parentViewController switchToList];
 }
 
+-(IBAction)recommends:(id)sender {
+    DLog(@"%d", ((UIButton*)sender).tag);
+
+    DetailViewController *detailVC = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailViewController"];
+    DLog(@"%@", self.parentViewController);
+    [self.parentViewController.navigationController pushViewController:detailVC animated:YES];
+}
 @end
