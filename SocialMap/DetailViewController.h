@@ -13,10 +13,12 @@
 @property (strong, nonatomic) id detailItem;
 
 @property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *image1;
+@property (weak, nonatomic) IBOutlet UIImageView *imageCurrent;
+@property (weak, nonatomic) IBOutlet UIImageView *imageOld;
 
 @property (nonatomic, strong) IBOutlet UISwipeGestureRecognizer *swipeLeftRecognizer;
 @property (nonatomic, strong) IBOutlet UISwipeGestureRecognizer *swipeRightRecognizer;
+@property (nonatomic, strong) IBOutlet UIPageControl *ImagePageControl;
 
 - (IBAction)handleSwipeFrom:(UISwipeGestureRecognizer *)recognizer;
 

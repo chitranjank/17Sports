@@ -9,7 +9,9 @@
 #import "DetailViewController.h"
 #import "MapViewController.h"
 
-@interface DetailViewController ()
+@interface DetailViewController () {
+    NSArray *imagesOfMerchant;
+}
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
 - (void)configureView;
 @end
@@ -53,6 +55,12 @@
     [self configureView];
     [self.view addGestureRecognizer:self.swipeLeftRecognizer];
     [self.view addGestureRecognizer:self.swipeRightRecognizer];
+    
+
+    imagesOfMerchant = @[@"4 三源益康.jpg", @"5 帝景高尔夫.jpg", @"9 汇川马友会.jpg"];
+    self.ImagePageControl.numberOfPages = [imagesOfMerchant count];
+    self.ImagePageControl.currentPage = 0;
+    self.imageCurrent.image = [UIImage imageNamed:imagesOfMerchant[0]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -78,26 +86,38 @@
 }
 
 - (IBAction)handleSwipeFrom:(UISwipeGestureRecognizer *)recognizer {
-
-    
 	CGPoint location = [recognizer locationInView:self.view];
     DLog(@"%f, %f,   %d", location.x, location.y, recognizer.direction);
-	
-    //[self showImageWithText:@"swipe" atPoint:location];
-	
+
+    self.imageOld.image = self.imageCurrent.image;
+    [self.imageOld setFrame:CGRectMake(40, 90, 240, 128)];
+    self.imageOld.hidden = NO;
+    int count = [imagesOfMerchant count];
+    int current = self.ImagePageControl.currentPage;
+    int next;
+    
     if (recognizer.direction == UISwipeGestureRecognizerDirectionLeft) {
-        location.x -= 220.0;
+        next = (current + count - 1) % count;
+        
+        self.imageCurrent.image = [UIImage imageNamed:imagesOfMerchant[next]];
+        [self.imageCurrent setFrame:CGRectMake(320, 90, 240, 128)];
+        
         [UIView animateWithDuration:0.55 animations:^{
-            self.image1.alpha = 0.5;
+            [self.imageCurrent setFrame:CGRectMake(40, 90, 240, 128)];
+            [self.imageOld setFrame:CGRectMake(-320, 90, 240, 128)];
+        }];
+    } else if (recognizer.direction == UISwipeGestureRecognizerDirectionRight){
+        next = (current + count + 1) % count;
+        
+        self.imageCurrent.image = [UIImage imageNamed:imagesOfMerchant[next]];
+        [self.imageCurrent setFrame:CGRectMake(-320, 90, 240, 128)];
+        
+        [UIView animateWithDuration:0.55 animations:^{          
+            [self.imageCurrent setFrame:CGRectMake(40, 90, 240, 128)];
+            [self.imageOld setFrame:CGRectMake(320, 90, 240, 128)];
         }];
     }
-    else {
-        location.x += 220.0;
-        [UIView animateWithDuration:0.55 animations:^{
-            self.image1.alpha = 1;
-        }];
-    }
-	
+    self.ImagePageControl.currentPage = next;
 
 }
 
