@@ -85,12 +85,19 @@
     self.masterPopoverController = nil;
 }
 
+#define imageTop 78
+#define imageLeft 40
+#define imageWidth 240
+#define imageHeight 128
+#define screenWidth 320
+
+
 - (IBAction)handleSwipeFrom:(UISwipeGestureRecognizer *)recognizer {
 	CGPoint location = [recognizer locationInView:self.view];
     DLog(@"%f, %f,   %d", location.x, location.y, recognizer.direction);
 
     self.imageOld.image = self.imageCurrent.image;
-    [self.imageOld setFrame:CGRectMake(40, 90, 240, 128)];
+    [self.imageOld setFrame:CGRectMake(imageLeft, imageTop, imageWidth, imageHeight)];
     self.imageOld.hidden = NO;
     int count = [imagesOfMerchant count];
     int current = self.ImagePageControl.currentPage;
@@ -100,21 +107,21 @@
         next = (current + count - 1) % count;
         
         self.imageCurrent.image = [UIImage imageNamed:imagesOfMerchant[next]];
-        [self.imageCurrent setFrame:CGRectMake(320, 90, 240, 128)];
+        [self.imageCurrent setFrame:CGRectMake(screenWidth, imageTop, imageWidth, imageHeight)];
         
         [UIView animateWithDuration:0.55 animations:^{
-            [self.imageCurrent setFrame:CGRectMake(40, 90, 240, 128)];
-            [self.imageOld setFrame:CGRectMake(-320, 90, 240, 128)];
+            [self.imageCurrent setFrame:CGRectMake(imageLeft, imageTop, imageWidth, imageHeight)];
+            [self.imageOld setFrame:CGRectMake(-screenWidth, imageTop, imageWidth, imageHeight)];
         }];
     } else if (recognizer.direction == UISwipeGestureRecognizerDirectionRight){
         next = (current + count + 1) % count;
         
         self.imageCurrent.image = [UIImage imageNamed:imagesOfMerchant[next]];
-        [self.imageCurrent setFrame:CGRectMake(-320, 90, 240, 128)];
+        [self.imageCurrent setFrame:CGRectMake(-screenWidth, imageTop, imageWidth, imageHeight)];
         
         [UIView animateWithDuration:0.55 animations:^{          
-            [self.imageCurrent setFrame:CGRectMake(40, 90, 240, 128)];
-            [self.imageOld setFrame:CGRectMake(320, 90, 240, 128)];
+            [self.imageCurrent setFrame:CGRectMake(imageLeft, imageTop, imageWidth, imageHeight)];
+            [self.imageOld setFrame:CGRectMake(screenWidth, imageTop, imageWidth, imageHeight)];
         }];
     }
     self.ImagePageControl.currentPage = next;

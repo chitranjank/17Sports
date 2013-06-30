@@ -24,6 +24,9 @@
     
     [self addAnnos];
 
+    DLog(@"locating is %d, auth status=%d", [CLLocationManager locationServicesEnabled],  [CLLocationManager authorizationStatus]);
+
+    
     [self.map setShowsUserLocation:YES];
     
     CLLocationManager *locationManager = [[CLLocationManager alloc] init];

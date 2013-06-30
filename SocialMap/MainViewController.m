@@ -69,7 +69,7 @@
     [self addChildViewController:listVC];
     [self addChildViewController:welcomeVC];
     
-
+    [self.container addSubview:mapVC.view];
     [self.container addSubview:welcomeVC.view];
     
     DLog(@"c=%@  ||| %@", self.container, self.container.subviews);
@@ -77,6 +77,13 @@
     self.navigationItem.rightBarButtonItem = nil;
 
     isShowingWelcome = YES;
+    
+    
+    CLLocationManager *locationManager = [[CLLocationManager alloc] init];
+    locationManager.delegate = (id)self;//设置代理
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest;//指定需要的精度级别
+    locationManager.distanceFilter = 1000.0f;//设置距离筛选器
+    [locationManager startUpdatingLocation];//启动位置管理器
 }
 
 - (void)didReceiveMemoryWarning

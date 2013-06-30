@@ -32,6 +32,8 @@
     
     [self.map setShowsUserLocation:YES];
     
+    DLog(@"locating is %d, auth status=%d", [CLLocationManager locationServicesEnabled],  [CLLocationManager authorizationStatus]);
+
     MKCoordinateSpan theSpan;    //地图的范围 越小越精确
     theSpan.latitudeDelta = .2;
     theSpan.longitudeDelta = .2;
