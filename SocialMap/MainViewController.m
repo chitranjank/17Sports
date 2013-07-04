@@ -184,5 +184,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     DLog(@"Choosed");
+    [self.searchDisplayController setActive:NO];
+    if (isShowingWelcome) {
+        [self switchToList];
+    }
+
 }
 @end
