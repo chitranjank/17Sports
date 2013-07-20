@@ -1,0 +1,19 @@
+//
+// Prefix header for all source files of the '17sportsTest' target in the '17sportsTest' project
+//
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+#endif
+
+
+#ifdef DEBUG
+#   define DLog(fmt, ...) NSLog((@"%s <#%d> " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
+#else
+#   define DLog(...)
+#endif
+
+#define STR(format...)     ([NSString stringWithFormat:format])
+
+#define STAssertEqualStr(expect, actual, msg, ...) STAssertTrue([expect isEqualToString:actual], @"expect=<%@>, but actual=<%@>. " msg, expect, actual, ##__VA_ARGS__);

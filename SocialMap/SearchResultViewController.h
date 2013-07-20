@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
 
 @interface SearchResultViewController : UITableViewController
 
@@ -14,4 +15,5 @@
 @property (weak, nonatomic) IBOutlet UIView *tView;
 
 
+-(double) calculateDistanceOfCoord1:(CLLocationCoordinate2D)coord1 Coord2:(CLLocationCoordinate2D)coord2;
 @end

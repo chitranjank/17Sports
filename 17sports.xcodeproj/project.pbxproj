@@ -21,6 +21,14 @@
 		8F295D9F176626DB00EE546A /* Beijing, China.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 8F295D9E176626DB00EE546A /* Beijing, China.gpx */; };
 		8F295DA1176627FD00EE546A /* Tianjin, China.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 8F295DA0176627FD00EE546A /* Tianjin, China.gpx */; };
 		8F2F5A831764245D00F296EA /* 6-12AM.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F2F5A821764245D00F296EA /* 6-12AM.png */; };
+		8F6CF7A7179AD670005A4590 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F6CF7A6179AD670005A4590 /* SenTestingKit.framework */; };
+		8F6CF7A8179AD670005A4590 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FDE58D0170EAB1F0038FA78 /* UIKit.framework */; };
+		8F6CF7A9179AD670005A4590 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FDE58D2170EAB1F0038FA78 /* Foundation.framework */; };
+		8F6CF7AF179AD670005A4590 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8F6CF7AD179AD670005A4590 /* InfoPlist.strings */; };
+		8F6CF7B2179AD670005A4590 /* DistanceTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F6CF7B1179AD670005A4590 /* DistanceTest.m */; };
+		8F6CF7B8179AD766005A4590 /* SearchResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDEE1CC1768208E000BDBEB /* SearchResultViewController.m */; };
+		8F6CF7B9179AE88F005A4590 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FDE58FC170EADB60038FA78 /* MapKit.framework */; };
+		8F6CF7BA179AE8CE005A4590 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FDE5902170EB79B0038FA78 /* CoreLocation.framework */; };
 		8F83D660178598B6008E75D8 /* golf.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F83D65A178598B6008E75D8 /* golf.png */; };
 		8F83D661178598B6008E75D8 /* gym.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F83D65B178598B6008E75D8 /* gym.png */; };
 		8F83D662178598B6008E75D8 /* horse.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F83D65C178598B6008E75D8 /* horse.png */; };
@@ -65,6 +73,13 @@
 		8F295D9E176626DB00EE546A /* Beijing, China.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "Beijing, China.gpx"; path = "../Beijing, China.gpx"; sourceTree = "<group>"; };
 		8F295DA0176627FD00EE546A /* Tianjin, China.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "Tianjin, China.gpx"; path = "../Tianjin, China.gpx"; sourceTree = "<group>"; };
 		8F2F5A821764245D00F296EA /* 6-12AM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "6-12AM.png"; sourceTree = "<group>"; };
+		8F6CF7A5179AD670005A4590 /* 17sportsTest.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 17sportsTest.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F6CF7A6179AD670005A4590 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		8F6CF7AC179AD670005A4590 /* 17sportsTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "17sportsTest-Info.plist"; sourceTree = "<group>"; };
+		8F6CF7AE179AD670005A4590 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8F6CF7B0179AD670005A4590 /* DistanceTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DistanceTest.h; sourceTree = "<group>"; };
+		8F6CF7B1179AD670005A4590 /* DistanceTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DistanceTest.m; sourceTree = "<group>"; };
+		8F6CF7B3179AD670005A4590 /* 17sportsTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "17sportsTest-Prefix.pch"; sourceTree = "<group>"; };
 		8F83D65A178598B6008E75D8 /* golf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = golf.png; sourceTree = "<group>"; };
 		8F83D65B178598B6008E75D8 /* gym.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gym.png; sourceTree = "<group>"; };
 		8F83D65C178598B6008E75D8 /* horse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = horse.png; sourceTree = "<group>"; };
@@ -105,6 +120,18 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		8F6CF7A1179AD670005A4590 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F6CF7A7179AD670005A4590 /* SenTestingKit.framework in Frameworks */,
+				8F6CF7A8179AD670005A4590 /* UIKit.framework in Frameworks */,
+				8F6CF7A9179AD670005A4590 /* Foundation.framework in Frameworks */,
+				8F6CF7B9179AE88F005A4590 /* MapKit.framework in Frameworks */,
+				8F6CF7BA179AE8CE005A4590 /* CoreLocation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8FDE58C9170EAB1F0038FA78 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -146,10 +173,31 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
+		8F6CF7AA179AD670005A4590 /* 17sportsTest */ = {
+			isa = PBXGroup;
+			children = (
+				8F6CF7B0179AD670005A4590 /* DistanceTest.h */,
+				8F6CF7B1179AD670005A4590 /* DistanceTest.m */,
+				8F6CF7AB179AD670005A4590 /* Supporting Files */,
+			);
+			path = 17sportsTest;
+			sourceTree = "<group>";
+		};
+		8F6CF7AB179AD670005A4590 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8F6CF7AC179AD670005A4590 /* 17sportsTest-Info.plist */,
+				8F6CF7AD179AD670005A4590 /* InfoPlist.strings */,
+				8F6CF7B3179AD670005A4590 /* 17sportsTest-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		8FDE58C1170EAB1F0038FA78 = {
 			isa = PBXGroup;
 			children = (
 				8FDE58D6170EAB1F0038FA78 /* 17sports */,
+				8F6CF7AA179AD670005A4590 /* 17sportsTest */,
 				8FDE58CF170EAB1F0038FA78 /* Frameworks */,
 				8FDE58CD170EAB1F0038FA78 /* Products */,
 			);
@@ -159,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				8FDE58CC170EAB1F0038FA78 /* 17sports.app */,
+				8F6CF7A5179AD670005A4590 /* 17sportsTest.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -171,6 +220,7 @@
 				8FDE58D0170EAB1F0038FA78 /* UIKit.framework */,
 				8FDE58D2170EAB1F0038FA78 /* Foundation.framework */,
 				8FDE58D4170EAB1F0038FA78 /* CoreGraphics.framework */,
+				8F6CF7A6179AD670005A4590 /* SenTestingKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -222,6 +272,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		8F6CF7A4179AD670005A4590 /* 17sportsTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8F6CF7B6179AD670005A4590 /* Build configuration list for PBXNativeTarget "17sportsTest" */;
+			buildPhases = (
+				8F6CF7A0179AD670005A4590 /* Sources */,
+				8F6CF7A1179AD670005A4590 /* Frameworks */,
+				8F6CF7A2179AD670005A4590 /* Resources */,
+				8F6CF7A3179AD670005A4590 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = 17sportsTest;
+			productName = 17sportsTest;
+			productReference = 8F6CF7A5179AD670005A4590 /* 17sportsTest.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
 		8FDE58CB170EAB1F0038FA78 /* 17sports */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8FDE58F6170EAB200038FA78 /* Build configuration list for PBXNativeTarget "17sports" */;
@@ -261,11 +329,20 @@
 			projectRoot = "";
 			targets = (
 				8FDE58CB170EAB1F0038FA78 /* 17sports */,
+				8F6CF7A4179AD670005A4590 /* 17sportsTest */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		8F6CF7A2179AD670005A4590 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F6CF7AF179AD670005A4590 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8FDE58CA170EAB1F0038FA78 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -301,7 +378,32 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		8F6CF7A3179AD670005A4590 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		8F6CF7A0179AD670005A4590 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F6CF7B2179AD670005A4590 /* DistanceTest.m in Sources */,
+				8F6CF7B8179AD766005A4590 /* SearchResultViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8FDE58C8170EAB1F0038FA78 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -321,6 +423,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		8F6CF7AD179AD670005A4590 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8F6CF7AE179AD670005A4590 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		8FDE58D9170EAB1F0038FA78 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -348,6 +458,36 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		8F6CF7B4179AD670005A4590 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "17sportsTest/17sportsTest-Prefix.pch";
+				INFOPLIST_FILE = "17sportsTest/17sportsTest-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		8F6CF7B5179AD670005A4590 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "17sportsTest/17sportsTest-Prefix.pch";
+				INFOPLIST_FILE = "17sportsTest/17sportsTest-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
 		8FDE58F4170EAB1F0038FA78 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -437,6 +577,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		8F6CF7B6179AD670005A4590 /* Build configuration list for PBXNativeTarget "17sportsTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8F6CF7B4179AD670005A4590 /* Debug */,
+				8F6CF7B5179AD670005A4590 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		8FDE58C6170EAB1F0038FA78 /* Build configuration list for PBXProject "17sports" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

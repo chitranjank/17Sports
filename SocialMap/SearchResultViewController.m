@@ -10,6 +10,7 @@
 #import "DetailViewController.h"
 #import "MainViewController.h"
 
+
 @interface SearchResultViewController () {
     NSArray *merchants;
 }
@@ -86,6 +87,7 @@
     return @"搜索到12条结果";
 }
 
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     DLog(@"%@ %@", tableView, indexPath);
@@ -100,12 +102,39 @@
     if (indexPath.section == 0) {
         NSDictionary *dict = merchants[indexPath.row];
         cell.textLabel.text = dict[@"name"];
-        cell.detailTextLabel.text = @"距离500m";
+        
+        CLLocationManager *locationManager = [[CLLocationManager alloc] init];
+        CLLocationCoordinate2D myCoord = locationManager.location.coordinate;
+        //CLLocationCoordinate2D myCoord = CLLocationCoordinate2DMake([[NSUserDefaults standardUserDefaults] doubleForKey:@"latitude"], [[NSUserDefaults standardUserDefaults] doubleForKey:@"longitude"]);
+        CLLocationCoordinate2D merchantCoord = CLLocationCoordinate2DMake([dict[@"latitude"] doubleValue], [dict[@"longitude"] doubleValue]);
+        
+        cell.detailTextLabel.text = STR(@"距离%.2f公里", [self calculateDistanceOfCoord1:myCoord Coord2:merchantCoord]);
         cell.imageView.image = [UIImage imageNamed:STR(@"%@ %@.jpg", dict[@"id"], dict[@"name"])];        
     } else {
         //cell.textLabel.text = @"Map here";
     }
     return cell;
+}
+
+-(double) calculateDistanceOfCoord1:(CLLocationCoordinate2D)coord1 Coord2:(CLLocationCoordinate2D)coord2{
+    
+    const double EARTH_RADIUS = 6378.137;
+    double radLat1 = [self rad:coord1.latitude];
+    double radLat2 = [self rad:coord2.latitude];
+    
+    double a = radLat1 - radLat2;
+    double b = [self rad:coord1.longitude] - [self rad:coord2.longitude];
+    
+    double s = 2 * asin( sqrt( pow(sin(a / 2), 2) + cos(radLat1) * cos(radLat2) * pow(sin(b / 2), 2) ) );
+    s *= EARTH_RADIUS;
+    s = round(s * 10000) / 10000;
+    
+    return s;
+}
+
+-(double) rad:(double)d {
+    const double PI = 3.141592653589793;
+    return d * PI / 180.0;
 }
 
 /*

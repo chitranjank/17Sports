@@ -50,17 +50,17 @@
 
 -(void) addAnnos {
     NSArray *merchants = [NSMutableArray arrayWithArray:@[
-                 @{@"id": @"1", @"name": @"复康路游泳馆", @"longtitude": @39.099142, @"latitude": @117.171809},
-                 @{@"id": @"4", @"name": @"三源益康", @"longtitude": @39.1273, @"latitude": @117.2503},
-                 @{@"id": @"3", @"name": @"游泳跳水馆", @"longtitude": @39.1099, @"latitude": @117.2554}
-                 ]];
+                          @{@"id": @"1", @"name": @"复康路游泳馆", @"latitude": @39.099142, @"longitude": @117.171809},
+                          @{@"id": @"4", @"name": @"三源益康", @"latitude": @39.1273, @"longitude": @117.2503},
+                          @{@"id": @"3", @"name": @"游泳跳水馆", @"latitude": @39.1099, @"longitude": @117.2554}
+                          ]];
     
     NSDictionary *merchant = merchants[0];
     Anno *anno = [[Anno alloc] init];
-    NSNumber *lng = ((NSNumber*)merchant[@"longtitude"]);
+    NSNumber *lng = ((NSNumber*)merchant[@"longitude"]);
     NSNumber *lat = ((NSNumber*)merchant[@"latitude"]);
     
-    anno.coordinate = CLLocationCoordinate2DMake([lng floatValue], [lat floatValue]);
+    anno.coordinate = CLLocationCoordinate2DMake([lat floatValue], [lng floatValue]);
     anno.title = merchant[@"name"];
     anno.subtitle = @"距离1.2km";
     

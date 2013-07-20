@@ -45,10 +45,10 @@
     
     for (NSDictionary *merchant in merchants) {
         Anno *anno = [[Anno alloc] init];
-        NSNumber *lng = ((NSNumber*)merchant[@"longtitude"]);
+        NSNumber *lng = ((NSNumber*)merchant[@"longitude"]);
         NSNumber *lat = ((NSNumber*)merchant[@"latitude"]);
         
-        anno.coordinate = CLLocationCoordinate2DMake([lng floatValue], [lat floatValue]);
+        anno.coordinate = CLLocationCoordinate2DMake([lat floatValue], [lng floatValue]);
         anno.title = merchant[@"name"];
         anno.subtitle = @"距离1.2km";
         
@@ -76,6 +76,10 @@
     
     MKCoordinateRegion theRegion;
     theRegion.center = [self.map userLocation].coordinate;
+    
+    [[NSUserDefaults standardUserDefaults] setDouble:theRegion.center.latitude forKey:@"latitude"];
+    [[NSUserDefaults standardUserDefaults] setDouble:theRegion.center.longitude forKey:@"longitude"];
+    
     theRegion.span = theSpan;
     [self.map setRegion:theRegion];
     [self.map setCenterCoordinate:theRegion.center animated:YES];
