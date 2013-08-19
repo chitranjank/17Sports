@@ -10,10 +10,12 @@
 #import "DetailViewController.h"
 #import "MainViewController.h"
 #include "Distance.h"
+#include "MerchantData.h"
 
 
 @interface SearchResultViewController () {
     NSArray *merchants;
+    CLLocationManager* locationManager;
 }
 @end
 
@@ -28,8 +30,6 @@
     return self;
 }
 
-
-
 - (void)awakeFromNib
 {
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
@@ -43,22 +43,29 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
     [self initTableObjects];
+    locationManager = ((MainViewController*)(self.parentViewController)).locationManager;
     
 }
 
 -(void) initTableObjects {
     if (!merchants) {
-        merchants = ((MainViewController*)(self.parentViewController)).merchants;
+        merchants = [MerchantData allMerchants];
+//        merchants = ((MainViewController*)(self.parentViewController)).merchants;
     }
     
-      
     //NSIndexPath *indexPath01 = [NSIndexPath indexPathForRow:0 inSection:1];
     //[self.tableView insertRowsAtIndexPaths:@[indexPath01] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [locationManager startUpdatingLocation];
+    locationManager.delegate = (id)self;
+}
 
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+    printCoordinate(@"", ((CLLocation*)locations[0]).coordinate);
+}
 
 - (void)didReceiveMemoryWarning
 {
@@ -85,7 +92,7 @@
     if(section == 1) {
         return @"map section";
     }
-    return @"搜索到12条结果";
+    return STR(@"搜索到%d条结果", merchants.count);
 }
 
 
@@ -109,13 +116,19 @@
         CLLocationCoordinate2D merchantCoord = CLLocationCoordinate2DMake([dict[@"latitude"] doubleValue], [dict[@"longitude"] doubleValue]);
         
         cell.detailTextLabel.text = STR(@"距离%.2f公里", [Distance calculateDistanceOfCoord1:myCoord Coord2:merchantCoord]);
-        cell.imageView.image = [UIImage imageNamed:STR(@"%@ %@.jpg", dict[@"id"], dict[@"name"])];        
+        cell.imageView.image = [UIImage imageNamed:dict[@"images"][0]];
     } else {
         //cell.textLabel.text = @"Map here";
     }
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    DetailViewController *detailVC = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailViewController"];
+    DLog(@"%@", self.parentViewController);
+    [self.parentViewController.navigationController pushViewController:detailVC animated:YES];
+}
 
 /*
 // Override to support conditional editing of the table view.
@@ -156,12 +169,7 @@
 }
 */
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    DetailViewController *detailVC = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailViewController"];
-    DLog(@"%@", self.parentViewController);
-    [self.parentViewController.navigationController pushViewController:detailVC animated:YES];
-}
+
 
 #define ROW_HEIGHT 60
 

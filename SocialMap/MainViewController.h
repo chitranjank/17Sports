@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
+
 
 @interface MainViewController : UIViewController<UISearchBarDelegate, UITableViewDelegate>
 
@@ -15,6 +17,8 @@
 
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *btnWelcomePage;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *btnToogleListAndMap;
+
+@property (strong, nonatomic) CLLocationManager* locationManager;
 
 -(IBAction) toogleListAndMap;
 -(void) switchToList;

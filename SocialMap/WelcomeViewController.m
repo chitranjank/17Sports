@@ -9,8 +9,11 @@
 #import "WelcomeViewController.h"
 #import "MainViewController.h"
 #import "DetailViewController.h"
-@interface WelcomeViewController ()
+#import <MapKit/MapKit.h>
 
+@interface WelcomeViewController () {
+    CLLocationManager *locationManager;
+}
 @end
 
 @implementation WelcomeViewController
@@ -28,7 +31,9 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+
 }
+
 
 - (void)didReceiveMemoryWarning
 {

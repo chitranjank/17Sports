@@ -51,15 +51,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-
-    self.merchants = [NSMutableArray arrayWithArray:@[
-                      @{@"id": @"1", @"name": @"复康路游泳馆", @"latitude": @39.099142, @"longitude": @117.171809},
-                      @{@"id": @"4", @"name": @"三源益康", @"latitude": @39.1273, @"longitude": @117.2503},
-                      @{@"id": @"3", @"name": @"游泳跳水馆", @"latitude": @39.1099, @"longitude": @117.2554}
-                      ]];
     
-    
-
     mapVC = [self.storyboard instantiateViewControllerWithIdentifier:@"MapViewController"];
     listVC = [self.storyboard instantiateViewControllerWithIdentifier:@"SearchResultViewController"];
     welcomeVC = [self.storyboard instantiateViewControllerWithIdentifier:@"WelcomeViewController"];
@@ -69,7 +61,7 @@
     [self addChildViewController:listVC];
     [self addChildViewController:welcomeVC];
     
-    [self.container addSubview:mapVC.view];
+//    [self.container addSubview:mapVC.view];
     [self.container addSubview:welcomeVC.view];
     
     DLog(@"c=%@  ||| %@", self.container, self.container.subviews);
@@ -78,13 +70,20 @@
 
     isShowingWelcome = YES;
     
-    
-    CLLocationManager *locationManager = [[CLLocationManager alloc] init];
-    locationManager.delegate = (id)self;//设置代理
-    locationManager.desiredAccuracy = kCLLocationAccuracyBest;//指定需要的精度级别
-    locationManager.distanceFilter = 1000.0f;//设置距离筛选器
-    [locationManager startUpdatingLocation];//启动位置管理器
+    [self startLocating];
 }
+
+-(void) viewWillAppear:(BOOL)animated {
+    [self.locationManager startUpdatingLocation];
+}
+
+-(void) startLocating {
+    self.locationManager = [[CLLocationManager alloc] init];
+    self.locationManager.delegate = (id)self;//设置代理
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;//指定需要的精度级别
+    self.locationManager.distanceFilter = 1000.0f;//设置距离筛选器
+}
+
 
 - (void)didReceiveMemoryWarning
 {
