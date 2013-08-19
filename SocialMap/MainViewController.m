@@ -61,7 +61,6 @@
     [self addChildViewController:listVC];
     [self addChildViewController:welcomeVC];
     
-//    [self.container addSubview:mapVC.view];
     [self.container addSubview:welcomeVC.view];
     
     DLog(@"c=%@  ||| %@", self.container, self.container.subviews);
@@ -71,6 +70,8 @@
     isShowingWelcome = YES;
     
     [self startLocating];
+    
+    [self.navigationController.navigationBar setTintColor:[UIColor blackColor]];
 }
 
 -(void) viewWillAppear:(BOOL)animated {

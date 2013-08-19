@@ -111,7 +111,6 @@
         NSDictionary *dict = merchants[indexPath.row];
         cell.textLabel.text = dict[@"name"];
         
-        CLLocationManager *locationManager = [[CLLocationManager alloc] init];
         CLLocationCoordinate2D myCoord = locationManager.location.coordinate;
         CLLocationCoordinate2D merchantCoord = CLLocationCoordinate2DMake([dict[@"latitude"] doubleValue], [dict[@"longitude"] doubleValue]);
         
