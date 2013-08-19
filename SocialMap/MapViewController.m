@@ -43,7 +43,7 @@
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
-    printCoordinate(@"", ((CLLocation*)locations[0]).coordinate);
+    printCoordinate(@"map view", ((CLLocation*)locations[0]).coordinate);
     [self centerMap];
     [self addAnnos];
 }
@@ -57,7 +57,6 @@
 
 
         CLLocationCoordinate2D myCoord = locationManager.location.coordinate;
-        printCoordinate(@"", myCoord);
         anno.coordinate = CLLocationCoordinate2DMake([lat doubleValue], [lng doubleValue]);
         
         anno.title = merchant[@"name"];

@@ -8,7 +8,11 @@
 
 #import "MerchantMapViewController.h"
 #import "Anno.h"
-@interface MerchantMapViewController ()
+#import "Distance.h"
+
+@interface MerchantMapViewController () {
+    CLLocationManager* locationManager;
+}
 
 @end
 
@@ -19,45 +23,63 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    DLog(@"");
+    [self startLocating];
     
     [self.map setShowsUserLocation:YES];
     
     DLog(@"locating is %d, auth status=%d", [CLLocationManager locationServicesEnabled],  [CLLocationManager authorizationStatus]);
+}
 
-    MKCoordinateSpan theSpan;    //地图的范围 越小越精确
-    theSpan.latitudeDelta = .2;
-    theSpan.longitudeDelta = .2;
-    
-    MKCoordinateRegion theRegion;
-    theRegion.center = [self.map userLocation].coordinate;
-    theRegion.span = theSpan;
-    [self.map setRegion:theRegion];
-    [self.map setCenterCoordinate:theRegion.center animated:YES];
-    NSLog(@"here=%f, %f", theRegion.center.latitude, theRegion.center.longitude);
-    
+
+-(void) startLocating {
+    locationManager = [[CLLocationManager alloc] init];
+    locationManager.delegate = (id)self;//设置代理
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest;//指定需要的精度级别
+    locationManager.distanceFilter = 1000.0f;//设置距离筛选器
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [locationManager startUpdatingLocation];
+    locationManager.delegate = (id)self;
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+    printCoordinate(@"", ((CLLocation*)locations[0]).coordinate);
     [self addAnnos];
+    [self centerMap];
+
 }
 
 -(void) addAnnos {
-    NSArray *merchants = [NSMutableArray arrayWithArray:@[
-                          @{@"id": @"1", @"name": @"复康路游泳馆", @"latitude": @39.099142, @"longitude": @117.171809},
-                          @{@"id": @"4", @"name": @"三源益康", @"latitude": @39.1273, @"longitude": @117.2503},
-                          @{@"id": @"3", @"name": @"游泳跳水馆", @"latitude": @39.1099, @"longitude": @117.2554}
-                          ]];
+    NSDictionary *merchant = [[NSUserDefaults standardUserDefaults] objectForKey:MERCHANT];
     
-    NSDictionary *merchant = merchants[0];
     Anno *anno = [[Anno alloc] init];
-    NSNumber *lng = ((NSNumber*)merchant[@"longitude"]);
     NSNumber *lat = ((NSNumber*)merchant[@"latitude"]);
+    NSNumber *lng = ((NSNumber*)merchant[@"longitude"]);
     
-    anno.coordinate = CLLocationCoordinate2DMake([lat floatValue], [lng floatValue]);
+    
+    CLLocationCoordinate2D myCoord = locationManager.location.coordinate;
+    anno.coordinate = CLLocationCoordinate2DMake([lat doubleValue], [lng doubleValue]);
+    
     anno.title = merchant[@"name"];
-    anno.subtitle = @"距离1.2km";
+    anno.subtitle = STR(@"距离%.2f公里", [Distance calculateDistanceOfCoord1:myCoord Coord2:anno.coordinate]);
+    anno.merchant = merchant;
     
     [self.map addAnnotation:anno];
     
 }
 
+-(void) centerMap {
+    MKCoordinateSpan theSpan;    //地图的范围 越小越精确
+    theSpan.latitudeDelta = 1.0;
+    theSpan.longitudeDelta = 1.0;
+    
+    MKCoordinateRegion theRegion;
+    theRegion.center = locationManager.location.coordinate;
+    
+    theRegion.span = theSpan;
+    [self.map setRegion:theRegion];
+    [self.map setCenterCoordinate:theRegion.center animated:YES];
+}
 
 @end

@@ -64,7 +64,7 @@
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
-    printCoordinate(@"", ((CLLocation*)locations[0]).coordinate);
+    printCoordinate(@"list view", ((CLLocation*)locations[0]).coordinate);
 }
 
 - (void)didReceiveMemoryWarning

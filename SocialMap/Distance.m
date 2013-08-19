@@ -13,7 +13,7 @@
 
 
 +(double) calculateDistanceOfCoord1:(CLLocationCoordinate2D)coord1 Coord2:(CLLocationCoordinate2D)coord2{
-    DLog(@"coord1=%f,%f  coord2=%f,%f", coord1.latitude, coord1.longitude, coord2.latitude, coord2.longitude);
+    //DLog(@"coord1=%f,%f  coord2=%f,%f", coord1.latitude, coord1.longitude, coord2.latitude, coord2.longitude);
     
     const double EARTH_RADIUS = 6378.137;
     double radLat1 = [self rad:coord1.latitude];
