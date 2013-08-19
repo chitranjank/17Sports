@@ -14,6 +14,4 @@
 
 @property (weak, nonatomic) IBOutlet UIView *tView;
 
-
--(double) calculateDistanceOfCoord1:(CLLocationCoordinate2D)coord1 Coord2:(CLLocationCoordinate2D)coord2;
 @end

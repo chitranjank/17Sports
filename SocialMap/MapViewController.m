@@ -10,13 +10,19 @@
 #import "Anno.h"
 #import "DetailViewController.h"
 #import "MainViewController.h"
+#import "Distance.h"
 
 @interface MapViewController () {
     NSArray *merchants;
+    CLLocationManager *locationManager;
 }
 @end
 
 @implementation MapViewController
+
+- (void)viewWillAppear:(BOOL)animated {
+    
+}
 
 -(void) viewDidLoad {
     
@@ -29,7 +35,7 @@
     
     [self.map setShowsUserLocation:YES];
     
-    CLLocationManager *locationManager = [[CLLocationManager alloc] init];
+    locationManager = [[CLLocationManager alloc] init];
     locationManager.delegate = (id)self;//设置代理
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;//指定需要的精度级别
     locationManager.distanceFilter = 1000.0f;//设置距离筛选器
@@ -48,25 +54,17 @@
         NSNumber *lng = ((NSNumber*)merchant[@"longitude"]);
         NSNumber *lat = ((NSNumber*)merchant[@"latitude"]);
         
-        anno.coordinate = CLLocationCoordinate2DMake([lat floatValue], [lng floatValue]);
+        locationManager = [[CLLocationManager alloc] init];
+        CLLocationCoordinate2D myCoord = locationManager.location.coordinate;
+        
+        anno.coordinate = CLLocationCoordinate2DMake([lat doubleValue], [lng doubleValue]);
+        
+        NSLog(@"there=%f, %f here=%f, %f", anno.coordinate.latitude, anno.coordinate.longitude, myCoord.latitude, myCoord.longitude);
         anno.title = merchant[@"name"];
-        anno.subtitle = @"距离1.2km";
+        anno.subtitle = STR(@"距离%.2f公里", [Distance calculateDistanceOfCoord1:myCoord Coord2:anno.coordinate]);
         
         [self.map addAnnotation:anno];
     }
-    /*
-     Anno *sh = [[Anno alloc] init];
-     sh.coordinate = CLLocationCoordinate2DMake(31.240948, 121.485958);
-     sh.title = @"Shanghai";
-     sh.subtitle = @"MoDu";
-     
-     Anno *bj = [[Anno alloc] init];
-     bj.coordinate = CLLocationCoordinate2DMake(39.908605, 116.398019);
-     bj.title = @"Beijing";
-     bj.subtitle = @"DiDu";
-    
-    [self.map addAnnotations:@[sh, bj]];
-     */
 }
 
 -(void) centerMap {

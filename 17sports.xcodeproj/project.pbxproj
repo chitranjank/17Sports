@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F20739E17C1E3D6000B0D2D /* Distance.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F20739D17C1E3D6000B0D2D /* Distance.m */; };
+		8F20739F17C1E3D6000B0D2D /* Distance.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F20739D17C1E3D6000B0D2D /* Distance.m */; };
 		8F295D811765E1BD00EE546A /* 2 天大游泳馆.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8F295D761765E1BD00EE546A /* 2 天大游泳馆.jpg */; };
 		8F295D821765E1BD00EE546A /* 3 游泳跳水馆.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8F295D771765E1BD00EE546A /* 3 游泳跳水馆.jpg */; };
 		8F295D831765E1BD00EE546A /* 4 三源益康.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8F295D781765E1BD00EE546A /* 4 三源益康.jpg */; };
@@ -58,6 +60,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8F20739C17C1E3D6000B0D2D /* Distance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Distance.h; sourceTree = "<group>"; };
+		8F20739D17C1E3D6000B0D2D /* Distance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Distance.m; sourceTree = "<group>"; };
 		8F295D761765E1BD00EE546A /* 2 天大游泳馆.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "2 天大游泳馆.jpg"; sourceTree = "<group>"; };
 		8F295D771765E1BD00EE546A /* 3 游泳跳水馆.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "3 游泳跳水馆.jpg"; sourceTree = "<group>"; };
 		8F295D781765E1BD00EE546A /* 4 三源益康.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "4 三源益康.jpg"; sourceTree = "<group>"; };
@@ -248,6 +252,8 @@
 				8FB15916177C7C9E000838AD /* WelcomeViewController.m */,
 				8FB15918177C831E000838AD /* MerchantMapViewController.h */,
 				8FB15919177C831E000838AD /* MerchantMapViewController.m */,
+				8F20739C17C1E3D6000B0D2D /* Distance.h */,
+				8F20739D17C1E3D6000B0D2D /* Distance.m */,
 			);
 			name = 17sports;
 			path = SocialMap;
@@ -401,6 +407,7 @@
 			files = (
 				8F6CF7B2179AD670005A4590 /* DistanceTest.m in Sources */,
 				8F6CF7B8179AD766005A4590 /* SearchResultViewController.m in Sources */,
+				8F20739F17C1E3D6000B0D2D /* Distance.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,6 +424,7 @@
 				8FDEE1D417684C5F000BDBEB /* MainViewController.m in Sources */,
 				8FB15917177C7C9E000838AD /* WelcomeViewController.m in Sources */,
 				8FB1591A177C831E000838AD /* MerchantMapViewController.m in Sources */,
+				8F20739E17C1E3D6000B0D2D /* Distance.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -584,6 +592,7 @@
 				8F6CF7B5179AD670005A4590 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8FDE58C6170EAB1F0038FA78 /* Build configuration list for PBXProject "17sports" */ = {
 			isa = XCConfigurationList;

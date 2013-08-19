@@ -7,7 +7,7 @@
 //
 
 #import "DistanceTest.h"
-#import "SearchResultViewController.h"
+#import "Distance.h"
 #import <MapKit/MapKit.h>
 
 @implementation DistanceTest
@@ -28,12 +28,11 @@
 
 - (void)testCalculateDistance
 {
-    SearchResultViewController *controller = [[SearchResultViewController alloc] init];
     CLLocationCoordinate2D coord1 = CLLocationCoordinate2DMake(70.1, 50.2);
     CLLocationCoordinate2D coord2 = CLLocationCoordinate2DMake(75.3, 48.4);
     
-    double distance = [controller calculateDistanceOfCoord1:coord1 Coord2:coord2];
-    STAssertEqualsWithAccuracy(581.853, distance, 0.001, nil);
+    double result = [Distance calculateDistanceOfCoord1:coord1 Coord2:coord2];
+    STAssertEqualsWithAccuracy(581.853, result, 0.001, nil);
     
 }
 

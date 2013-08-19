@@ -10,4 +10,5 @@
 
 @interface DistanceTest : SenTestCase
 
+
 @end
