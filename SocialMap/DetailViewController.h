@@ -12,7 +12,13 @@
 
 @property (strong, nonatomic) id detailItem;
 
-@property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *labelName;
+@property (weak, nonatomic) IBOutlet UILabel *labelPrice;
+@property (weak, nonatomic) IBOutlet UILabel *labelDescription;
+@property (weak, nonatomic) IBOutlet UIButton *btnPhone;
+@property (weak, nonatomic) IBOutlet UIButton *btnAddress;
+
 @property (weak, nonatomic) IBOutlet UIImageView *imageCurrent;
 @property (weak, nonatomic) IBOutlet UIImageView *imageOld;
 

@@ -122,10 +122,13 @@
     return cell;
 }
 
+
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     DetailViewController *detailVC = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailViewController"];
-    DLog(@"%@", self.parentViewController);
+    
+    [[NSUserDefaults standardUserDefaults] setObject:merchants[indexPath.row] forKey:MERCHANT];
     [self.parentViewController.navigationController pushViewController:detailVC animated:YES];
 }
 

@@ -10,6 +10,7 @@
 #import <MapKit/MapKit.h>
 @interface Anno : NSObject <MKAnnotation>
 
+@property (nonatomic) NSDictionary *merchant;
 @property (nonatomic) NSString *title;
 @property (nonatomic) NSString *subtitle;
 @property (nonatomic) CLLocationCoordinate2D coordinate;

@@ -25,3 +25,5 @@
 
 
 #define printCoordinate(msg, coordinate) DLog(@"%@ (%f, %f)", msg, coordinate.latitude, coordinate.longitude);
+
+#define MERCHANT @"merchant"

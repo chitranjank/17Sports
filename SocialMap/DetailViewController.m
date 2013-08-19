@@ -11,6 +11,7 @@
 
 @interface DetailViewController () {
     NSArray *imagesOfMerchant;
+    NSDictionary *merchant;
 }
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
 - (void)configureView;
@@ -39,25 +40,33 @@
     }        
 }
 
-- (void)configureView
-{
-    // Update the user interface for the detail item.
-
-    if (self.detailItem) {
-        self.detailDescriptionLabel.text = [self.detailItem description];
-    }
-}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     [self configureView];
+
+}
+
+- (void)configureView
+{
+    if (self.detailItem) {
+        // Update the user interface for the detail item.
+    }
+    
     [self.view addGestureRecognizer:self.swipeLeftRecognizer];
     [self.view addGestureRecognizer:self.swipeRightRecognizer];
-    
 
-    imagesOfMerchant = @[@"4 三源益康.jpg", @"5 帝景高尔夫.jpg", @"9 汇川马友会.jpg"];
+    merchant = [[NSUserDefaults standardUserDefaults] objectForKey:MERCHANT];
+    
+    self.labelName.text = merchant[@"name"];
+    self.labelPrice.text = STR(@"价格：%@", merchant[@"price"]);
+    self.labelDescription.text = merchant[@"description"];
+    self.btnPhone.titleLabel.text = STR(@"电话：%@", merchant[@"phone"]);
+    self.btnAddress.titleLabel.text = STR(@"地址：%@", merchant[@"address"]);
+    
+    imagesOfMerchant = merchant[@"images"];// @[@"4 三源益康.jpg", @"5 帝景高尔夫.jpg", @"9 汇川马友会.jpg"];
     self.ImagePageControl.numberOfPages = [imagesOfMerchant count];
     self.ImagePageControl.currentPage = 0;
     self.imageCurrent.image = [UIImage imageNamed:imagesOfMerchant[0]];
@@ -94,7 +103,7 @@
 
 - (IBAction)handleSwipeFrom:(UISwipeGestureRecognizer *)recognizer {
 	CGPoint location = [recognizer locationInView:self.view];
-    DLog(@"%f, %f,   %d", location.x, location.y, recognizer.direction);
+    DLog(@"%f, %f,   direction=%d", location.x, location.y, recognizer.direction);
 
     self.imageOld.image = self.imageCurrent.image;
     [self.imageOld setFrame:CGRectMake(imageLeft, imageTop, imageWidth, imageHeight)];
@@ -132,7 +141,7 @@
  * This only works on real devices.
  */
 - (IBAction)callPhone:(id)sender {
-    NSString *num = [[NSString alloc] initWithFormat:@"telprompt://%@",@"23556589"];
+    NSString *num = [[NSString alloc] initWithFormat:@"telprompt://%@", merchant[@"phone"]];
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:num]];
 }
 @end

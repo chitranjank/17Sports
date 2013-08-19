@@ -62,6 +62,7 @@
         
         anno.title = merchant[@"name"];
         anno.subtitle = STR(@"距离%.2f公里", [Distance calculateDistanceOfCoord1:myCoord Coord2:anno.coordinate]);
+        anno.merchant = merchant;
         
         [self.map addAnnotation:anno];
     }
@@ -80,9 +81,7 @@
     [self.map setCenterCoordinate:theRegion.center animated:YES];
 }
 
--(MKAnnotationView*) mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
-    DLog(@"");
-    
+-(MKAnnotationView*) mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {  
     if ([annotation isKindOfClass:[MKUserLocation class]])
         return nil;
     
@@ -100,16 +99,17 @@
 }
 
 
-
 -(void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view{
 
 }
 
--(void) mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
-    DLog(@"calloutAccessoryControlTapped %f %f", self.map.region.span.latitudeDelta, self.map.region.span.longitudeDelta);
-    
+-(void) mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {    
     DetailViewController *detailVC = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailViewController"];
-    DLog(@"%@", self.parentViewController);
+    
+    MKAnnotationView* aView = view;
+    Anno *anno = aView.annotation;
+    
+    [[NSUserDefaults standardUserDefaults] setObject:anno.merchant forKey:MERCHANT];
     [self.parentViewController.navigationController pushViewController:detailVC animated:YES];
 }
 
