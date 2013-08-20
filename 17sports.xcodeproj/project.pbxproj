@@ -131,6 +131,13 @@
 		8F681E5817C32DAA004B91E5 /* ICON@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F681E5717C32DAA004B91E5 /* ICON@2x.png */; };
 		8F681E5A17C32EEA004B91E5 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F681E5917C32EEA004B91E5 /* Default@2x.png */; };
 		8F681E5C17C32F23004B91E5 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F681E5B17C32F23004B91E5 /* Default-568h@2x.png */; };
+		8F681E6317C335EF004B91E5 /* tennis.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8F681E5D17C335EF004B91E5 /* tennis.jpg */; };
+		8F681E6417C335EF004B91E5 /* swimming.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8F681E5E17C335EF004B91E5 /* swimming.jpg */; };
+		8F681E6617C335EF004B91E5 /* bodybuilding.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8F681E6017C335EF004B91E5 /* bodybuilding.jpg */; };
+		8F681E6C17C3366B004B91E5 /* billiards.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8F681E6917C3366B004B91E5 /* billiards.jpg */; };
+		8F681E6D17C3366B004B91E5 /* equestrainism.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8F681E6A17C3366B004B91E5 /* equestrainism.jpg */; };
+		8F681E6E17C3366B004B91E5 /* golf.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8F681E6B17C3366B004B91E5 /* golf.jpg */; };
+		8F681E7017C33755004B91E5 /* recommends.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8F681E6F17C33755004B91E5 /* recommends.jpg */; };
 		8F6CF7A7179AD670005A4590 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F6CF7A6179AD670005A4590 /* SenTestingKit.framework */; };
 		8F6CF7A8179AD670005A4590 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FDE58D0170EAB1F0038FA78 /* UIKit.framework */; };
 		8F6CF7A9179AD670005A4590 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FDE58D2170EAB1F0038FA78 /* Foundation.framework */; };
@@ -139,12 +146,6 @@
 		8F6CF7B8179AD766005A4590 /* SearchResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDEE1CC1768208E000BDBEB /* SearchResultViewController.m */; };
 		8F6CF7B9179AE88F005A4590 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FDE58FC170EADB60038FA78 /* MapKit.framework */; };
 		8F6CF7BA179AE8CE005A4590 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FDE5902170EB79B0038FA78 /* CoreLocation.framework */; };
-		8F83D660178598B6008E75D8 /* golf.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F83D65A178598B6008E75D8 /* golf.png */; };
-		8F83D661178598B6008E75D8 /* gym.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F83D65B178598B6008E75D8 /* gym.png */; };
-		8F83D662178598B6008E75D8 /* horse.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F83D65C178598B6008E75D8 /* horse.png */; };
-		8F83D663178598B6008E75D8 /* pool.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F83D65D178598B6008E75D8 /* pool.png */; };
-		8F83D664178598B6008E75D8 /* swim.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F83D65E178598B6008E75D8 /* swim.png */; };
-		8F83D665178598B6008E75D8 /* tennis.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F83D65F178598B6008E75D8 /* tennis.png */; };
 		8FB15917177C7C9E000838AD /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FB15916177C7C9E000838AD /* WelcomeViewController.m */; };
 		8FB1591A177C831E000838AD /* MerchantMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FB15919177C831E000838AD /* MerchantMapViewController.m */; };
 		8FDE58D1170EAB1F0038FA78 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FDE58D0170EAB1F0038FA78 /* UIKit.framework */; };
@@ -286,7 +287,6 @@
 		8F295D7E1765E1BD00EE546A /* 10 英雅马术俱乐部.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "10 英雅马术俱乐部.jpg"; sourceTree = "<group>"; };
 		8F295D7F1765E1BD00EE546A /* 11 牧歌骑士会.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "11 牧歌骑士会.jpg"; sourceTree = "<group>"; };
 		8F295D8B1765E6C400EE546A /* 1 复康路游泳馆.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "1 复康路游泳馆.jpg"; sourceTree = "<group>"; };
-		8F295D9D1766260400EE546A /* 场馆信息.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "场馆信息.docx"; sourceTree = "<group>"; };
 		8F295D9E176626DB00EE546A /* Beijing, China.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "Beijing, China.gpx"; path = "../Beijing, China.gpx"; sourceTree = "<group>"; };
 		8F295DA0176627FD00EE546A /* Tianjin, China.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "Tianjin, China.gpx"; path = "../Tianjin, China.gpx"; sourceTree = "<group>"; };
 		8F2F5A821764245D00F296EA /* 6-12AM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "6-12AM.png"; sourceTree = "<group>"; };
@@ -295,6 +295,13 @@
 		8F681E5717C32DAA004B91E5 /* ICON@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ICON@2x.png"; path = "../ICON@2x.png"; sourceTree = "<group>"; };
 		8F681E5917C32EEA004B91E5 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
 		8F681E5B17C32F23004B91E5 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
+		8F681E5D17C335EF004B91E5 /* tennis.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tennis.jpg; sourceTree = "<group>"; };
+		8F681E5E17C335EF004B91E5 /* swimming.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = swimming.jpg; sourceTree = "<group>"; };
+		8F681E6017C335EF004B91E5 /* bodybuilding.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bodybuilding.jpg; sourceTree = "<group>"; };
+		8F681E6917C3366B004B91E5 /* billiards.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = billiards.jpg; sourceTree = "<group>"; };
+		8F681E6A17C3366B004B91E5 /* equestrainism.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = equestrainism.jpg; sourceTree = "<group>"; };
+		8F681E6B17C3366B004B91E5 /* golf.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = golf.jpg; sourceTree = "<group>"; };
+		8F681E6F17C33755004B91E5 /* recommends.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = recommends.jpg; sourceTree = "<group>"; };
 		8F6CF7A5179AD670005A4590 /* 17sportsTest.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 17sportsTest.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F6CF7A6179AD670005A4590 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		8F6CF7AC179AD670005A4590 /* 17sportsTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "17sportsTest-Info.plist"; sourceTree = "<group>"; };
@@ -302,12 +309,6 @@
 		8F6CF7B0179AD670005A4590 /* DistanceTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DistanceTest.h; sourceTree = "<group>"; };
 		8F6CF7B1179AD670005A4590 /* DistanceTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DistanceTest.m; sourceTree = "<group>"; };
 		8F6CF7B3179AD670005A4590 /* 17sportsTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "17sportsTest-Prefix.pch"; sourceTree = "<group>"; };
-		8F83D65A178598B6008E75D8 /* golf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = golf.png; sourceTree = "<group>"; };
-		8F83D65B178598B6008E75D8 /* gym.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gym.png; sourceTree = "<group>"; };
-		8F83D65C178598B6008E75D8 /* horse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = horse.png; sourceTree = "<group>"; };
-		8F83D65D178598B6008E75D8 /* pool.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pool.png; sourceTree = "<group>"; };
-		8F83D65E178598B6008E75D8 /* swim.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = swim.png; sourceTree = "<group>"; };
-		8F83D65F178598B6008E75D8 /* tennis.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tennis.png; sourceTree = "<group>"; };
 		8FB15915177C7C9E000838AD /* WelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeViewController.h; sourceTree = "<group>"; };
 		8FB15916177C7C9E000838AD /* WelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewController.m; sourceTree = "<group>"; };
 		8FB15918177C831E000838AD /* MerchantMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MerchantMapViewController.h; sourceTree = "<group>"; };
@@ -372,6 +373,13 @@
 		8F295D741765E1B000EE546A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8F681E6F17C33755004B91E5 /* recommends.jpg */,
+				8F681E6917C3366B004B91E5 /* billiards.jpg */,
+				8F681E6A17C3366B004B91E5 /* equestrainism.jpg */,
+				8F681E6B17C3366B004B91E5 /* golf.jpg */,
+				8F681E5D17C335EF004B91E5 /* tennis.jpg */,
+				8F681E5E17C335EF004B91E5 /* swimming.jpg */,
+				8F681E6017C335EF004B91E5 /* bodybuilding.jpg */,
 				8F681E5B17C32F23004B91E5 /* Default-568h@2x.png */,
 				8F681E5917C32EEA004B91E5 /* Default@2x.png */,
 				8F681E5717C32DAA004B91E5 /* ICON@2x.png */,
@@ -478,14 +486,7 @@
 				8F20740817C1EBC3000B0D2D /* 101.jpg */,
 				8F20740917C1EBC3000B0D2D /* 102.jpg */,
 				8F20740A17C1EBC3000B0D2D /* 103.jpg */,
-				8F83D65A178598B6008E75D8 /* golf.png */,
-				8F83D65B178598B6008E75D8 /* gym.png */,
-				8F83D65C178598B6008E75D8 /* horse.png */,
-				8F83D65D178598B6008E75D8 /* pool.png */,
-				8F83D65E178598B6008E75D8 /* swim.png */,
-				8F83D65F178598B6008E75D8 /* tennis.png */,
 				8F2F5A821764245D00F296EA /* 6-12AM.png */,
-				8F295D9D1766260400EE546A /* 场馆信息.docx */,
 				8F295D8B1765E6C400EE546A /* 1 复康路游泳馆.jpg */,
 				8F295D761765E1BD00EE546A /* 2 天大游泳馆.jpg */,
 				8F295D771765E1BD00EE546A /* 3 游泳跳水馆.jpg */,
@@ -701,12 +702,6 @@
 				8F295D8C1765E6C400EE546A /* 1 复康路游泳馆.jpg in Resources */,
 				8F295D9F176626DB00EE546A /* Beijing, China.gpx in Resources */,
 				8F295DA1176627FD00EE546A /* Tianjin, China.gpx in Resources */,
-				8F83D660178598B6008E75D8 /* golf.png in Resources */,
-				8F83D661178598B6008E75D8 /* gym.png in Resources */,
-				8F83D662178598B6008E75D8 /* horse.png in Resources */,
-				8F83D663178598B6008E75D8 /* pool.png in Resources */,
-				8F83D664178598B6008E75D8 /* swim.png in Resources */,
-				8F83D665178598B6008E75D8 /* tennis.png in Resources */,
 				8F20740B17C1EBC3000B0D2D /* 1.jpg in Resources */,
 				8F20740C17C1EBC3000B0D2D /* 2.jpg in Resources */,
 				8F20740D17C1EBC3000B0D2D /* 3.jpg in Resources */,
@@ -813,6 +808,13 @@
 				8F681E5817C32DAA004B91E5 /* ICON@2x.png in Resources */,
 				8F681E5A17C32EEA004B91E5 /* Default@2x.png in Resources */,
 				8F681E5C17C32F23004B91E5 /* Default-568h@2x.png in Resources */,
+				8F681E6317C335EF004B91E5 /* tennis.jpg in Resources */,
+				8F681E6417C335EF004B91E5 /* swimming.jpg in Resources */,
+				8F681E6617C335EF004B91E5 /* bodybuilding.jpg in Resources */,
+				8F681E6C17C3366B004B91E5 /* billiards.jpg in Resources */,
+				8F681E6D17C3366B004B91E5 /* equestrainism.jpg in Resources */,
+				8F681E6E17C3366B004B91E5 /* golf.jpg in Resources */,
+				8F681E7017C33755004B91E5 /* recommends.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
