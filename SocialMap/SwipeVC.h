@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol SwipeDelegate <NSObject>
+
+-(void)onClick:(int)currentPage;
+
+@end
+
 @interface SwipeVC : UIViewController {
     NSArray *_images;
 }
@@ -18,7 +24,7 @@
 @property (nonatomic, strong) IBOutlet UISwipeGestureRecognizer *swipeRightRecognizer;
 @property (nonatomic, strong) IBOutlet UIPageControl *ImagePageControl;
 
-@property (weak, nonatomic) id delegate;
+@property (weak, nonatomic) id<SwipeDelegate> delegate;
 @property (nonatomic, strong) NSArray *images;
 
 

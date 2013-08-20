@@ -99,8 +99,10 @@
 }
 
 -(IBAction)onClick:(id)sender {
-    DLog(@"tag=%d", ((UIButton*)sender).tag);
-    [self.delegate onClick:sender];
+    if (self.delegate) {
+        [self.delegate onClick:self.ImagePageControl.currentPage];
+    }
+
 }
 
 @end

@@ -108,7 +108,7 @@
     MKAnnotationView* aView = view;
     Anno *anno = aView.annotation;
     
-    [[NSUserDefaults standardUserDefaults] setObject:anno.merchant forKey:MERCHANT];
+    [[NSUserDefaults standardUserDefaults] setObject:anno.merchant forKey:@"merchant"];
     [self.parentViewController.navigationController pushViewController:detailVC animated:YES];
 }
 

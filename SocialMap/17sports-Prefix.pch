@@ -26,7 +26,6 @@
 
 #define printCoordinate(msg, coordinate) DLog(@"%@ (%f, %f)", msg, coordinate.latitude, coordinate.longitude);
 
-#define MERCHANT @"merchant"
 #define SWIMMING 0
 #define EQUESTRIANISM 1
 #define GOLF 2

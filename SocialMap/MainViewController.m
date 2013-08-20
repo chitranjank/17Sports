@@ -101,8 +101,8 @@
 
 -(void) switchToList {
     [UIView transitionWithView:self.container
-                      duration:0.8
-                       options:UIViewAnimationOptionTransitionCurlUp
+                    duration:0.8
+                    options:UIViewAnimationOptionTransitionCurlUp
                     animations:^{
                         [welcomeVC.view removeFromSuperview];
                         [self.container addSubview:listVC.view];
@@ -116,8 +116,8 @@
 
 -(IBAction)switchToWelcomePage:(id)sender {
     [UIView transitionWithView:self.container
-                      duration:0.8
-                       options:UIViewAnimationOptionTransitionCurlDown
+                    duration:0.8
+                    options:UIViewAnimationOptionTransitionCurlDown
                     animations:^{
                         [mapVC.view removeFromSuperview];
                         [listVC.view removeFromSuperview];

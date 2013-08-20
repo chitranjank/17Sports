@@ -50,7 +50,7 @@
         // Update the user interface for the detail item.
     }
     
-    merchant = [[NSUserDefaults standardUserDefaults] objectForKey:MERCHANT];
+    merchant = [[NSUserDefaults standardUserDefaults] objectForKey:@"merchant"];
     
     self.labelName.text = merchant[@"name"];
     self.labelPrice.text = STR(@"价格：%@", merchant[@"price"]);

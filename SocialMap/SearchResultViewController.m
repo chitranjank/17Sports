@@ -43,24 +43,28 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self initTableObjects];
+
     locationManager = ((MainViewController*)(self.parentViewController)).locationManager;
     
 }
 
--(void) initTableObjects {
-    if (!merchants) {
-        merchants = [MerchantData allMerchants];
-//        merchants = ((MainViewController*)(self.parentViewController)).merchants;
-    }
-    
-    //NSIndexPath *indexPath01 = [NSIndexPath indexPathForRow:0 inSection:1];
-    //[self.tableView insertRowsAtIndexPaths:@[indexPath01] withRowAnimation:UITableViewRowAnimationAutomatic];
-}
 
 - (void)viewWillAppear:(BOOL)animated {
     [locationManager startUpdatingLocation];
     locationManager.delegate = (id)self;
+
+    [self initTableObjects];
+}
+
+-(void) initTableObjects {
+    merchants = ((MainViewController*)(self.parentViewController)).merchants;
+    DLog(@"%d", merchants.count);
+    if (merchants.count > 0) {
+        [(UITableView*)self.view reloadData];
+    }
+    
+    //NSIndexPath *indexPath01 = [NSIndexPath indexPathForRow:0 inSection:1];
+    //[self.tableView insertRowsAtIndexPaths:@[indexPath01] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
@@ -87,6 +91,10 @@
     return [merchants count];
 }
 
+-(float)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {   
+    return  25.0;
+}
+
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     DLog(@"Sec no=%d %@", section, tableView);
     if(section == 1) {
@@ -98,7 +106,6 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    DLog(@"%@ %@", tableView, indexPath);
     
 #ifdef ios6
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
@@ -128,7 +135,7 @@
 {
     DetailViewController *detailVC = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailViewController"];
     
-    [[NSUserDefaults standardUserDefaults] setObject:merchants[indexPath.row] forKey:MERCHANT];
+    [[NSUserDefaults standardUserDefaults] setObject:merchants[indexPath.row] forKey:@"merchant"];
     [self.parentViewController.navigationController pushViewController:detailVC animated:YES];
 }
 

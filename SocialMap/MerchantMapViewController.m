@@ -51,7 +51,7 @@
 }
 
 -(void) addAnnos {
-    NSDictionary *merchant = [[NSUserDefaults standardUserDefaults] objectForKey:MERCHANT];
+    NSDictionary *merchant = [[NSUserDefaults standardUserDefaults] objectForKey:@"merchant"];
     
     Anno *anno = [[Anno alloc] init];
     NSNumber *lat = ((NSNumber*)merchant[@"latitude"]);

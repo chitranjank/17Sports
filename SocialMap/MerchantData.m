@@ -13,7 +13,7 @@
 +(NSArray*) allMerchants {
     NSMutableArray *all = [NSMutableArray array];
     [all addObjectsFromArray:[MerchantData allMerchantsOfGolf]];
-    [all addObjectsFromArray:[MerchantData allMerchantsOfHorse]];
+    [all addObjectsFromArray:[MerchantData allMerchantsOfEquestrianism]];
     [all addObjectsFromArray:[MerchantData allMerchantsOfSwimming]];
     return all;
 }
@@ -354,7 +354,7 @@
             ]];
 }
 
-+(NSArray*) allMerchantsOfHorse {
++(NSArray*) allMerchantsOfEquestrianism {
     return [NSMutableArray arrayWithArray:@[
             @{
             @"id": @97,

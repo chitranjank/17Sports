@@ -11,5 +11,7 @@
 @interface MerchantData : NSObject
 
 +(NSArray*) allMerchants;
-
++(NSArray*) allMerchantsOfGolf;
++(NSArray*) allMerchantsOfEquestrianism;
++(NSArray*) allMerchantsOfSwimming;
 @end

@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SwipeVC.h"
 
-@interface WelcomeViewController : UIViewController
+@interface WelcomeViewController : UIViewController<SwipeDelegate>
 
 
 @property (weak, nonatomic) IBOutlet UIView *containerView;

@@ -11,6 +11,7 @@
 #import "DetailViewController.h"
 #import <MapKit/MapKit.h>
 #import "SwipeVC.h"
+#import "MerchantData.h"
 
 @interface WelcomeViewController () {
     CLLocationManager *locationManager;
@@ -49,12 +50,29 @@
 }
 
 -(IBAction)shortcuts:(id)sender {
-    DLog(@"tag=%d", ((UIButton*)sender).tag);
-    [(MainViewController*)self.parentViewController switchToList];
+    int tag = ((UIButton*)sender).tag;
+    DLog(@"tag=%d", tag);
+    MainViewController* mainVC = (MainViewController*)self.parentViewController;
+    switch (tag) {
+        case SWIMMING:
+            mainVC.merchants = [MerchantData allMerchantsOfSwimming];
+            [(MainViewController*)self.parentViewController switchToList];
+            break;
+        case EQUESTRIANISM:
+            mainVC.merchants = [MerchantData allMerchantsOfEquestrianism];
+            [(MainViewController*)self.parentViewController switchToList];
+            break;
+        case GOLF:
+            mainVC.merchants = [MerchantData allMerchantsOfGolf];
+            [(MainViewController*)self.parentViewController switchToList];
+            break;
+        default:
+            break;
+    }
 }
 
--(void)onClick:(id)sender {
-    DLog(@"tag=%d", ((UIButton*)sender).tag);
+-(void)onClick:(int)currentPage {
+    DLog(@"tag=%d", currentPage);
 
     DetailViewController *detailVC = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailViewController"];
     [self.parentViewController.navigationController pushViewController:detailVC animated:YES];

@@ -12,6 +12,4 @@
 @interface SearchResultViewController : UITableViewController
 
 
-@property (weak, nonatomic) IBOutlet UIView *tView;
-
 @end
