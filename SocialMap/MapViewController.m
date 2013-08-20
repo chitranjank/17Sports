@@ -26,8 +26,6 @@
     [super viewDidLoad];
     
     [self initTableObjects];
-    [self.map setShowsUserLocation:YES];
-    locationManager = ((MainViewController*)(self.parentViewController)).locationManager;
 }
 
 
@@ -38,10 +36,23 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    [locationManager startUpdatingLocation];
+    locationManager = ((MainViewController*)(self.parentViewController)).locationManager;
     locationManager.delegate = (id)self;
+    [locationManager startUpdatingLocation];
+
+    [self.map setShowsUserLocation:YES];
 }
 
+/**
+ * for iOS 5-
+ */
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
+    [self locationManager:manager didUpdateLocations:@[newLocation]];
+}
+
+/**
+ * for iOS 6+
+ */
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
     printCoordinate(@"map view", ((CLLocation*)locations[0]).coordinate);
     [self centerMap];

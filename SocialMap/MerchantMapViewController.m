@@ -39,10 +39,21 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    [locationManager startUpdatingLocation];
     locationManager.delegate = (id)self;
+    [locationManager startUpdatingLocation];
+
 }
 
+/**
+ * for iOS 5-
+ */
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
+    [self locationManager:manager didUpdateLocations:@[newLocation]];
+}
+
+/**
+ * for iOS 6+
+ */
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
     printCoordinate(@"", ((CLLocation*)locations[0]).coordinate);
     [self addAnnos];

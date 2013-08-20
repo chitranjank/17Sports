@@ -69,6 +69,10 @@
     [self addChildViewController:listVC];
     [self addChildViewController:welcomeVC];
     
+    welcomeVC.view.frame = self.container.bounds;
+    mapVC.view.frame = self.container.bounds;
+    listVC.view.frame = self.container.bounds;
+
     [self.container addSubview:welcomeVC.view];
     
     self.navigationItem.leftBarButtonItem = nil;
@@ -77,8 +81,6 @@
     isShowingWelcome = YES;
     
 }
-
-
 
 
 -(void) viewWillAppear:(BOOL)animated {
@@ -92,6 +94,9 @@
     self.locationManager.distanceFilter = 1000.0f;//设置距离筛选器
 }
 
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+    printCoordinate(@"list view", ((CLLocation*)locations[0]).coordinate);
+}
 
 - (void)didReceiveMemoryWarning
 {
@@ -130,21 +135,18 @@
 }
 
 -(IBAction) toogleListAndMap {
-    DLog(@"toogle %@", self);
-    
-    
     if (isShowingListNotMap) {
         [UIView transitionWithView:self.container
-                          duration:0.8
-                           options:UIViewAnimationOptionTransitionFlipFromLeft
+                        duration:0.8
+                        options:UIViewAnimationOptionTransitionFlipFromLeft
                         animations:^{ [listVC.view removeFromSuperview]; [self.container addSubview:mapVC.view]; }
                         completion:NULL];
         [mapVC centerMap];
      
     } else {
         [UIView transitionWithView:self.container
-                          duration:0.8
-                           options:UIViewAnimationOptionTransitionFlipFromLeft
+                        duration:0.8
+                        options:UIViewAnimationOptionTransitionFlipFromLeft
                         animations:^{ [mapVC.view removeFromSuperview]; [self.container addSubview:listVC.view]; }
                         completion:NULL];
         

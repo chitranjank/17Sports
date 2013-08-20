@@ -124,10 +124,10 @@
                         <subviews>
                             <containerView contentMode="scaleToFill" id="zAb-Lu-ZIh">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
-                                <autoresizingMask key="autoresizingMask" heightSizable="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.58096108160000004" blue="0.31428671219999998" alpha="1" colorSpace="calibratedRGB"/>
                             </containerView>
-                            <searchBar contentMode="redraw" id="uDY-TV-PKZ">
+                            <searchBar hidden="YES" contentMode="redraw" id="uDY-TV-PKZ">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -385,7 +385,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="characterWrap" id="ncA-4s-l55">
-                                <rect key="frame" x="20" y="383" width="274" height="45"/>
+                                <rect key="frame" x="20" y="332" width="274" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -398,7 +398,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Q3S-rw-v3w">
-                                <rect key="frame" x="150" y="355" width="144" height="44"/>
+                                <rect key="frame" x="156" y="38" width="144" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -411,7 +411,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="复康路游泳馆" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" minimumFontSize="10" id="WhO-1k-g4i">
-                                <rect key="frame" x="20" y="8" width="274" height="33"/>
+                                <rect key="frame" x="12" y="8" width="274" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="24"/>
@@ -541,7 +541,6 @@
         <class className="DetailViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailViewController.h"/>
             <relationships>
-                <relationship kind="action" name="callPhone:"/>
                 <relationship kind="outlet" name="btnAddress" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="btnPhone" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="imageCurrent" candidateClass="UIImageView"/>

@@ -43,15 +43,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    locationManager = ((MainViewController*)(self.parentViewController)).locationManager;
-    
 }
 
 
 - (void)viewWillAppear:(BOOL)animated {
-    [locationManager startUpdatingLocation];
+    locationManager = ((MainViewController*)(self.parentViewController)).locationManager;
     locationManager.delegate = (id)self;
+    [locationManager startUpdatingLocation];
+
 
     [self initTableObjects];
 }
@@ -67,6 +66,16 @@
     //[self.tableView insertRowsAtIndexPaths:@[indexPath01] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
+/**
+ * for iOS 5-
+ */
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
+    [self locationManager:manager didUpdateLocations:@[newLocation]];
+}
+
+/**
+ * for iOS 6+
+ */
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
     printCoordinate(@"list view", ((CLLocation*)locations[0]).coordinate);
 }
@@ -91,12 +100,8 @@
     return [merchants count];
 }
 
--(float)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {   
-    return  25.0;
-}
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    DLog(@"Sec no=%d %@", section, tableView);
     if(section == 1) {
         return @"map section";
     }
