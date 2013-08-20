@@ -114,7 +114,7 @@
             </objects>
             <point key="canvasLocation" x="223" y="125"/>
         </scene>
-        <!--Main View Controller - 17运动网-->
+        <!--Main View Controller - 17SPORTS.NET-->
         <scene sceneID="FP7-hv-8r9">
             <objects>
                 <viewController id="bjW-MM-OMI" customClass="MainViewController" sceneMemberID="viewController">
@@ -138,7 +138,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="17运动网" id="Bde-dr-5Td">
+                    <navigationItem key="navigationItem" title="17SPORTS.NET" id="Bde-dr-5Td">
                         <barButtonItem key="leftBarButtonItem" title="首页" id="l0B-OX-nnv">
                             <connections>
                                 <action selector="switchToWelcomePage:" destination="bjW-MM-OMI" id="O8u-Xk-Syx"/>
@@ -178,7 +178,7 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Cpr-0e-HoJ">
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Cpr-0e-HoJ">
                                 <rect key="frame" x="10" y="235" width="198" height="95"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
@@ -190,7 +190,7 @@
                                     <action selector="shortcuts:" destination="rVg-w7-J45" eventType="touchUpInside" id="kDJ-UW-oU6"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="W0B-Uw-t6S">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="W0B-Uw-t6S">
                                 <rect key="frame" x="113" y="133" width="95" height="95"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -220,7 +220,7 @@
                                     <action selector="shortcuts:" destination="rVg-w7-J45" eventType="touchUpInside" id="7lQ-v0-FaK"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="cLV-H9-wup">
+                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="cLV-H9-wup">
                                 <rect key="frame" x="10" y="338" width="95" height="95"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -235,7 +235,7 @@
                                     <action selector="shortcuts:" destination="rVg-w7-J45" eventType="touchUpInside" id="uat-B1-bgJ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Slm-A7-ACd">
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Slm-A7-ACd">
                                 <rect key="frame" x="216" y="133" width="95" height="198"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -250,7 +250,7 @@
                                     <action selector="shortcuts:" destination="rVg-w7-J45" eventType="touchUpInside" id="ag3-cT-IMo"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Emz-I2-ru2">
+                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Emz-I2-ru2">
                                 <rect key="frame" x="113" y="337" width="198" height="95"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -276,11 +276,51 @@
                                 <rect key="frame" x="0.0" y="20" width="320" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" id="QLd-eC-gTM">
+                                <rect key="frame" x="141" y="8" width="38" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="pageIndicatorTintColor" red="1" green="0.58096108160000004" blue="0.31428671219999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="currentPageIndicatorTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </pageControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="gaU-JV-pYe">
+                                <rect key="frame" x="10" y="29" width="301" height="84"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Recommends">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="recommends:" destination="rVg-w7-J45" eventType="touchUpInside" id="81z-DM-aNg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="TQN-CP-W8F" appends="YES" id="JH6-tZ-HYt"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="ImagePageControl" destination="QLd-eC-gTM" id="mg9-7K-CcJ"/>
+                        <outlet property="swipeLeftRecognizer" destination="TQN-CP-W8F" id="iVV-BP-STr"/>
+                        <outlet property="swipeRightRecognizer" destination="lDX-4K-cjB" id="tjf-Z6-LQV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CDD-fn-cVd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="left" id="TQN-CP-W8F" userLabel="Swipe Gesture Recognizer - left">
+                    <connections>
+                        <action selector="handleSwipeFrom:" destination="rVg-w7-J45" id="hfH-Af-qNy"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="lDX-4K-cjB" userLabel="Swipe Gesture Recognizer- right">
+                    <connections>
+                        <action selector="handleSwipeFrom:" destination="rVg-w7-J45" id="d0p-5U-6rF"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="112" y="-1265"/>
         </scene>
@@ -493,63 +533,6 @@
         <image name="swimming.jpg" width="190" height="190"/>
         <image name="tennis.jpg" width="190" height="190"/>
     </resources>
-    <classes>
-        <class className="DetailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="callPhone:"/>
-                <relationship kind="action" name="handleSwipeFrom:" candidateClass="UISwipeGestureRecognizer"/>
-                <relationship kind="outlet" name="ImagePageControl" candidateClass="UIPageControl"/>
-                <relationship kind="outlet" name="btnAddress" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="btnPhone" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="imageCurrent" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="imageOld" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="labelDescription" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="labelName" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="labelPrice" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="swipeLeftRecognizer" candidateClass="UISwipeGestureRecognizer"/>
-                <relationship kind="outlet" name="swipeRightRecognizer" candidateClass="UISwipeGestureRecognizer"/>
-            </relationships>
-        </class>
-        <class className="MainViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="switchToWelcomePage:"/>
-                <relationship kind="action" name="toogleListAndMap"/>
-                <relationship kind="outlet" name="btnToogleListAndMap" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="btnWelcomePage" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="container" candidateClass="UIView"/>
-            </relationships>
-        </class>
-        <class className="MapViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="map" candidateClass="MKMapView"/>
-            </relationships>
-        </class>
-        <class className="MerchantMapViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MerchantMapViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="map" candidateClass="MKMapView"/>
-            </relationships>
-        </class>
-        <class className="SearchResultViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SearchResultViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="tView" candidateClass="UIView"/>
-            </relationships>
-        </class>
-        <class className="TabBarVC" superclassName="UITabBarController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TabBarVC.h"/>
-        </class>
-        <class className="WelcomeViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WelcomeViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="recommends:"/>
-                <relationship kind="action" name="shortcuts:"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
