@@ -8,15 +8,20 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SwipeVC : UIViewController
+@interface SwipeVC : UIViewController {
+    NSArray *_images;
+}
 
-@property (weak, nonatomic) IBOutlet UIImageView *imageCurrent;
-@property (weak, nonatomic) IBOutlet UIImageView *imageOld;
-
+@property (nonatomic, strong) IBOutlet UIImageView *imageCurrent;
+@property (nonatomic, strong) IBOutlet UIImageView *imageOld;
 @property (nonatomic, strong) IBOutlet UISwipeGestureRecognizer *swipeLeftRecognizer;
 @property (nonatomic, strong) IBOutlet UISwipeGestureRecognizer *swipeRightRecognizer;
 @property (nonatomic, strong) IBOutlet UIPageControl *ImagePageControl;
 
+@property (weak, nonatomic) id delegate;
+@property (nonatomic, strong) NSArray *images;
+
+
 - (IBAction)handleSwipeFrom:(UISwipeGestureRecognizer *)recognizer;
-- (IBAction)recommends:(id)sender;
+- (IBAction)onClick:(id)sender;
 @end

@@ -35,11 +35,10 @@
 	// Do any additional setup after loading the view.
 
     SwipeVC *swipeVC = [self.storyboard instantiateViewControllerWithIdentifier:@"SwipeVC"];
-
     [self addChildViewController:swipeVC];
     [self.containerView addSubview:swipeVC.view];
-    
-    DLog(@"%@", swipeVC);
+    swipeVC.delegate = (id)self;
+    swipeVC.images = @[@"recommends.jpg", @"100.jpg", @"80.jpg"];
 }
 
 
@@ -54,7 +53,7 @@
     [(MainViewController*)self.parentViewController switchToList];
 }
 
--(IBAction)recommends:(id)sender {
+-(IBAction)onClick:(id)sender {
     DLog(@"tag=%d", ((UIButton*)sender).tag);
 
     DetailViewController *detailVC = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailViewController"];
