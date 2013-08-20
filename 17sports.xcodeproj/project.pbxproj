@@ -127,6 +127,7 @@
 		8F295D9F176626DB00EE546A /* Beijing, China.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 8F295D9E176626DB00EE546A /* Beijing, China.gpx */; };
 		8F295DA1176627FD00EE546A /* Tianjin, China.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 8F295DA0176627FD00EE546A /* Tianjin, China.gpx */; };
 		8F2F5A831764245D00F296EA /* 6-12AM.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F2F5A821764245D00F296EA /* 6-12AM.png */; };
+		8F681E5517C31C81004B91E5 /* TabBarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F681E5417C31C81004B91E5 /* TabBarVC.m */; };
 		8F6CF7A7179AD670005A4590 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F6CF7A6179AD670005A4590 /* SenTestingKit.framework */; };
 		8F6CF7A8179AD670005A4590 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FDE58D0170EAB1F0038FA78 /* UIKit.framework */; };
 		8F6CF7A9179AD670005A4590 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FDE58D2170EAB1F0038FA78 /* Foundation.framework */; };
@@ -286,6 +287,8 @@
 		8F295D9E176626DB00EE546A /* Beijing, China.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "Beijing, China.gpx"; path = "../Beijing, China.gpx"; sourceTree = "<group>"; };
 		8F295DA0176627FD00EE546A /* Tianjin, China.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "Tianjin, China.gpx"; path = "../Tianjin, China.gpx"; sourceTree = "<group>"; };
 		8F2F5A821764245D00F296EA /* 6-12AM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "6-12AM.png"; sourceTree = "<group>"; };
+		8F681E5317C31C81004B91E5 /* TabBarVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarVC.h; sourceTree = "<group>"; };
+		8F681E5417C31C81004B91E5 /* TabBarVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarVC.m; sourceTree = "<group>"; };
 		8F6CF7A5179AD670005A4590 /* 17sportsTest.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 17sportsTest.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F6CF7A6179AD670005A4590 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		8F6CF7AC179AD670005A4590 /* 17sportsTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "17sportsTest-Info.plist"; sourceTree = "<group>"; };
@@ -568,6 +571,8 @@
 				8F20739D17C1E3D6000B0D2D /* Distance.m */,
 				8F2073A117C1E841000B0D2D /* MerchantData.h */,
 				8F2073A217C1E842000B0D2D /* MerchantData.m */,
+				8F681E5317C31C81004B91E5 /* TabBarVC.h */,
+				8F681E5417C31C81004B91E5 /* TabBarVC.m */,
 			);
 			name = 17sports;
 			path = SocialMap;
@@ -843,6 +848,7 @@
 				8FB1591A177C831E000838AD /* MerchantMapViewController.m in Sources */,
 				8F20739E17C1E3D6000B0D2D /* Distance.m in Sources */,
 				8F2073A317C1E842000B0D2D /* MerchantData.m in Sources */,
+				8F681E5517C31C81004B91E5 /* TabBarVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -21,10 +21,10 @@
             </objects>
             <point key="canvasLocation" x="-316" y="-616"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab BarVC-->
         <scene sceneID="ONi-3G-iFe">
             <objects>
-                <tabBarController definesPresentationContext="YES" id="seH-cm-C7J" sceneMemberID="viewController">
+                <tabBarController definesPresentationContext="YES" id="seH-cm-C7J" customClass="TabBarVC" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="DDc-uS-h5o">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
@@ -42,7 +42,7 @@
             </objects>
             <point key="canvasLocation" x="-1077" y="-184"/>
         </scene>
-        <!--View Controller - 签到-->
+        <!--View Controller-->
         <scene sceneID="Udg-Xm-Hst">
             <objects>
                 <viewController id="2LA-ZJ-Non" sceneMemberID="viewController">
@@ -60,13 +60,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="签到" image="6-12AM.png" id="Dje-r9-XeC"/>
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="Dje-r9-XeC"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5It-hC-QXy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-452" y="125"/>
         </scene>
-        <!--View Controller - 我的-->
+        <!--View Controller-->
         <scene sceneID="D0s-35-hnP">
             <objects>
                 <viewController id="WzO-DW-JhP" sceneMemberID="viewController">
@@ -84,13 +84,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="我的" image="6-12AM.png" id="vhX-o5-Yqk"/>
+                    <tabBarItem key="tabBarItem" systemItem="contacts" id="vhX-o5-Yqk"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9ta-uL-DXr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-118" y="125"/>
         </scene>
-        <!--View Controller - other-->
+        <!--View Controller-->
         <scene sceneID="8Ec-AX-nS1">
             <objects>
                 <viewController id="bFu-UH-XAO" sceneMemberID="viewController">
@@ -108,7 +108,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="other" id="IA3-3O-eoY"/>
+                    <tabBarItem key="tabBarItem" systemItem="mostRecent" id="IA3-3O-eoY"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rm9-b9-naj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -131,10 +131,6 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <scopeButtonTitles>
-                                    <string>距离排序</string>
-                                    <string>价格排序</string>
-                                </scopeButtonTitles>
                                 <connections>
                                     <outlet property="delegate" destination="bjW-MM-OMI" id="Hjm-Rm-9WX"/>
                                 </connections>
@@ -572,7 +568,6 @@
     </scenes>
     <resources>
         <image name="3 游泳跳水馆.jpg" width="500" height="333"/>
-        <image name="6-12AM.png" width="28" height="28"/>
         <image name="golf.png" width="116" height="115"/>
         <image name="gym.png" width="117" height="116"/>
         <image name="horse.png" width="118" height="117"/>
@@ -625,6 +620,9 @@
             <relationships>
                 <relationship kind="outlet" name="tView" candidateClass="UIView"/>
             </relationships>
+        </class>
+        <class className="TabBarVC" superclassName="UITabBarController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TabBarVC.h"/>
         </class>
         <class className="WelcomeViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WelcomeViewController.h"/>

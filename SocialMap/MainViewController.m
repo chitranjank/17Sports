@@ -52,10 +52,17 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
+    [self createSubViews];
+    
+    [self startLocating];
+    
+    [self.navigationController.navigationBar setTintColor:[UIColor blackColor]];
+}
+
+-(void) createSubViews {
     mapVC = [self.storyboard instantiateViewControllerWithIdentifier:@"MapViewController"];
     listVC = [self.storyboard instantiateViewControllerWithIdentifier:@"SearchResultViewController"];
     welcomeVC = [self.storyboard instantiateViewControllerWithIdentifier:@"WelcomeViewController"];
-
     
     [self addChildViewController:mapVC];
     [self addChildViewController:listVC];
@@ -63,16 +70,15 @@
     
     [self.container addSubview:welcomeVC.view];
     
-    DLog(@"c=%@  ||| %@", self.container, self.container.subviews);
     self.navigationItem.leftBarButtonItem = nil;
     self.navigationItem.rightBarButtonItem = nil;
-
+    
     isShowingWelcome = YES;
     
-    [self startLocating];
-    
-    [self.navigationController.navigationBar setTintColor:[UIColor blackColor]];
 }
+
+
+
 
 -(void) viewWillAppear:(BOOL)animated {
     [self.locationManager startUpdatingLocation];
@@ -158,6 +164,7 @@
     if (isShowingWelcome) {
         [self switchToList];
     }
+
     
 }
 
