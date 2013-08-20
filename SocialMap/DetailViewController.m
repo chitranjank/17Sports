@@ -21,11 +21,6 @@
 
 #pragma mark - Managing the detail item
 
-- (id)initWithCoder:(NSCoder *)decoder {
-    NSLog(@"nscode=%@", decoder);
-    return [super initWithCoder:(NSCoder *)decoder];
-}
-
 - (void)setDetailItem:(id)newDetailItem
 {
     if (_detailItem != newDetailItem) {
@@ -55,9 +50,6 @@
         // Update the user interface for the detail item.
     }
     
-    [self.view addGestureRecognizer:self.swipeLeftRecognizer];
-    [self.view addGestureRecognizer:self.swipeRightRecognizer];
-
     merchant = [[NSUserDefaults standardUserDefaults] objectForKey:MERCHANT];
     
     self.labelName.text = merchant[@"name"];
@@ -66,9 +58,7 @@
     self.btnPhone.titleLabel.text = STR(@"电话：%@", merchant[@"phone"]);
     self.btnAddress.titleLabel.text = STR(@"地址：%@", merchant[@"address"]);
     
-    imagesOfMerchant = merchant[@"images"];// @[@"4 三源益康.jpg", @"5 帝景高尔夫.jpg", @"9 汇川马友会.jpg"];
-    self.ImagePageControl.numberOfPages = [imagesOfMerchant count];
-    self.ImagePageControl.currentPage = 0;
+    imagesOfMerchant = merchant[@"images"];
     self.imageCurrent.image = [UIImage imageNamed:imagesOfMerchant[0]];
 }
 
@@ -94,48 +84,6 @@
     self.masterPopoverController = nil;
 }
 
-#define imageTop 78
-#define imageLeft 40
-#define imageWidth 240
-#define imageHeight 128
-#define screenWidth 320
-
-
-- (IBAction)handleSwipeFrom:(UISwipeGestureRecognizer *)recognizer {
-	CGPoint location = [recognizer locationInView:self.view];
-    DLog(@"%f, %f,   direction=%d", location.x, location.y, recognizer.direction);
-
-    self.imageOld.image = self.imageCurrent.image;
-    [self.imageOld setFrame:CGRectMake(imageLeft, imageTop, imageWidth, imageHeight)];
-    self.imageOld.hidden = NO;
-    int count = [imagesOfMerchant count];
-    int current = self.ImagePageControl.currentPage;
-    int next;
-    
-    if (recognizer.direction == UISwipeGestureRecognizerDirectionLeft) {
-        next = (current + count - 1) % count;
-        
-        self.imageCurrent.image = [UIImage imageNamed:imagesOfMerchant[next]];
-        [self.imageCurrent setFrame:CGRectMake(screenWidth, imageTop, imageWidth, imageHeight)];
-        
-        [UIView animateWithDuration:0.55 animations:^{
-            [self.imageCurrent setFrame:CGRectMake(imageLeft, imageTop, imageWidth, imageHeight)];
-            [self.imageOld setFrame:CGRectMake(-screenWidth, imageTop, imageWidth, imageHeight)];
-        }];
-    } else if (recognizer.direction == UISwipeGestureRecognizerDirectionRight){
-        next = (current + count + 1) % count;
-        
-        self.imageCurrent.image = [UIImage imageNamed:imagesOfMerchant[next]];
-        [self.imageCurrent setFrame:CGRectMake(-screenWidth, imageTop, imageWidth, imageHeight)];
-        
-        [UIView animateWithDuration:0.55 animations:^{          
-            [self.imageCurrent setFrame:CGRectMake(imageLeft, imageTop, imageWidth, imageHeight)];
-            [self.imageOld setFrame:CGRectMake(screenWidth, imageTop, imageWidth, imageHeight)];
-        }];
-    }
-    self.ImagePageControl.currentPage = next;
-
-}
 
 /**
  * This only works on real devices.

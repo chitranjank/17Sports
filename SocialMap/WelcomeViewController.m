@@ -53,7 +53,7 @@
     [(MainViewController*)self.parentViewController switchToList];
 }
 
--(IBAction)onClick:(id)sender {
+-(void)onClick:(id)sender {
     DLog(@"tag=%d", ((UIButton*)sender).tag);
 
     DetailViewController *detailVC = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailViewController"];

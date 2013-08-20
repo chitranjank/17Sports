@@ -20,12 +20,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *btnAddress;
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageCurrent;
-@property (weak, nonatomic) IBOutlet UIImageView *imageOld;
 
-@property (nonatomic, strong) IBOutlet UISwipeGestureRecognizer *swipeLeftRecognizer;
-@property (nonatomic, strong) IBOutlet UISwipeGestureRecognizer *swipeRightRecognizer;
-@property (nonatomic, strong) IBOutlet UIPageControl *ImagePageControl;
-
-- (IBAction)handleSwipeFrom:(UISwipeGestureRecognizer *)recognizer;
 
 @end
