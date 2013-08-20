@@ -10,15 +10,13 @@
 
 @interface WelcomeViewController : UIViewController
 
-@property (nonatomic, strong) IBOutlet UISwipeGestureRecognizer *swipeLeftRecognizer;
-@property (nonatomic, strong) IBOutlet UISwipeGestureRecognizer *swipeRightRecognizer;
-@property (nonatomic, strong) IBOutlet UIPageControl *ImagePageControl;
-@property (weak, nonatomic) IBOutlet UIImageView *imageCurrent;
-@property (weak, nonatomic) IBOutlet UIImageView *imageOld;
 
-- (IBAction)handleSwipeFrom:(UISwipeGestureRecognizer *)recognizer;
+@property (weak, nonatomic) IBOutlet UIView *containerView;
+
 
 -(IBAction)shortcuts:(id)sender;
--(IBAction)recommends:(id)sender;
+
+
+
 
 @end

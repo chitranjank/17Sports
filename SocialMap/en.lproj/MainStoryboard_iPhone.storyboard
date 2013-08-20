@@ -272,55 +272,20 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="recommends.jpg" id="5kv-6m-zTS">
-                                <rect key="frame" x="0.0" y="20" width="320" height="100"/>
+                            <view contentMode="scaleToFill" id="8mx-6w-3hc" userLabel="Container View">
+                                <rect key="frame" x="0.0" y="23" width="320" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" id="QLd-eC-gTM">
-                                <rect key="frame" x="141" y="8" width="38" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="pageIndicatorTintColor" red="1" green="0.58096108160000004" blue="0.31428671219999998" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="currentPageIndicatorTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            </pageControl>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="gaU-JV-pYe">
-                                <rect key="frame" x="10" y="29" width="301" height="84"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Recommends">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="recommends:" destination="rVg-w7-J45" eventType="touchUpInside" id="81z-DM-aNg"/>
-                                </connections>
-                            </button>
+                                <color key="backgroundColor" red="1" green="0.58096108160000004" blue="0.31428671219999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="TQN-CP-W8F" appends="YES" id="JH6-tZ-HYt"/>
-                        </connections>
                     </view>
                     <connections>
-                        <outlet property="ImagePageControl" destination="QLd-eC-gTM" id="mg9-7K-CcJ"/>
-                        <outlet property="swipeLeftRecognizer" destination="TQN-CP-W8F" id="iVV-BP-STr"/>
-                        <outlet property="swipeRightRecognizer" destination="lDX-4K-cjB" id="tjf-Z6-LQV"/>
+                        <outlet property="containerView" destination="8mx-6w-3hc" id="9hh-rJ-VAZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CDD-fn-cVd" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="left" id="TQN-CP-W8F" userLabel="Swipe Gesture Recognizer - left">
-                    <connections>
-                        <action selector="handleSwipeFrom:" destination="rVg-w7-J45" id="hfH-Af-qNy"/>
-                    </connections>
-                </swipeGestureRecognizer>
-                <swipeGestureRecognizer direction="right" id="lDX-4K-cjB" userLabel="Swipe Gesture Recognizer- right">
-                    <connections>
-                        <action selector="handleSwipeFrom:" destination="rVg-w7-J45" id="d0p-5U-6rF"/>
-                    </connections>
-                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="112" y="-1265"/>
         </scene>
@@ -522,6 +487,54 @@
             </objects>
             <point key="canvasLocation" x="1531" y="-627"/>
         </scene>
+        <!--SwipeVC-->
+        <scene sceneID="YpD-Yo-228">
+            <objects>
+                <viewController storyboardIdentifier="SwipeVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Vhf-VD-FS5" customClass="SwipeVC" sceneMemberID="viewController">
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="uid-E3-HwR">
+                        <rect key="frame" x="0.0" y="20" width="320" height="100"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="G25-2t-tnW" userLabel="Image View - current">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="recommends.jpg" id="fmc-QK-hkS" userLabel="Image View - old">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" id="j14-nT-Z1a">
+                                <rect key="frame" x="141" y="-7" width="38" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="pageIndicatorTintColor" red="1" green="0.58096108160000004" blue="0.31428671219999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </pageControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="ImagePageControl" destination="j14-nT-Z1a" id="YJo-nh-75X"/>
+                        <outlet property="imageCurrent" destination="G25-2t-tnW" id="KNM-Jo-pIV"/>
+                        <outlet property="imageOld" destination="fmc-QK-hkS" id="bfg-2P-mxx"/>
+                        <outlet property="swipeLeftRecognizer" destination="kxP-bM-Hdj" id="kUD-xB-aOu"/>
+                        <outlet property="swipeRightRecognizer" destination="EvO-Dy-OTr" id="dGC-0M-pDx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5oT-wj-Uzs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="left" id="kxP-bM-Hdj" userLabel="Swipe Gesture Recognizer - left">
+                    <connections>
+                        <action selector="handleSwipeFrom:" destination="Vhf-VD-FS5" id="SqB-Ia-EDE"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="EvO-Dy-OTr" userLabel="Swipe Gesture Recognizer - right">
+                    <connections>
+                        <action selector="handleSwipeFrom:" destination="Vhf-VD-FS5" id="MQn-CG-EE8"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="507" y="-1289"/>
+        </scene>
     </scenes>
     <resources>
         <image name="3 游泳跳水馆.jpg" width="500" height="333"/>
@@ -533,6 +546,75 @@
         <image name="swimming.jpg" width="190" height="190"/>
         <image name="tennis.jpg" width="190" height="190"/>
     </resources>
+    <classes>
+        <class className="DetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="callPhone:"/>
+                <relationship kind="action" name="handleSwipeFrom:" candidateClass="UISwipeGestureRecognizer"/>
+                <relationship kind="outlet" name="ImagePageControl" candidateClass="UIPageControl"/>
+                <relationship kind="outlet" name="btnAddress" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnPhone" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="imageCurrent" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="imageOld" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="labelDescription" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="labelName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="labelPrice" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="swipeLeftRecognizer" candidateClass="UISwipeGestureRecognizer"/>
+                <relationship kind="outlet" name="swipeRightRecognizer" candidateClass="UISwipeGestureRecognizer"/>
+            </relationships>
+        </class>
+        <class className="MainViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="switchToWelcomePage:"/>
+                <relationship kind="action" name="toogleListAndMap"/>
+                <relationship kind="outlet" name="btnToogleListAndMap" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="btnWelcomePage" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="container" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="MapViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="map" candidateClass="MKMapView"/>
+            </relationships>
+        </class>
+        <class className="MerchantMapViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MerchantMapViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="map" candidateClass="MKMapView"/>
+            </relationships>
+        </class>
+        <class className="SearchResultViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SearchResultViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tView" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="SwipeVC" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SwipeVC.h"/>
+            <relationships>
+                <relationship kind="action" name="handleSwipeFrom:" candidateClass="UISwipeGestureRecognizer"/>
+                <relationship kind="action" name="recommends:"/>
+                <relationship kind="outlet" name="ImagePageControl" candidateClass="UIPageControl"/>
+                <relationship kind="outlet" name="imageCurrent" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="imageOld" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="swipeLeftRecognizer" candidateClass="UISwipeGestureRecognizer"/>
+                <relationship kind="outlet" name="swipeRightRecognizer" candidateClass="UISwipeGestureRecognizer"/>
+            </relationships>
+        </class>
+        <class className="TabBarVC" superclassName="UITabBarController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TabBarVC.h"/>
+        </class>
+        <class className="WelcomeViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WelcomeViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="shortcuts:"/>
+                <relationship kind="outlet" name="containerView" candidateClass="UIView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

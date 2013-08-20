@@ -138,6 +138,7 @@
 		8F681E6D17C3366B004B91E5 /* equestrainism.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8F681E6A17C3366B004B91E5 /* equestrainism.jpg */; };
 		8F681E6E17C3366B004B91E5 /* golf.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8F681E6B17C3366B004B91E5 /* golf.jpg */; };
 		8F681E7017C33755004B91E5 /* recommends.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8F681E6F17C33755004B91E5 /* recommends.jpg */; };
+		8F681E7317C34081004B91E5 /* SwipeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F681E7217C34081004B91E5 /* SwipeVC.m */; };
 		8F6CF7A7179AD670005A4590 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F6CF7A6179AD670005A4590 /* SenTestingKit.framework */; };
 		8F6CF7A8179AD670005A4590 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FDE58D0170EAB1F0038FA78 /* UIKit.framework */; };
 		8F6CF7A9179AD670005A4590 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FDE58D2170EAB1F0038FA78 /* Foundation.framework */; };
@@ -302,6 +303,8 @@
 		8F681E6A17C3366B004B91E5 /* equestrainism.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = equestrainism.jpg; sourceTree = "<group>"; };
 		8F681E6B17C3366B004B91E5 /* golf.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = golf.jpg; sourceTree = "<group>"; };
 		8F681E6F17C33755004B91E5 /* recommends.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = recommends.jpg; sourceTree = "<group>"; };
+		8F681E7117C34081004B91E5 /* SwipeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwipeVC.h; sourceTree = "<group>"; };
+		8F681E7217C34081004B91E5 /* SwipeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwipeVC.m; sourceTree = "<group>"; };
 		8F6CF7A5179AD670005A4590 /* 17sportsTest.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 17sportsTest.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F6CF7A6179AD670005A4590 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		8F6CF7AC179AD670005A4590 /* 17sportsTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "17sportsTest-Info.plist"; sourceTree = "<group>"; };
@@ -583,6 +586,8 @@
 				8F2073A217C1E842000B0D2D /* MerchantData.m */,
 				8F681E5317C31C81004B91E5 /* TabBarVC.h */,
 				8F681E5417C31C81004B91E5 /* TabBarVC.m */,
+				8F681E7117C34081004B91E5 /* SwipeVC.h */,
+				8F681E7217C34081004B91E5 /* SwipeVC.m */,
 			);
 			name = 17sports;
 			path = SocialMap;
@@ -863,6 +868,7 @@
 				8F20739E17C1E3D6000B0D2D /* Distance.m in Sources */,
 				8F2073A317C1E842000B0D2D /* MerchantData.m in Sources */,
 				8F681E5517C31C81004B91E5 /* TabBarVC.m in Sources */,
+				8F681E7317C34081004B91E5 /* SwipeVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
