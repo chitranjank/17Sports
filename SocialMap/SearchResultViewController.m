@@ -232,7 +232,7 @@
 	label = [[UILabel alloc] initWithFrame:rect];
 	label.tag = TIME_TAG;
 	label.font = [UIFont systemFontOfSize:MAIN_FONT_SIZE];
-	label.textAlignment = UITextAlignmentRight;
+	label.textAlignment = UITextAlignmentRight;    // NSTextAlignmentRight
 	[cell.contentView addSubview:label];
 	label.highlightedTextColor = [UIColor yellowColor];
     

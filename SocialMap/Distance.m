@@ -12,12 +12,26 @@
 @implementation Distance
 
 +(NSArray*) sortMerchantsByDistance:(NSArray*)merchants myCoord:(CLLocationCoordinate2D)myCoord {
-    
+    return [merchants sortedArrayUsingComparator: ^(NSDictionary* obj1, NSDictionary* obj2) {
+        CLLocationCoordinate2D coord1 = CLLocationCoordinate2DMake([obj1[@"latitude"] doubleValue], [obj1[@"longitude"] doubleValue]);
+        double dist1 = [Distance calculateDistanceOfCoord1:myCoord Coord2:coord1];
+        
+        CLLocationCoordinate2D coord2 = CLLocationCoordinate2DMake([obj2[@"latitude"] doubleValue], [obj2[@"longitude"] doubleValue]);
+        double dist2 = [Distance calculateDistanceOfCoord1:myCoord Coord2:coord2];
+
+        
+        if (dist1 > dist2) {
+            return (NSComparisonResult)NSOrderedDescending;
+        }
+        
+        if (dist1 < dist2) {
+            return (NSComparisonResult)NSOrderedAscending;
+        }
+        return (NSComparisonResult)NSOrderedSame;
+    }];
 }
 
-+(double) calculateDistanceOfCoord1:(CLLocationCoordinate2D)coord1 Coord2:(CLLocationCoordinate2D)coord2{
-    //DLog(@"coord1=%f,%f  coord2=%f,%f", coord1.latitude, coord1.longitude, coord2.latitude, coord2.longitude);
-    
++(double) calculateDistanceOfCoord1:(CLLocationCoordinate2D)coord1 Coord2:(CLLocationCoordinate2D)coord2{  
     const double EARTH_RADIUS = 6378.137;
     double radLat1 = [self rad:coord1.latitude];
     double radLat2 = [self rad:coord2.latitude];

@@ -36,4 +36,18 @@
     
 }
 
+-(void) testCompareMerchantByDistance {
+    CLLocationCoordinate2D myCoord = CLLocationCoordinate2DMake(71.3, 50.4);
+
+    NSDictionary *nearest = @{@"id":@"101", @"latitude":@71.1, @"longitude":@50.2};
+    NSDictionary *middle = @{@"id":@"103", @"latitude":@72.1, @"longitude":@49.2};
+    NSDictionary *farthest = @{@"id":@"102",@"latitude":@75.3, @"longitude":@48.4};
+    NSArray *merchants = @[middle, farthest, nearest];
+    
+    NSArray *result = [Distance sortMerchantsByDistance:merchants myCoord:myCoord];
+    STAssertEquals(nearest, result[0], nil);
+    STAssertEquals(middle, result[1], nil);
+    STAssertEquals(farthest, result[2], nil);
+}
+
 @end

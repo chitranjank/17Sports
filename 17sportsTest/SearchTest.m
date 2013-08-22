@@ -48,8 +48,8 @@
      }
      ];
     NSArray *result = [MerchantData filterMerchants:arr byName:@"杨柳青"];
-    DLog(@"%@", result);
     
     STAssertEquals(1U, [result count], nil);
+    STAssertEqualObjects(@68, result[0][@"id"], nil);
 }
 @end
