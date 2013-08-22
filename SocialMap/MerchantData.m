@@ -18,8 +18,12 @@
     return all;
 }
 
-+(NSArray*) findMerchantsByName:(NSString*)name {
-//    [[MerchantData allMerchants] filterUsingPredicate:[NSPredicate predicateWithFormat:<#(NSString *), ...#>;
++(NSArray*) filterMerchants:(NSArray*)merchants byName:(NSString*)name {
+    NSString *attributeName = @"name";
+    NSString *attributeValue = STR(@"*%@*", name);
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K like[c] %@",
+                              attributeName, attributeValue];
+    return [merchants filteredArrayUsingPredicate:predicate];
 }
 
 +(NSArray*) allMerchantsOfGolf {

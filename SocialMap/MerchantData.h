@@ -14,8 +14,7 @@
 +(NSArray*) allMerchantsOfGolf;
 +(NSArray*) allMerchantsOfEquestrianism;
 +(NSArray*) allMerchantsOfSwimming;
-+(NSArray*) findMerchantsByName:(NSString*)name;
-
++(NSArray*) filterMerchants:(NSArray*)merchants byName:(NSString*)name;
 
 
 @end

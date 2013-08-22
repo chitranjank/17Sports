@@ -128,6 +128,7 @@
 		8F295DA1176627FD00EE546A /* Tianjin, China.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 8F295DA0176627FD00EE546A /* Tianjin, China.gpx */; };
 		8F2F5A831764245D00F296EA /* 6-12AM.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F2F5A821764245D00F296EA /* 6-12AM.png */; };
 		8F537F3317C5AB6500C8EEBE /* SearchTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F537F3217C5AB6500C8EEBE /* SearchTest.m */; };
+		8F537F3517C5B21D00C8EEBE /* MerchantData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2073A217C1E842000B0D2D /* MerchantData.m */; };
 		8F681E5517C31C81004B91E5 /* TabBarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F681E5417C31C81004B91E5 /* TabBarVC.m */; };
 		8F681E5817C32DAA004B91E5 /* ICON@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F681E5717C32DAA004B91E5 /* ICON@2x.png */; };
 		8F681E5A17C32EEA004B91E5 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F681E5917C32EEA004B91E5 /* Default@2x.png */; };
@@ -855,6 +856,7 @@
 				8F6CF7B8179AD766005A4590 /* SearchResultViewController.m in Sources */,
 				8F20739F17C1E3D6000B0D2D /* Distance.m in Sources */,
 				8F537F3317C5AB6500C8EEBE /* SearchTest.m in Sources */,
+				8F537F3517C5B21D00C8EEBE /* MerchantData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
