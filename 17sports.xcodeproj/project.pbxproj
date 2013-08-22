@@ -127,6 +127,7 @@
 		8F295D9F176626DB00EE546A /* Beijing, China.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 8F295D9E176626DB00EE546A /* Beijing, China.gpx */; };
 		8F295DA1176627FD00EE546A /* Tianjin, China.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 8F295DA0176627FD00EE546A /* Tianjin, China.gpx */; };
 		8F2F5A831764245D00F296EA /* 6-12AM.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F2F5A821764245D00F296EA /* 6-12AM.png */; };
+		8F537F3317C5AB6500C8EEBE /* SearchTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F537F3217C5AB6500C8EEBE /* SearchTest.m */; };
 		8F681E5517C31C81004B91E5 /* TabBarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F681E5417C31C81004B91E5 /* TabBarVC.m */; };
 		8F681E5817C32DAA004B91E5 /* ICON@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F681E5717C32DAA004B91E5 /* ICON@2x.png */; };
 		8F681E5A17C32EEA004B91E5 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F681E5917C32EEA004B91E5 /* Default@2x.png */; };
@@ -291,6 +292,8 @@
 		8F295D9E176626DB00EE546A /* Beijing, China.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "Beijing, China.gpx"; path = "../Beijing, China.gpx"; sourceTree = "<group>"; };
 		8F295DA0176627FD00EE546A /* Tianjin, China.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "Tianjin, China.gpx"; path = "../Tianjin, China.gpx"; sourceTree = "<group>"; };
 		8F2F5A821764245D00F296EA /* 6-12AM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "6-12AM.png"; sourceTree = "<group>"; };
+		8F537F3117C5AB6500C8EEBE /* SearchTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchTest.h; sourceTree = "<group>"; };
+		8F537F3217C5AB6500C8EEBE /* SearchTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchTest.m; sourceTree = "<group>"; };
 		8F681E5317C31C81004B91E5 /* TabBarVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarVC.h; sourceTree = "<group>"; };
 		8F681E5417C31C81004B91E5 /* TabBarVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarVC.m; sourceTree = "<group>"; };
 		8F681E5717C32DAA004B91E5 /* ICON@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ICON@2x.png"; path = "../ICON@2x.png"; sourceTree = "<group>"; };
@@ -511,6 +514,8 @@
 				8F6CF7B0179AD670005A4590 /* DistanceTest.h */,
 				8F6CF7B1179AD670005A4590 /* DistanceTest.m */,
 				8F6CF7AB179AD670005A4590 /* Supporting Files */,
+				8F537F3117C5AB6500C8EEBE /* SearchTest.h */,
+				8F537F3217C5AB6500C8EEBE /* SearchTest.m */,
 			);
 			path = 17sportsTest;
 			sourceTree = "<group>";
@@ -849,6 +854,7 @@
 				8F6CF7B2179AD670005A4590 /* DistanceTest.m in Sources */,
 				8F6CF7B8179AD766005A4590 /* SearchResultViewController.m in Sources */,
 				8F20739F17C1E3D6000B0D2D /* Distance.m in Sources */,
+				8F537F3317C5AB6500C8EEBE /* SearchTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

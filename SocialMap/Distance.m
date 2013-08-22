@@ -11,6 +11,9 @@
 
 @implementation Distance
 
++(NSArray*) sortMerchantsByDistance:(NSArray*)merchants myCoord:(CLLocationCoordinate2D)myCoord {
+    
+}
 
 +(double) calculateDistanceOfCoord1:(CLLocationCoordinate2D)coord1 Coord2:(CLLocationCoordinate2D)coord2{
     //DLog(@"coord1=%f,%f  coord2=%f,%f", coord1.latitude, coord1.longitude, coord2.latitude, coord2.longitude);

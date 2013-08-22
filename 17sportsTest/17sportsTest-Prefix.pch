@@ -7,13 +7,7 @@
     #import <Foundation/Foundation.h>
 #endif
 
-
-#ifdef DEBUG
-#   define DLog(fmt, ...) NSLog((@"%s <#%d> " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
-#else
-#   define DLog(...)
-#endif
-
-#define STR(format...)     ([NSString stringWithFormat:format])
+#import "17sports-Prefix.pch"
 
 #define STAssertEqualStr(expect, actual, msg, ...) STAssertTrue([expect isEqualToString:actual], @"expect=<%@>, but actual=<%@>. " msg, expect, actual, ##__VA_ARGS__);
+

@@ -18,6 +18,9 @@
     return all;
 }
 
++(NSArray*) findMerchantsByName:(NSString*)name {
+//    [[MerchantData allMerchants] filterUsingPredicate:[NSPredicate predicateWithFormat:<#(NSString *), ...#>;
+}
 
 +(NSArray*) allMerchantsOfGolf {
     return [NSMutableArray arrayWithArray:@[

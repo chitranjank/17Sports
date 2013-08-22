@@ -21,9 +21,6 @@
 
 #define STR(format...)     ([NSString stringWithFormat:format])
 
-#define STAssertEqualStr(expect, actual, msg, ...) STAssertTrue([expect isEqualToString:actual], @"expect=<%@>, but actual=<%@>. " msg, expect, actual, ##__VA_ARGS__);
-
-
 #define printCoordinate(msg, coordinate) DLog(@"%@ (%f, %f)", msg, coordinate.latitude, coordinate.longitude);
 
 #define SWIMMING 0

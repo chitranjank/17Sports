@@ -13,6 +13,7 @@
 @interface Distance : NSObject
 
 +(double) calculateDistanceOfCoord1:(CLLocationCoordinate2D)coord1 Coord2:(CLLocationCoordinate2D)coord2;
++(NSArray*) sortMerchantsByDistance:(NSArray*)merchants myCoord:(CLLocationCoordinate2D)myCoord;
 
 
 @end
