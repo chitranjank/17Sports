@@ -42,6 +42,9 @@
     swipeVC.images = @[@"recommends.jpg", @"100.jpg", @"80.jpg"];
 }
 
+-(void) viewWillAppear:(BOOL)animated {
+    self.view.frame = self.parentViewController.view.bounds;
+}
 
 - (void)didReceiveMemoryWarning
 {

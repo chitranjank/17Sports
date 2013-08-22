@@ -47,6 +47,8 @@
 
 
 - (void)viewWillAppear:(BOOL)animated {
+    self.view.frame = self.parentViewController.view.bounds;
+    
     locationManager = ((MainViewController*)(self.parentViewController)).locationManager;
     locationManager.delegate = (id)self;
     [locationManager startUpdatingLocation];

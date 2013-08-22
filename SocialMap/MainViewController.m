@@ -53,6 +53,7 @@
 	// Do any additional setup after loading the view.
     
     [self createSubViews];
+    [self customizeTitleView];
     
     [self startLocating];
     
@@ -60,6 +61,11 @@
     self.searchDisplayController.searchBar.hidden = YES;
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(tabBarItemChanged:) name:TAB_BAR_ITEM_CHANGED object:nil];
+}
+
+-(void) customizeTitleView {
+    UIImage *logo = [UIImage imageNamed:@"logo.png"];
+    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:logo];
 }
 
 -(void) tabBarItemChanged:(id)obj {
