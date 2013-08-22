@@ -50,13 +50,14 @@
     locationManager = ((MainViewController*)(self.parentViewController)).locationManager;
     locationManager.delegate = (id)self;
     [locationManager startUpdatingLocation];
-
-
-    [self initTableObjects];
 }
 
--(void) initTableObjects {
+-(void) refreshTableObjects {
     merchants = ((MainViewController*)(self.parentViewController)).merchants;
+    CLLocationCoordinate2D myCoord = locationManager.location.coordinate;
+    
+    merchants = [Distance sortMerchantsByDistance:merchants myCoord:myCoord];
+    
     DLog(@"%d", merchants.count);
     if (merchants.count > 0) {
         [(UITableView*)self.view reloadData];
@@ -77,7 +78,9 @@
  * for iOS 6+
  */
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
-    printCoordinate(@"list view", ((CLLocation*)locations[0]).coordinate);
+    CLLocationCoordinate2D myCoord = ((CLLocation*)locations[0]).coordinate;
+    printCoordinate(@"list view", myCoord);
+    [self refreshTableObjects];
 }
 
 - (void)didReceiveMemoryWarning
@@ -127,6 +130,8 @@
         CLLocationCoordinate2D merchantCoord = CLLocationCoordinate2DMake([dict[@"latitude"] doubleValue], [dict[@"longitude"] doubleValue]);
         
         cell.detailTextLabel.text = STR(@"距离%.2f公里", [Distance calculateDistanceOfCoord1:myCoord Coord2:merchantCoord]);
+        // TODO should not caculate distance every time
+//        cell.detailTextLabel.text = STR(@"距离%.2f公里", [dict[@"caculatedDistance"] doubleValue]);
         cell.imageView.image = [UIImage imageNamed:dict[@"images"][0]];
     } else {
         //cell.textLabel.text = @"Map here";

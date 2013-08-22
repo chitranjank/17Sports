@@ -12,13 +12,14 @@
 @implementation Distance
 
 +(NSArray*) sortMerchantsByDistance:(NSArray*)merchants myCoord:(CLLocationCoordinate2D)myCoord {
-    return [merchants sortedArrayUsingComparator: ^(NSDictionary* obj1, NSDictionary* obj2) {
+    return [merchants sortedArrayUsingComparator: ^(NSMutableDictionary* obj1, NSMutableDictionary* obj2) {
         CLLocationCoordinate2D coord1 = CLLocationCoordinate2DMake([obj1[@"latitude"] doubleValue], [obj1[@"longitude"] doubleValue]);
         double dist1 = [Distance calculateDistanceOfCoord1:myCoord Coord2:coord1];
+//        obj1[@"caculatedDistance"] = [NSNumber numberWithDouble:dist1];
         
         CLLocationCoordinate2D coord2 = CLLocationCoordinate2DMake([obj2[@"latitude"] doubleValue], [obj2[@"longitude"] doubleValue]);
         double dist2 = [Distance calculateDistanceOfCoord1:myCoord Coord2:coord2];
-
+//        obj2[@"caculatedDistance"] = [NSNumber numberWithDouble:dist2];
         
         if (dist1 > dist2) {
             return (NSComparisonResult)NSOrderedDescending;
