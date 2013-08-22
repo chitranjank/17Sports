@@ -14,7 +14,6 @@
 #import "MerchantData.h"
 
 @interface WelcomeViewController () {
-    CLLocationManager *locationManager;
     NSArray *imagesOfMerchant;
 }
 @end

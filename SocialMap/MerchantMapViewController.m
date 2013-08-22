@@ -9,6 +9,7 @@
 #import "MerchantMapViewController.h"
 #import "Anno.h"
 #import "Distance.h"
+#import "AppDelegate.h"
 
 @interface MerchantMapViewController () {
     CLLocationManager* locationManager;
@@ -23,20 +24,12 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    [self startLocating];
-    
     [self.map setShowsUserLocation:YES];
     
-    DLog(@"locating is %d, auth status=%d", [CLLocationManager locationServicesEnabled],  [CLLocationManager authorizationStatus]);
+    AppDelegate *app = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    locationManager = app.locationManager;
 }
 
-
--(void) startLocating {
-    locationManager = [[CLLocationManager alloc] init];
-    locationManager.delegate = (id)self;//设置代理
-    locationManager.desiredAccuracy = kCLLocationAccuracyBest;//指定需要的精度级别
-    locationManager.distanceFilter = 1000.0f;//设置距离筛选器
-}
 
 - (void)viewWillAppear:(BOOL)animated {
     locationManager.delegate = (id)self;

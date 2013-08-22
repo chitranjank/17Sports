@@ -11,5 +11,6 @@
 
 @interface SearchResultViewController : UITableViewController
 
+-(void) refreshTableObjects;
 
 @end

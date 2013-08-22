@@ -18,13 +18,21 @@
         UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
         splitViewController.delegate = (id)navigationController.topViewController;
     }
+    [self startLocating];
     return YES;
 }
-							
+
+-(void) startLocating {
+    self.locationManager = [[CLLocationManager alloc] init];
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;//指定需要的精度级别
+    self.locationManager.distanceFilter = 1000.0f;//设置距离筛选器
+}
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+    [self.locationManager stopUpdatingLocation];
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
@@ -41,6 +49,7 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    [self.locationManager startUpdatingLocation];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application

@@ -11,7 +11,7 @@
 #import "MainViewController.h"
 #include "Distance.h"
 #include "MerchantData.h"
-
+#include "AppDelegate.h"
 
 @interface SearchResultViewController () {
     NSArray *merchants;
@@ -43,28 +43,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    AppDelegate *app = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    locationManager = app.locationManager;
 }
 
 
 - (void)viewWillAppear:(BOOL)animated {
     self.view.frame = self.parentViewController.view.bounds;
     
-    locationManager = ((MainViewController*)(self.parentViewController)).locationManager;
-    locationManager.delegate = (id)self;
     [locationManager startUpdatingLocation];
+    locationManager.delegate = (id)self;
 }
 
--(void) refreshTableObjects {
-    merchants = ((MainViewController*)(self.parentViewController)).merchants;
-    CLLocationCoordinate2D myCoord = locationManager.location.coordinate;
-    
-    merchants = [Distance sortMerchantsByDistance:merchants myCoord:myCoord];
-    
-    [(UITableView*)self.view reloadData];
-    
-    //NSIndexPath *indexPath01 = [NSIndexPath indexPathForRow:0 inSection:1];
-    //[self.tableView insertRowsAtIndexPaths:@[indexPath01] withRowAnimation:UITableViewRowAnimationAutomatic];
-}
 
 /**
  * for iOS 5-
@@ -80,6 +71,18 @@
     CLLocationCoordinate2D myCoord = ((CLLocation*)locations[0]).coordinate;
     printCoordinate(@"list view", myCoord);
     [self refreshTableObjects];
+}
+
+-(void) refreshTableObjects {
+    merchants = ((MainViewController*)(self.parentViewController)).merchants;
+    CLLocationCoordinate2D myCoord = locationManager.location.coordinate;
+    
+    merchants = [Distance sortMerchantsByDistance:merchants myCoord:myCoord];
+    
+    [(UITableView*)self.view reloadData];
+    
+    //NSIndexPath *indexPath01 = [NSIndexPath indexPathForRow:0 inSection:1];
+    //[self.tableView insertRowsAtIndexPaths:@[indexPath01] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
 - (void)didReceiveMemoryWarning

@@ -12,6 +12,8 @@
 #import "MainViewController.h"
 #import "Distance.h"
 #import "MerchantData.h"
+#include "AppDelegate.h"
+
 
 @interface MapViewController () {
     NSArray *merchants;
@@ -24,17 +26,19 @@
 
 -(void) viewDidLoad {
     [super viewDidLoad];
+    
+    [self.map setShowsUserLocation:YES];
+    
+    AppDelegate *app = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    locationManager = app.locationManager;
 }
 
 
 - (void)viewWillAppear:(BOOL)animated {
     self.view.frame = self.parentViewController.view.bounds;
     
-    locationManager = ((MainViewController*)(self.parentViewController)).locationManager;
     locationManager.delegate = (id)self;
     [locationManager startUpdatingLocation];
-
-    [self.map setShowsUserLocation:YES];
 }
 
 /**

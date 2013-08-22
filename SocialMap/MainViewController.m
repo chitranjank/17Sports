@@ -12,10 +12,9 @@
 #import "MapViewController.h"
 #import "WelcomeViewController.h"
 #import "MerchantData.h"
+#import "AppDelegate.h"
 
 @interface MainViewController () {
-    UIViewController *listView;
-    UIImageView *v1, *v2;
     MapViewController *mapVC;
     SearchResultViewController *listVC;
     WelcomeViewController *welcomeVC;
@@ -54,8 +53,6 @@
     
     [self createSubViews];
     [self customizeTitleView];
-    
-    [self startLocating];
     
     [self.navigationController.navigationBar setTintColor:[UIColor blackColor]];
     self.searchDisplayController.searchBar.hidden = YES;
@@ -98,19 +95,8 @@
 
 
 -(void) viewWillAppear:(BOOL)animated {
-    [self.locationManager startUpdatingLocation];
 }
 
--(void) startLocating {
-    self.locationManager = [[CLLocationManager alloc] init];
-    self.locationManager.delegate = (id)self;//设置代理
-    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;//指定需要的精度级别
-    self.locationManager.distanceFilter = 1000.0f;//设置距离筛选器
-}
-
-- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
-    printCoordinate(@"list view", ((CLLocation*)locations[0]).coordinate);
-}
 
 - (void)didReceiveMemoryWarning
 {
@@ -183,7 +169,9 @@
     DLog(@"%d =%@=", self.merchants.count, searchText);
     if (isShowingWelcome) {
         [self switchToList];
-    }  
+    } else if (isShowingListNotMap) {
+        [listVC refreshTableObjects];
+    }
 }
 
 - (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
