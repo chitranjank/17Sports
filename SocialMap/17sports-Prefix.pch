@@ -29,3 +29,8 @@
 #define BODYBUILDING 3
 #define TENNIS 4
 #define BILLIARDS 5
+
+#define SEARCH @"Search"
+#define MERCHANT @"merchant"
+#define SEARCH_TAB_TAG 100
+#define TAB_BAR_ITEM_CHANGED @"tab_bar_item_changed"

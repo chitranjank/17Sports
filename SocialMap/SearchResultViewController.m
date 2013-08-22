@@ -58,10 +58,7 @@
     
     merchants = [Distance sortMerchantsByDistance:merchants myCoord:myCoord];
     
-    DLog(@"%d", merchants.count);
-    if (merchants.count > 0) {
-        [(UITableView*)self.view reloadData];
-    }
+    [(UITableView*)self.view reloadData];
     
     //NSIndexPath *indexPath01 = [NSIndexPath indexPathForRow:0 inSection:1];
     //[self.tableView insertRowsAtIndexPaths:@[indexPath01] withRowAnimation:UITableViewRowAnimationAutomatic];

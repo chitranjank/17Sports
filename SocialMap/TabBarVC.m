@@ -38,8 +38,8 @@
 
 #pragma mark - tabbar delegates
 - (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {
-    DLog(@"%d", [tabBar.items indexOfObject:item]);
-
+    DLog(@"%d %@ %d", [tabBar.items indexOfObject:item], item.title, item.tag);
+    [[NSNotificationCenter defaultCenter] postNotificationName:TAB_BAR_ITEM_CHANGED object:self];
 }
 
 @end

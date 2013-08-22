@@ -24,16 +24,8 @@
 
 -(void) viewDidLoad {  
     [super viewDidLoad];
-    
-    [self initTableObjects];
 }
 
-
--(void) initTableObjects {
-    if (!merchants) {
-        merchants = [MerchantData allMerchants];
-    }
-}
 
 - (void)viewWillAppear:(BOOL)animated {
     locationManager = ((MainViewController*)(self.parentViewController)).locationManager;
@@ -55,12 +47,19 @@
  */
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
     printCoordinate(@"map view", ((CLLocation*)locations[0]).coordinate);
+    merchants = ((MainViewController*)(self.parentViewController)).merchants;
+    [self removeAllAnnotations];
     [self centerMap];
-    [self addAnnos];
+    [self addAnnotations];
+
 }
 
 
--(void) addAnnos {
+- (void)removeAllAnnotations {
+    [self.map removeAnnotations:self.map.annotations];
+}
+
+-(void) addAnnotations {
     for (NSDictionary *merchant in merchants) {
         Anno *anno = [[Anno alloc] init];
         NSNumber *lat = ((NSNumber*)merchant[@"latitude"]);

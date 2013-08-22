@@ -11,7 +11,7 @@
 #import "DetailViewController.h"
 #import "MapViewController.h"
 #import "WelcomeViewController.h"
-
+#import "MerchantData.h"
 
 @interface MainViewController () {
     UIViewController *listView;
@@ -58,6 +58,14 @@
     
     [self.navigationController.navigationBar setTintColor:[UIColor blackColor]];
     self.searchDisplayController.searchBar.hidden = YES;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(tabBarItemChanged:) name:TAB_BAR_ITEM_CHANGED object:nil];
+}
+
+-(void) tabBarItemChanged:(id)obj {
+    DLog(@"%@", obj);
+    self.searchDisplayController.searchBar.hidden = NO;
+    [self.searchDisplayController setActive:YES];
 }
 
 -(void) createSubViews {
@@ -163,12 +171,13 @@
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
     DLog(@"%@", searchBar);
+    NSString *searchText = searchBar.text;
     [self.searchDisplayController setActive:NO];
+    self.merchants = [MerchantData filterMerchants:[MerchantData allMerchants] byName:searchText];
+    DLog(@"%d =%@=", self.merchants.count, searchText);
     if (isShowingWelcome) {
         [self switchToList];
-    }
-
-    
+    }  
 }
 
 - (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
@@ -181,24 +190,27 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 1;
+    // TODO here's the search text hint
+    return 3;
+//    return searchedMerchants.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
 
+    // TODO here's the search text hint
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
-    cell.textLabel.text = @"天津";
+    cell.textLabel.text = @"曾经搜索的词";
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    DLog(@"Choosed");
-    [self.searchDisplayController setActive:NO];
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // TODO here's the search text hint
     
-    if (isShowingWelcome) {
-        [self switchToList];
-    }
-
+//    DetailViewController *detailVC = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailViewController"];
+//    
+//    [[NSUserDefaults standardUserDefaults] setObject:searchedMerchants[indexPath.row] forKey:MERCHANT];
+//    [self.parentViewController.navigationController pushViewController:detailVC animated:YES];
 }
 @end
