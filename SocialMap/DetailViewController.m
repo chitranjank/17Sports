@@ -42,7 +42,6 @@
 	// Do any additional setup after loading the view, typically from a nib.
     [self configureView];
     ((UIScrollView*)(self.view)).contentSize = CGSizeMake(320, 460);
-    ((UIScrollView*)(self.view)).backgroundColor = [UIColor blackColor];
 }
 
 - (void)configureView

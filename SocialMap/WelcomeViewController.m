@@ -39,6 +39,8 @@
     [self.containerView addSubview:swipeVC.view];
     swipeVC.delegate = (id)self;
     swipeVC.images = @[@"recommends.jpg", @"100.jpg", @"80.jpg"];
+    
+    ((UIScrollView*)(self.view)).contentSize = CGSizeMake(320, 460);
 }
 
 -(void) viewWillAppear:(BOOL)animated {
