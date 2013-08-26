@@ -5,11 +5,11 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
+        <!--Navigation Controller - 主页-->
         <scene sceneID="11">
             <objects>
                 <navigationController id="3" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="search" id="B7B-Hk-GL9"/>
+                    <tabBarItem key="tabBarItem" title="主页" image="tab-home.png" id="B7B-Hk-GL9"/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="4">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -42,7 +42,7 @@
             </objects>
             <point key="canvasLocation" x="-1077" y="-184"/>
         </scene>
-        <!--View Controller-->
+        <!--View Controller - 搜索-->
         <scene sceneID="Udg-Xm-Hst">
             <objects>
                 <viewController id="2LA-ZJ-Non" sceneMemberID="viewController">
@@ -60,13 +60,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="Dje-r9-XeC"/>
+                    <tabBarItem key="tabBarItem" enabled="NO" title="搜索" image="tab-search.png" id="Dje-r9-XeC"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5It-hC-QXy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-452" y="125"/>
         </scene>
-        <!--View Controller-->
+        <!--View Controller - 收藏-->
         <scene sceneID="D0s-35-hnP">
             <objects>
                 <viewController id="WzO-DW-JhP" sceneMemberID="viewController">
@@ -84,13 +84,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" enabled="NO" systemItem="contacts" id="vhX-o5-Yqk"/>
+                    <tabBarItem key="tabBarItem" enabled="NO" title="收藏" image="tab-favourate.png" id="vhX-o5-Yqk"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9ta-uL-DXr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-118" y="125"/>
         </scene>
-        <!--View Controller-->
+        <!--View Controller - 关于我们-->
         <scene sceneID="8Ec-AX-nS1">
             <objects>
                 <viewController id="bFu-UH-XAO" sceneMemberID="viewController">
@@ -108,7 +108,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" enabled="NO" systemItem="mostRecent" id="IA3-3O-eoY"/>
+                    <tabBarItem key="tabBarItem" enabled="NO" title="关于我们" image="tab-aboutus.png" id="IA3-3O-eoY"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rm9-b9-naj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -555,6 +555,10 @@
         <image name="golf.jpg" width="396" height="190"/>
         <image name="recommends.jpg" width="640" height="200"/>
         <image name="swimming.jpg" width="190" height="190"/>
+        <image name="tab-aboutus.png" width="30" height="30"/>
+        <image name="tab-favourate.png" width="30" height="30"/>
+        <image name="tab-home.png" width="30" height="30"/>
+        <image name="tab-search.png" width="30" height="30"/>
         <image name="tennis.jpg" width="190" height="190"/>
     </resources>
     <classes>
