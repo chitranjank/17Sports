@@ -67,8 +67,8 @@
 
 -(void) tabBarItemChanged:(id)obj {
     DLog(@"%@", obj);
-    self.searchDisplayController.searchBar.hidden = NO;
-    [self.searchDisplayController setActive:YES];
+//    self.searchDisplayController.searchBar.hidden = NO;
+//    [self.searchDisplayController setActive:YES];
 }
 
 -(void) createSubViews {
@@ -154,57 +154,4 @@
     isShowingListNotMap = !isShowingListNotMap;
 }
 
-#pragma mark - search bar and data source delegates
-//TODO should move to a dedicate class for searching
-
-- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
-    DLog(@"%@ %@", searchBar, searchText);
-}
-
-- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
-    DLog(@"%@", searchBar);
-    NSString *searchText = searchBar.text;
-    [self.searchDisplayController setActive:NO];
-    self.merchants = [MerchantData filterMerchants:[MerchantData allMerchants] byName:searchText];
-    DLog(@"%d =%@=", self.merchants.count, searchText);
-    if (isShowingWelcome) {
-        [self switchToList];
-    } else if (isShowingListNotMap) {
-        [listVC refreshTableObjects];
-    }
-}
-
-- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
-    DLog(@"%@", searchBar);
-}
-
-- (void)searchBar:(UISearchBar *)searchBar selectedScopeButtonIndexDidChange:(NSInteger)selectedScope {
-    DLog(@"%@: %d", searchBar, selectedScope);
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    // TODO here's the search text hint
-    return 3;
-//    return searchedMerchants.count;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-
-    // TODO here's the search text hint
-    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
-    cell.textLabel.text = @"曾经搜索的词";
-    return cell;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // TODO here's the search text hint
-    
-//    DetailViewController *detailVC = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailViewController"];
-//    
-//    [[NSUserDefaults standardUserDefaults] setObject:searchedMerchants[indexPath.row] forKey:MERCHANT];
-//    [self.parentViewController.navigationController pushViewController:detailVC animated:YES];
-}
 @end

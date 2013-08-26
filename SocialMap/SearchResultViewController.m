@@ -95,36 +95,36 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // Return the number of rows in the section.
-    return [merchants count];
+    if (SEARCH_LIST_TABLE_VIEW_TAG == tableView.tag) {
+        return [merchants count];
+    } else {
+        //TODO how the search hints behave?
+        return 3;
+    }
 }
 
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    if(section == 1) {
-        return @"map section";
+    if (SEARCH_LIST_TABLE_VIEW_TAG == tableView.tag) {
+        return STR(@"搜索到%d条结果", merchants.count);
+    } else {
+        return nil;        
     }
-    return STR(@"搜索到%d条结果", merchants.count);
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    UITableViewCell *cell;
     
-#ifdef ios6
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-#else
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
-#endif
-    
-
-    if (indexPath.section == 0) {
+    if (SEARCH_LIST_TABLE_VIEW_TAG == tableView.tag) {
+        cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+        
         NSDictionary *dict = merchants[indexPath.row];
         cell.textLabel.text = dict[@"name"];
         
@@ -133,11 +133,17 @@
         
         cell.detailTextLabel.text = STR(@"距离%.2f公里", [Distance calculateDistanceOfCoord1:myCoord Coord2:merchantCoord]);
         // TODO should not caculate distance every time
-//        cell.detailTextLabel.text = STR(@"距离%.2f公里", [dict[@"caculatedDistance"] doubleValue]);
+        //        cell.detailTextLabel.text = STR(@"距离%.2f公里", [dict[@"caculatedDistance"] doubleValue]);
         cell.imageView.image = [UIImage imageNamed:dict[@"images"][0]];
+        
     } else {
-        //cell.textLabel.text = @"Map here";
+        cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+        if (!cell) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
+        }
+        cell.textLabel.text = STR(@"曾经搜索的词 %d", [indexPath row]);
     }
+
     return cell;
 }
 
@@ -145,11 +151,43 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    DetailViewController *detailVC = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailViewController"];
-    
-    [[NSUserDefaults standardUserDefaults] setObject:merchants[indexPath.row] forKey:@"merchant"];
-    [self.parentViewController.navigationController pushViewController:detailVC animated:YES];
+    if (SEARCH_LIST_TABLE_VIEW_TAG == tableView.tag) {
+        DetailViewController *detailVC = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailViewController"];
+        
+        [[NSUserDefaults standardUserDefaults] setObject:merchants[indexPath.row] forKey:@"merchant"];
+        [self.parentViewController.navigationController pushViewController:detailVC animated:YES];
+    }
 }
+
+#pragma mark - search bar and data source delegates
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+    DLog(@"%@ %@", searchBar, searchText);
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    DLog(@"%@", searchBar);
+    NSString *searchText = searchBar.text;
+    [searchBar resignFirstResponder];
+    
+    ((MainViewController*)(self.parentViewController)).merchants = [MerchantData filterMerchants:[MerchantData allMerchants] byName:searchText];
+    [self refreshTableObjects];
+    
+    self.searchDisplayController.active = NO;
+    
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
+    [searchBar resignFirstResponder];
+//    searchBar.showsCancelButton = NO;
+}
+
+- (void)searchBar:(UISearchBar *)searchBar selectedScopeButtonIndexDidChange:(NSInteger)selectedScope {
+    DLog(@"%@: %d", searchBar, selectedScope);
+}
+
+
+#pragma mark - others
 
 /*
 // Override to support conditional editing of the table view.

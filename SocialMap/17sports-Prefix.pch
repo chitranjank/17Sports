@@ -33,4 +33,6 @@
 #define SEARCH @"Search"
 #define MERCHANT @"merchant"
 #define SEARCH_TAB_TAG 100
+#define SEARCH_LIST_TABLE_VIEW_TAG 200
+#define SEARCH_HINTS_TABLE_VIEW_TAG 201
 #define TAB_BAR_ITEM_CHANGED @"tab_bar_item_changed"
