@@ -113,23 +113,11 @@
 		8F20746F17C1EBC3000B0D2D /* 101.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8F20740817C1EBC3000B0D2D /* 101.jpg */; };
 		8F20747017C1EBC3000B0D2D /* 102.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8F20740917C1EBC3000B0D2D /* 102.jpg */; };
 		8F20747117C1EBC3000B0D2D /* 103.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8F20740A17C1EBC3000B0D2D /* 103.jpg */; };
-		8F295D811765E1BD00EE546A /* 2 天大游泳馆.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8F295D761765E1BD00EE546A /* 2 天大游泳馆.jpg */; };
-		8F295D821765E1BD00EE546A /* 3 游泳跳水馆.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8F295D771765E1BD00EE546A /* 3 游泳跳水馆.jpg */; };
-		8F295D831765E1BD00EE546A /* 4 三源益康.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8F295D781765E1BD00EE546A /* 4 三源益康.jpg */; };
-		8F295D841765E1BD00EE546A /* 5 帝景高尔夫.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8F295D791765E1BD00EE546A /* 5 帝景高尔夫.jpg */; };
-		8F295D851765E1BD00EE546A /* 6 滨海湖高尔夫球会.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8F295D7A1765E1BD00EE546A /* 6 滨海湖高尔夫球会.jpg */; };
-		8F295D861765E1BD00EE546A /* 7 松江团泊湖高尔夫.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8F295D7B1765E1BD00EE546A /* 7 松江团泊湖高尔夫.jpg */; };
-		8F295D871765E1BD00EE546A /* 8 森奥高尔夫.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8F295D7C1765E1BD00EE546A /* 8 森奥高尔夫.jpg */; };
-		8F295D881765E1BD00EE546A /* 9 汇川马友会.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8F295D7D1765E1BD00EE546A /* 9 汇川马友会.jpg */; };
-		8F295D891765E1BD00EE546A /* 10 英雅马术俱乐部.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8F295D7E1765E1BD00EE546A /* 10 英雅马术俱乐部.jpg */; };
-		8F295D8A1765E1BD00EE546A /* 11 牧歌骑士会.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8F295D7F1765E1BD00EE546A /* 11 牧歌骑士会.jpg */; };
-		8F295D8C1765E6C400EE546A /* 1 复康路游泳馆.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8F295D8B1765E6C400EE546A /* 1 复康路游泳馆.jpg */; };
 		8F295D9F176626DB00EE546A /* Beijing, China.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 8F295D9E176626DB00EE546A /* Beijing, China.gpx */; };
 		8F295DA1176627FD00EE546A /* Tianjin, China.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 8F295DA0176627FD00EE546A /* Tianjin, China.gpx */; };
 		8F2F5A831764245D00F296EA /* 6-12AM.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F2F5A821764245D00F296EA /* 6-12AM.png */; };
 		8F537F3317C5AB6500C8EEBE /* SearchTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F537F3217C5AB6500C8EEBE /* SearchTest.m */; };
 		8F537F3517C5B21D00C8EEBE /* MerchantData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2073A217C1E842000B0D2D /* MerchantData.m */; };
-		8F537F3717C5EE0E00C8EEBE /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F537F3617C5EE0E00C8EEBE /* Default.png */; };
 		8F537F3B17C5F2B400C8EEBE /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F537F3A17C5F2B400C8EEBE /* logo.png */; };
 		8F5AADA817CB593E00BAFF3C /* tab-aboutus@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F5AADA417CB593E00BAFF3C /* tab-aboutus@2x.png */; };
 		8F5AADA917CB593E00BAFF3C /* tab-favourate@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F5AADA517CB593E00BAFF3C /* tab-favourate@2x.png */; };
@@ -139,9 +127,9 @@
 		8F5AADB217CB5A8B00BAFF3C /* tab-favourate.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F5AADAE17CB5A8B00BAFF3C /* tab-favourate.png */; };
 		8F5AADB317CB5A8B00BAFF3C /* tab-home.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F5AADAF17CB5A8B00BAFF3C /* tab-home.png */; };
 		8F5AADB417CB5A8B00BAFF3C /* tab-search.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F5AADB017CB5A8B00BAFF3C /* tab-search.png */; };
+		8F5AADB617CB8DB200BAFF3C /* ICON.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F5AADB517CB8DB200BAFF3C /* ICON.png */; };
+		8F5AADB717CB8DBB00BAFF3C /* ICON@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F681E5717C32DAA004B91E5 /* ICON@2x.png */; };
 		8F681E5517C31C81004B91E5 /* TabBarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F681E5417C31C81004B91E5 /* TabBarVC.m */; };
-		8F681E5817C32DAA004B91E5 /* ICON@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F681E5717C32DAA004B91E5 /* ICON@2x.png */; };
-		8F681E5A17C32EEA004B91E5 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F681E5917C32EEA004B91E5 /* Default@2x.png */; };
 		8F681E5C17C32F23004B91E5 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F681E5B17C32F23004B91E5 /* Default-568h@2x.png */; };
 		8F681E6317C335EF004B91E5 /* tennis.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8F681E5D17C335EF004B91E5 /* tennis.jpg */; };
 		8F681E6417C335EF004B91E5 /* swimming.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8F681E5E17C335EF004B91E5 /* swimming.jpg */; };
@@ -288,17 +276,6 @@
 		8F20740817C1EBC3000B0D2D /* 101.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 101.jpg; sourceTree = "<group>"; };
 		8F20740917C1EBC3000B0D2D /* 102.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 102.jpg; sourceTree = "<group>"; };
 		8F20740A17C1EBC3000B0D2D /* 103.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 103.jpg; sourceTree = "<group>"; };
-		8F295D761765E1BD00EE546A /* 2 天大游泳馆.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "2 天大游泳馆.jpg"; sourceTree = "<group>"; };
-		8F295D771765E1BD00EE546A /* 3 游泳跳水馆.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "3 游泳跳水馆.jpg"; sourceTree = "<group>"; };
-		8F295D781765E1BD00EE546A /* 4 三源益康.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "4 三源益康.jpg"; sourceTree = "<group>"; };
-		8F295D791765E1BD00EE546A /* 5 帝景高尔夫.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "5 帝景高尔夫.jpg"; sourceTree = "<group>"; };
-		8F295D7A1765E1BD00EE546A /* 6 滨海湖高尔夫球会.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "6 滨海湖高尔夫球会.jpg"; sourceTree = "<group>"; };
-		8F295D7B1765E1BD00EE546A /* 7 松江团泊湖高尔夫.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "7 松江团泊湖高尔夫.jpg"; sourceTree = "<group>"; };
-		8F295D7C1765E1BD00EE546A /* 8 森奥高尔夫.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "8 森奥高尔夫.jpg"; sourceTree = "<group>"; };
-		8F295D7D1765E1BD00EE546A /* 9 汇川马友会.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "9 汇川马友会.jpg"; sourceTree = "<group>"; };
-		8F295D7E1765E1BD00EE546A /* 10 英雅马术俱乐部.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "10 英雅马术俱乐部.jpg"; sourceTree = "<group>"; };
-		8F295D7F1765E1BD00EE546A /* 11 牧歌骑士会.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "11 牧歌骑士会.jpg"; sourceTree = "<group>"; };
-		8F295D8B1765E6C400EE546A /* 1 复康路游泳馆.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "1 复康路游泳馆.jpg"; sourceTree = "<group>"; };
 		8F295D9E176626DB00EE546A /* Beijing, China.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "Beijing, China.gpx"; path = "../Beijing, China.gpx"; sourceTree = "<group>"; };
 		8F295DA0176627FD00EE546A /* Tianjin, China.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "Tianjin, China.gpx"; path = "../Tianjin, China.gpx"; sourceTree = "<group>"; };
 		8F2F5A821764245D00F296EA /* 6-12AM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "6-12AM.png"; sourceTree = "<group>"; };
@@ -314,6 +291,7 @@
 		8F5AADAE17CB5A8B00BAFF3C /* tab-favourate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab-favourate.png"; sourceTree = "<group>"; };
 		8F5AADAF17CB5A8B00BAFF3C /* tab-home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab-home.png"; sourceTree = "<group>"; };
 		8F5AADB017CB5A8B00BAFF3C /* tab-search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab-search.png"; sourceTree = "<group>"; };
+		8F5AADB517CB8DB200BAFF3C /* ICON.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ICON.png; path = ../ICON.png; sourceTree = "<group>"; };
 		8F681E5317C31C81004B91E5 /* TabBarVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarVC.h; sourceTree = "<group>"; };
 		8F681E5417C31C81004B91E5 /* TabBarVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarVC.m; sourceTree = "<group>"; };
 		8F681E5717C32DAA004B91E5 /* ICON@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ICON@2x.png"; path = "../ICON@2x.png"; sourceTree = "<group>"; };
@@ -399,6 +377,7 @@
 		8F295D741765E1B000EE546A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8F5AADB517CB8DB200BAFF3C /* ICON.png */,
 				8F5AADAD17CB5A8B00BAFF3C /* tab-aboutus.png */,
 				8F5AADAE17CB5A8B00BAFF3C /* tab-favourate.png */,
 				8F5AADAF17CB5A8B00BAFF3C /* tab-home.png */,
@@ -523,17 +502,6 @@
 				8F20740917C1EBC3000B0D2D /* 102.jpg */,
 				8F20740A17C1EBC3000B0D2D /* 103.jpg */,
 				8F2F5A821764245D00F296EA /* 6-12AM.png */,
-				8F295D8B1765E6C400EE546A /* 1 复康路游泳馆.jpg */,
-				8F295D761765E1BD00EE546A /* 2 天大游泳馆.jpg */,
-				8F295D771765E1BD00EE546A /* 3 游泳跳水馆.jpg */,
-				8F295D781765E1BD00EE546A /* 4 三源益康.jpg */,
-				8F295D791765E1BD00EE546A /* 5 帝景高尔夫.jpg */,
-				8F295D7A1765E1BD00EE546A /* 6 滨海湖高尔夫球会.jpg */,
-				8F295D7B1765E1BD00EE546A /* 7 松江团泊湖高尔夫.jpg */,
-				8F295D7C1765E1BD00EE546A /* 8 森奥高尔夫.jpg */,
-				8F295D7D1765E1BD00EE546A /* 9 汇川马友会.jpg */,
-				8F295D7E1765E1BD00EE546A /* 10 英雅马术俱乐部.jpg */,
-				8F295D7F1765E1BD00EE546A /* 11 牧歌骑士会.jpg */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -728,17 +696,6 @@
 				8FDE58EA170EAB1F0038FA78 /* MainStoryboard_iPhone.storyboard in Resources */,
 				8FDE58ED170EAB1F0038FA78 /* MainStoryboard_iPad.storyboard in Resources */,
 				8F2F5A831764245D00F296EA /* 6-12AM.png in Resources */,
-				8F295D811765E1BD00EE546A /* 2 天大游泳馆.jpg in Resources */,
-				8F295D821765E1BD00EE546A /* 3 游泳跳水馆.jpg in Resources */,
-				8F295D831765E1BD00EE546A /* 4 三源益康.jpg in Resources */,
-				8F295D841765E1BD00EE546A /* 5 帝景高尔夫.jpg in Resources */,
-				8F295D851765E1BD00EE546A /* 6 滨海湖高尔夫球会.jpg in Resources */,
-				8F295D861765E1BD00EE546A /* 7 松江团泊湖高尔夫.jpg in Resources */,
-				8F295D871765E1BD00EE546A /* 8 森奥高尔夫.jpg in Resources */,
-				8F295D881765E1BD00EE546A /* 9 汇川马友会.jpg in Resources */,
-				8F295D891765E1BD00EE546A /* 10 英雅马术俱乐部.jpg in Resources */,
-				8F295D8A1765E1BD00EE546A /* 11 牧歌骑士会.jpg in Resources */,
-				8F295D8C1765E6C400EE546A /* 1 复康路游泳馆.jpg in Resources */,
 				8F295D9F176626DB00EE546A /* Beijing, China.gpx in Resources */,
 				8F295DA1176627FD00EE546A /* Tianjin, China.gpx in Resources */,
 				8F20740B17C1EBC3000B0D2D /* 1.jpg in Resources */,
@@ -844,8 +801,6 @@
 				8F20746F17C1EBC3000B0D2D /* 101.jpg in Resources */,
 				8F20747017C1EBC3000B0D2D /* 102.jpg in Resources */,
 				8F20747117C1EBC3000B0D2D /* 103.jpg in Resources */,
-				8F681E5817C32DAA004B91E5 /* ICON@2x.png in Resources */,
-				8F681E5A17C32EEA004B91E5 /* Default@2x.png in Resources */,
 				8F681E5C17C32F23004B91E5 /* Default-568h@2x.png in Resources */,
 				8F681E6317C335EF004B91E5 /* tennis.jpg in Resources */,
 				8F681E6417C335EF004B91E5 /* swimming.jpg in Resources */,
@@ -854,7 +809,6 @@
 				8F681E6D17C3366B004B91E5 /* equestrainism.jpg in Resources */,
 				8F681E6E17C3366B004B91E5 /* golf.jpg in Resources */,
 				8F681E7017C33755004B91E5 /* recommends.jpg in Resources */,
-				8F537F3717C5EE0E00C8EEBE /* Default.png in Resources */,
 				8F537F3B17C5F2B400C8EEBE /* logo.png in Resources */,
 				8F5AADA817CB593E00BAFF3C /* tab-aboutus@2x.png in Resources */,
 				8F5AADA917CB593E00BAFF3C /* tab-favourate@2x.png in Resources */,
@@ -864,6 +818,8 @@
 				8F5AADB217CB5A8B00BAFF3C /* tab-favourate.png in Resources */,
 				8F5AADB317CB5A8B00BAFF3C /* tab-home.png in Resources */,
 				8F5AADB417CB5A8B00BAFF3C /* tab-search.png in Resources */,
+				8F5AADB617CB8DB200BAFF3C /* ICON.png in Resources */,
+				8F5AADB717CB8DBB00BAFF3C /* ICON@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1008,7 +964,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1030,7 +986,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";

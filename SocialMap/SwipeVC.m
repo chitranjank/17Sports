@@ -71,7 +71,7 @@
 
     int count = _images.count;
     int current = self.ImagePageControl.currentPage;
-    int next;
+    int next = 0;
     
     if (recognizer.direction == UISwipeGestureRecognizerDirectionLeft) {
         next = (current + count - 1) % count;

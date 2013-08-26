@@ -442,7 +442,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="3 游泳跳水馆.jpg" id="0JT-B7-GRJ">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="0JT-B7-GRJ">
                                 <rect key="frame" x="0.0" y="106" width="320" height="156"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -551,7 +551,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="3 游泳跳水馆.jpg" width="500" height="333"/>
         <image name="billiards.jpg" width="396" height="190"/>
         <image name="bodybuilding.jpg" width="190" height="396"/>
         <image name="equestrainism.jpg" width="190" height="190"/>
@@ -568,7 +567,6 @@
         <class className="DetailViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailViewController.h"/>
             <relationships>
-                <relationship kind="action" name="callPhone:"/>
                 <relationship kind="outlet" name="btnAddress" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="btnPhone" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="imageCurrent" candidateClass="UIImageView"/>
