@@ -55,8 +55,8 @@
     self.labelName.text = merchant[@"name"];
     self.labelPrice.text = STR(@"价格：%@", merchant[@"price"]);
     self.labelDescription.text = merchant[@"description"];
-    self.btnPhone.titleLabel.text = STR(@"电话：%@", merchant[@"phone"]);
-    self.btnAddress.titleLabel.text = STR(@"地址：%@", merchant[@"address"]);
+    [self.btnPhone setTitle:STR(@"电话：%@", merchant[@"phone"]) forState:UIControlStateNormal];
+    [self.btnAddress setTitle:STR(@"地址：%@", merchant[@"address"]) forState:UIControlStateNormal];
     
     imagesOfMerchant = merchant[@"images"];
     self.imageCurrent.image = [UIImage imageNamed:imagesOfMerchant[0]];
@@ -89,6 +89,8 @@
  * This only works on real devices.
  */
 - (IBAction)callPhone:(id)sender {
+    DLog(@"%@", ((UIButton*)sender).titleLabel.text);
+
     NSString *num = [[NSString alloc] initWithFormat:@"telprompt://%@", merchant[@"phone"]];
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:num]];
 }
