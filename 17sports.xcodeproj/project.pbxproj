@@ -172,6 +172,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		853B024117EED95A0071387A /* tubiao120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tubiao120.png; sourceTree = "<group>"; };
 		85F9E9A717E6062200E54DCE /* ICON@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ICON@2x.png"; path = "../ICON@2x.png"; sourceTree = "<group>"; };
 		85F9E9A917E6064B00E54DCE /* ICON.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ICON.png; path = ../ICON.png; sourceTree = "<group>"; };
 		85F9E9AB17E6075B00E54DCE /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
@@ -541,6 +542,7 @@
 		8FDE58C1170EAB1F0038FA78 = {
 			isa = PBXGroup;
 			children = (
+				853B024117EED95A0071387A /* tubiao120.png */,
 				8FDE58D6170EAB1F0038FA78 /* 17sports */,
 				8F6CF7AA179AD670005A4590 /* 17sportsTest */,
 				8FDE58CF170EAB1F0038FA78 /* Frameworks */,
