@@ -70,6 +70,18 @@
             mainVC.merchants = [MerchantData allMerchantsOfGolf];
             [(MainViewController*)self.parentViewController switchToList];
             break;
+        case BODYBUILDING:
+            mainVC.merchants = [MerchantData allMerchantsOfBodyBuilding];
+            [(MainViewController*)self.parentViewController switchToList];
+            break;
+        case BILLIARDS:
+            mainVC.merchants = [MerchantData allMerchantsOfBilliards];
+            [(MainViewController*)self.parentViewController switchToList];
+            break;
+        case TENNIS:
+            mainVC.merchants = [MerchantData allMerchantsOfTennis];
+            [(MainViewController*)self.parentViewController switchToList];
+            break;
         default:
             break;
     }

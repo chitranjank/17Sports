@@ -14,6 +14,11 @@
 +(NSArray*) allMerchantsOfGolf;
 +(NSArray*) allMerchantsOfEquestrianism;
 +(NSArray*) allMerchantsOfSwimming;
++(NSArray*) allMerchantsOfBodyBuilding;
++(NSArray*) allMerchantsOfBilliards;
++(NSArray*) allMerchantsOfTennis;
+
+
 +(NSArray*) filterMerchants:(NSArray*)merchants byName:(NSString*)name;
 
 

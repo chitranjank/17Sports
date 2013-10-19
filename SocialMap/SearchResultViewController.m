@@ -54,6 +54,7 @@
     
     [locationManager startUpdatingLocation];
     locationManager.delegate = (id)self;
+    [self refreshTableObjects];
 }
 
 
